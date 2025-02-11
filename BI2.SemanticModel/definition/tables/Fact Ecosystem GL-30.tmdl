@@ -1,0 +1,233 @@
+table 'Fact Ecosystem GL-30'
+	lineageTag: bab31488-b19c-4e75-995d-f5851e792632
+
+	column 'Key for mapping'
+		dataType: double
+		lineageTag: d8396377-021a-4de1-9c40-bd3b7f7ecaf1
+		summarizeBy: sum
+		sourceColumn: Key for mapping
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Region
+		dataType: string
+		lineageTag: c985d7f3-8816-4025-9f47-d9748d62caca
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geo
+		dataType: string
+		lineageTag: 88ee9d52-424f-481c-93ed-6a1bedf201ea
+		summarizeBy: none
+		sourceColumn: Geo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: e9e0cf49-36f5-4b5b-8cda-2776e217c850
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity ID'
+		dataType: string
+		lineageTag: f2a67066-ebb7-41ba-bdc8-b5ed885c1051
+		summarizeBy: none
+		sourceColumn: Opportunity ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer PO ID'
+		dataType: string
+		lineageTag: 1976b8a2-a7b5-4846-95b3-888d44280d62
+		summarizeBy: none
+		sourceColumn: Customer PO ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Order Number'
+		dataType: double
+		lineageTag: b25fc940-438b-4e4a-9bbc-dd3374d53a39
+		summarizeBy: sum
+		sourceColumn: Sales Order Number
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Selling Motion'
+		dataType: string
+		lineageTag: 85850754-f944-4ae2-b100-b3af8c0a776d
+		summarizeBy: none
+		sourceColumn: Selling Motion
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'T1 Partner Type'
+		dataType: string
+		lineageTag: 95905546-3ee1-4e3c-bacd-a8fe2907754c
+		summarizeBy: none
+		sourceColumn: T1 Partner Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'T1 Partner PPID'
+		dataType: string
+		lineageTag: b53cb5f2-a8e0-4fc8-98e7-0733f8154678
+		summarizeBy: none
+		sourceColumn: T1 Partner PPID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'T1 Partner Name'
+		dataType: string
+		lineageTag: 5d440989-29ef-4d63-a01f-7b2208e27647
+		summarizeBy: none
+		sourceColumn: T1 Partner Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'T2 Partner Type'
+		dataType: string
+		lineageTag: 56afb0e1-511a-4055-8018-730da4e0468c
+		summarizeBy: none
+		sourceColumn: T2 Partner Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reseller PPID'
+		dataType: string
+		lineageTag: 84272a75-64f3-4a02-9534-13d5f90c9c21
+		summarizeBy: none
+		sourceColumn: Reseller PPID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reseller Name'
+		dataType: string
+		lineageTag: cc483700-c9c3-4570-88ae-3b0f0dde5cc4
+		summarizeBy: none
+		sourceColumn: Reseller Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reseller EMDM ID'
+		dataType: double
+		lineageTag: 14015aa2-5066-463a-9261-280a3d83dd9e
+		summarizeBy: count
+		sourceColumn: Reseller EMDM ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'End Customer CRS'
+		dataType: string
+		lineageTag: 4ca19751-f7aa-468b-bc62-ab61c44998fa
+		summarizeBy: none
+		sourceColumn: End Customer CRS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Customer Name'
+		dataType: string
+		lineageTag: 69fd5c31-fb1f-4dc4-b586-2e2aece93df5
+		summarizeBy: none
+		sourceColumn: End Customer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Customer EMDM ID'
+		dataType: string
+		lineageTag: 9e975ec7-29ef-4ce8-92fd-9f9838c4ba54
+		summarizeBy: none
+		sourceColumn: End Customer EMDM ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Coverage Segment'
+		dataType: string
+		lineageTag: 23a4d17a-4aa0-4df5-abf8-1be28c0523a9
+		summarizeBy: none
+		sourceColumn: Sales Coverage Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column PL
+		dataType: string
+		lineageTag: 2d350c35-3ec8-4a3b-94e5-605d2f0eee91
+		summarizeBy: none
+		sourceColumn: PL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Services PL?'
+		dataType: string
+		lineageTag: 10590d12-6520-4c22-b470-cc97132d78d7
+		summarizeBy: none
+		sourceColumn: Services PL?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Part Number'
+		dataType: string
+		lineageTag: 9ee9c5b2-5d21-422a-9302-059b5cc99965
+		summarizeBy: none
+		sourceColumn: Product Part Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Qty'
+		dataType: double
+		lineageTag: 73535cf4-7e91-40d3-a09c-018f56dbbe6c
+		summarizeBy: sum
+		sourceColumn: Product Qty
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Exception
+		dataType: string
+		lineageTag: 87317bfe-bcb5-4a96-88a5-9a9179e7d425
+		summarizeBy: none
+		sourceColumn: Exception
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesID
+		dataType: string
+		lineageTag: 1a40b0fa-5296-48de-8dd9-56e0e8d16d42
+		summarizeBy: none
+		sourceColumn: SalesID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Distri Group'
+		dataType: string
+		lineageTag: c4ab2585-7544-48a2-913f-8dcf921b12b0
+		summarizeBy: none
+		sourceColumn: Distri Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Ecosystem GL-30' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [Query="select *,(cast(cast(cast([Sales Order Number] as float)as numeric) as nvarchar(255))) as SalesID from [dbo].[GL_30_Report]"]),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Key for mapping", "Region", "Geo", "Country", "Opportunity ID", "Customer PO ID", "Sales Order Number", "Selling Motion", "T1 Partner Type", "T1 Partner PPID", "T1 Partner Name", "T2 Partner Type", "Reseller PPID", "Reseller Name", "Reseller EMDM ID", "End Customer CRS", "End Customer Name", "End Customer EMDM ID", "Distri Group", "Sales Coverage Segment", "PL", "Services PL?", "Product Part Number", "Product Qty", "Exception", "SalesID"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

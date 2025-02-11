@@ -1,0 +1,157 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "fe9881533ae73cca2d7b",
+  "position": {
+    "x": 762.55319148936167,
+    "y": 332.25531914893617,
+    "z": 5000,
+    "height": 372.19858156028369,
+    "width": 495.65957446808511,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact New Logo Target Pipeline"
+                    }
+                  },
+                  "Property": "ForecastCategory"
+                }
+              },
+              "queryRef": "REP_New_Logo_Target_Pipeline_Final.ForecastCategory",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dimension MDM"
+                    }
+                  },
+                  "Property": "NL Customer Segment_BIADS"
+                }
+              },
+              "queryRef": "MDM_VIEW.NL Customer Segment_BIADS",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dimension Geo"
+                    }
+                  },
+                  "Property": "Geo"
+                }
+              },
+              "queryRef": "GEO_VIEW.Geo",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact New Logo Target Pipeline"
+                        }
+                      },
+                      "Property": "Count_ST_Ids"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Sum(REP_New_Logo_Target_Pipeline_Final.Count_ST_Ids)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dimension MDM"
+                  }
+                },
+                "Property": "NL Customer Segment_BIADS"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

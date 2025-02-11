@@ -1,0 +1,1216 @@
+/// Fact table that constructs data related to Partner data in pipeline
+table 'Fact Partner Pipeline'
+	lineageTag: adb5e388-e504-4ba3-bac0-8f1223f6fa86
+
+	/// Distinct count of Partners for each Opportunity
+	measure PartnerCount =
+			//COUNTX(Values('Fact Partner Pipeline'[Opportunity Id]),CALCULATE(COUNT('Fact Partner Pipeline'[PartnerType])))
+			CountX(SUMMARIZE('Fact Partner Pipeline','Fact Partner Pipeline'[Opportunity Id],'Fact Partner Pipeline'[PartnerType],"Table",'Fact Partner Pipeline'[PartnerType]),[Table])
+		formatString: 0
+		lineageTag: daf047b7-d734-49ef-9eb5-93560b44ceeb
+
+	/// Sum of Opportunity value where Forecast category is Commit
+	measure 'TotalPipeline Commit' =
+			CALCULATE(
+			    sum('Fact Partner Pipeline'[Opportunity Value]),
+			        'Fact Partner Pipeline'[ForecastCategory_BIADS] IN {"Commit"}
+			    )
+		lineageTag: b2c95278-b5bd-48b5-a0ab-458b78057837
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of Opportunity value where Forecast category is Upside
+	measure 'TotalPipeline Upside' =
+			CALCULATE(
+			    sum('Fact Partner Pipeline'[Opportunity Value]),
+			        'Fact Partner Pipeline'[ForecastCategory_BIADS] IN {"Upside"}
+			    )
+		lineageTag: 9ccbb07d-0170-40f3-9744-9ce87f7ace6d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of Opportunity value where Forecast category is Won
+	measure 'TotalPipeline Won' =
+			CALCULATE(
+			    sum('Fact Partner Pipeline'[Opportunity Value]),
+			        'Fact Partner Pipeline'[ForecastCategory_BIADS] IN {"Won"}
+			    )
+		lineageTag: 6bfac4aa-6347-4210-ac41-c2f1d6360b55
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of Opportunity value where sales stage in 1,2 and 3
+	measure SalesStage123 = ```
+			CALCULATE(
+			    sum('Fact Partner Pipeline'[Opportunity Value]),
+			    'Fact Partner Pipeline'[SalesStage] IN {
+			        "01 - Understand Customer",
+			        "02 - Validate Opportunity",
+			        "03 - Qualify the Opportunity"
+			    }
+			)
+			
+			```
+		lineageTag: 23801777-47a2-41ca-8bcf-247210270aaf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of Opportunity value where sales stage in 4 and 5
+	measure SalesStage45 = ```
+			CALCULATE(
+			    sum('Fact Partner Pipeline'[Opportunity Value]),
+			    'Fact Partner Pipeline'[SalesStage] IN {
+			        "04B - Propose Solution",
+			        "04A - Develop Solution",
+			        "05 - Negotiate & Close"
+			    }
+			)
+			
+			```
+		lineageTag: 2f80b70c-88e9-4269-98e2-395e3302c71c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of Opportunity value where sales stage in 1,2 and 3
+	measure 'Total Stage 1-3 no flag' =
+			CALCULATE(
+			    [SalesStage123],
+			    'Fact Partner Pipeline'[ForecastCategory_BIADS]
+			        IN { "Pipeline" }
+			)
+		lineageTag: fd935ea8-1017-4c0e-ac7f-29bdb5db676d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of Opportunity value where sales stage in 4 and 5
+	measure 'Total Stage 4-5 no flag' = ```
+			CALCULATE(
+			    [SalesStage45],
+			    'Fact Partner Pipeline'[ForecastCategory_BIADS]
+			        IN { "Pipeline" }
+			)
+			
+			```
+		lineageTag: 73b91404-d9bd-460d-b895-4e096d6a4808
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Opportunity ID for HPE
+	column 'HPE Opportunity Id'
+		dataType: string
+		lineageTag: a1e2717e-93ac-4e03-b977-1f5c2906e362
+		summarizeBy: none
+		sourceColumn: HPE Opportunity Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column DATE_KY
+		dataType: dateTime
+		isHidden
+		formatString: mm/dd/yyyy
+		lineageTag: 0ef167f9-cd9e-4644-9532-82c6f04f5c88
+		summarizeBy: none
+		sourceColumn: DATE_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// For development team use only.
+	column BA_KY
+		dataType: string
+		isHidden
+		lineageTag: 89d9b97b-1e4b-481e-b4fe-1e7c9d02dfff
+		summarizeBy: none
+		sourceColumn: BA_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column GEO_KY
+		dataType: string
+		isHidden
+		lineageTag: 94f3f852-b67c-4a41-8d76-a2a79c69afcc
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity ID's based on Product or service
+	column 'Opportunity Id'
+		dataType: string
+		lineageTag: 890aed42-1930-4c84-832f-9b4f03b53a05
+		summarizeBy: none
+		sourceColumn: Opportunity Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of Opportunity Name
+	column OpportunityName
+		dataType: string
+		lineageTag: 174a996f-066e-418c-9c7f-620bf809d5cd
+		summarizeBy: none
+		sourceColumn: OpportunityName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Type of Opportunity 
+	column OpportunityType
+		dataType: string
+		lineageTag: 6d3229b8-5e12-404e-9f4e-1e29a046b647
+		summarizeBy: none
+		sourceColumn: OpportunityType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Status of Sales
+	column SalesStatus
+		dataType: string
+		lineageTag: c99b3c45-7c3c-403f-931c-77cb622c40fe
+		summarizeBy: none
+		sourceColumn: SalesStatus
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Different stages of sales
+	column SalesStage
+		dataType: string
+		lineageTag: bb033356-b3ca-48d2-93c4-51ea19127c4d
+		summarizeBy: none
+		sourceColumn: SalesStage
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Forecast Category based on Opportunity ID (Derived)
+	column ForecastCategory_BIADS
+		dataType: string
+		lineageTag: c95ecb81-47c8-4985-a199-33b7647fc2d8
+		summarizeBy: none
+		sourceColumn: ForecastCategory_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Go to market Direct / Indirect
+	column GoToMarketRoute
+		dataType: string
+		lineageTag: 5fbe4361-60cd-4cb4-9b02-43fdc29a6c4c
+		summarizeBy: none
+		sourceColumn: GoToMarketRoute
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column OpportunityRecordType
+		dataType: string
+		lineageTag: b56b2c7b-a23a-449e-97fe-4ed10b53c08a
+		summarizeBy: none
+		sourceColumn: OpportunityRecordType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Contains Product Code
+	column RenewalType
+		dataType: string
+		lineageTag: f7f7b790-c32f-481c-b303-9781e48b98bb
+		summarizeBy: none
+		sourceColumn: RenewalType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column FulfilmentRoute
+		dataType: string
+		lineageTag: 3cd2eac4-f82f-4b6e-a22b-9fdfc9751e8c
+		summarizeBy: none
+		sourceColumn: FulfilmentRoute
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only
+	column CustomerEngagement
+		dataType: string
+		lineageTag: 34eb532e-fa14-4b12-bb5f-8bca55fba7bd
+		summarizeBy: none
+		sourceColumn: CustomerEngagement
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity lost Reason 
+	column WonLostReason
+		dataType: string
+		lineageTag: dbc5631a-cf15-4dd3-9c86-f8e6d2c3d3ff
+		summarizeBy: none
+		sourceColumn: WonLostReason
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity Close Date
+	column CloseDateKey
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 6bdd4e25-88de-494d-80d3-2575cc0c2f85
+		summarizeBy: none
+		sourceColumn: CloseDateKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// For development team use only.
+	column HPSolution
+		dataType: string
+		lineageTag: 377d4f5d-6153-4722-95ac-f64555090434
+		summarizeBy: none
+		sourceColumn: HPSolution
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Value of particular Opportunity
+	column 'Opportunity Value'
+		dataType: double
+		lineageTag: e884b49e-f788-426b-89cc-993ca4d592c3
+		summarizeBy: sum
+		sourceColumn: Opportunity Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// For development team use only.
+	column 'Total Opportunity Value'
+		dataType: double
+		lineageTag: f5912454-ad8d-495f-8413-b67cb12bdb2c
+		summarizeBy: sum
+		sourceColumn: Total Opportunity Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Geo name
+	column Geo
+		dataType: string
+		lineageTag: 92dcdd96-d048-4042-9d46-10d5e590a09c
+		summarizeBy: none
+		sourceColumn: Geo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Country Name
+	column CountryName
+		dataType: string
+		lineageTag: cd74915c-3c0d-4363-9777-0d9764b7c860
+		summarizeBy: none
+		sourceColumn: CountryName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity Owner Manager Name based on Product or service
+	column 'Opportunity Owner Manager Name'
+		dataType: string
+		lineageTag: cd8ecdce-3618-49f4-a626-5904821989d2
+		summarizeBy: none
+		sourceColumn: Opportunity Owner Manager Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Primary competitor for each partner
+	column 'Primary Competitor'
+		dataType: string
+		lineageTag: 92b19880-f5e1-4673-8ce0-6abd6c257dae
+		summarizeBy: none
+		sourceColumn: Primary Competitor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Primary Channel Name of Partner
+	column 'Primary Channel Partner Name'
+		dataType: string
+		lineageTag: 13392642-6d7d-48ed-82d6-71e1437579b1
+		summarizeBy: none
+		sourceColumn: Primary Channel Partner Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column PrimaryCampaignName
+		dataType: string
+		lineageTag: 4a7a46d3-ff48-4b11-9081-297957a73e6d
+		summarizeBy: none
+		sourceColumn: PrimaryCampaignName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// ST ID
+	column SalesTerritoryId
+		dataType: string
+		lineageTag: 5ba86491-ff91-44a2-b664-a7465bdd948f
+		summarizeBy: none
+		sourceColumn: SalesTerritoryId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// ST Name
+	column SalesTerritoryName
+		dataType: string
+		lineageTag: 2b623509-b4ae-449f-96a5-94c264efe86a
+		summarizeBy: none
+		sourceColumn: SalesTerritoryName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column ScopeName
+		dataType: string
+		lineageTag: d08e162b-e05f-4aa9-a282-9d48dfcb5509
+		summarizeBy: none
+		sourceColumn: ScopeName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column SalesMotion
+		dataType: string
+		lineageTag: 70eefb1f-5a76-4e84-8285-3a0f7e43f5de
+		summarizeBy: none
+		sourceColumn: SalesMotion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Reps opportunity close date
+	column 'Opportunity Close Date'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 83ee913e-fcdb-43e4-b959-646c2b272491
+		summarizeBy: none
+		sourceColumn: Opportunity Close Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// Identifies if the deal is classifed under primary distributor
+	column 'Primary Distributor'
+		dataType: string
+		lineageTag: ee4e9e57-7e4d-46d0-8ada-d9e6cf4d8d57
+		summarizeBy: none
+		sourceColumn: Primary Distributor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column Category
+		dataType: string
+		lineageTag: 236beb5b-afa3-46cf-b939-7d9ceb92f519
+		summarizeBy: none
+		sourceColumn: Category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity Create Date
+	column 'Created Date'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 7c2b55be-8aed-4515-bf3e-c16cbc6db815
+		summarizeBy: none
+		sourceColumn: Created Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// Name of Primary Partner 
+	column 'Primary Partner'
+		dataType: string
+		lineageTag: 3abf830d-203c-48ba-b4a1-58c39ea015c8
+		summarizeBy: none
+		sourceColumn: Primary Partner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity Owner based on Product or service
+	column 'Opportunity Owner'
+		dataType: string
+		lineageTag: 414115f6-3f43-48d3-955a-e0acc1265073
+		summarizeBy: none
+		sourceColumn: Opportunity Owner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Workload based on Orders
+	column Workload
+		dataType: string
+		lineageTag: 7c8fe08b-9b43-4cbb-b4f6-e11127bbad90
+		summarizeBy: none
+		sourceColumn: Workload
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity owner Email based on Product or service
+	column 'Opportunity Owner Email'
+		dataType: string
+		lineageTag: 1e355611-cafb-4514-81f5-976603f8ceb7
+		summarizeBy: none
+		sourceColumn: Opportunity Owner Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Latin capture Account name associated with deal
+	column 'Account Name Latin Capture'
+		dataType: string
+		lineageTag: 755cfc9f-7018-47f9-8372-1c171b379d33
+		summarizeBy: none
+		sourceColumn: Account Name Latin Capture
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity Won/Lost date
+	column 'Won/Lost Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1a667fcc-ed34-40b2-bc3b-3647d1ad82aa
+		summarizeBy: none
+		sourceColumn: Won/Lost Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Indentify NL accounts align with Ranjan's team.
+	column 'New Logos Flag_BIADS'
+		dataType: string
+		lineageTag: 33dabf86-b63f-4848-b837-b8bb4a2894c9
+		summarizeBy: none
+		sourceColumn: New Logos Flag_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'EG Sales Coverage Segment'
+		dataType: string
+		lineageTag: a9cf1a49-7f6e-47de-869f-b27bef87cb74
+		summarizeBy: none
+		sourceColumn: EG Sales Coverage Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Segment split as received from MDM
+	column 'Customer Segment'
+		dataType: string
+		isHidden
+		lineageTag: 64f765f5-5ad6-459d-a856-3660e6c60d1f
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only
+	column 'targeted industry vertical name'
+		dataType: string
+		lineageTag: feca0899-941f-4788-b46c-6f42fb61c5c0
+		summarizeBy: none
+		sourceColumn: targeted industry vertical name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only
+	column 'targeted industry segment name'
+		dataType: string
+		lineageTag: 1ba3df91-a565-4c6f-af64-37521fc267ff
+		summarizeBy: none
+		sourceColumn: targeted industry segment name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Rank of Coverage segments
+	column 'Coverage Segments Rank'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5498782c-72a2-4aa2-8b6b-8ee38bf370ad
+		summarizeBy: sum
+		sourceColumn: Coverage Segments Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Top ST ID
+	column 'top sales territory id'
+		dataType: string
+		lineageTag: 153a158f-6680-4c3e-baa9-9a44281e3a31
+		summarizeBy: none
+		sourceColumn: top sales territory id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only
+	column 'top sales territory id_MDM'
+		dataType: string
+		lineageTag: 76bd108b-5c28-402d-b5ab-681d6f05b1b6
+		summarizeBy: none
+		sourceColumn: top sales territory id_MDM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// GreenLake PTB Geo Vetted flag (Y/N)
+	column 'GL PTB GEO vetted account Flag'
+		dataType: string
+		lineageTag: e7bd6b57-84be-4d3b-b38e-76949cb78ce0
+		summarizeBy: none
+		sourceColumn: GL PTB GEO vetted account Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// GreenLake PTB Recommendation based on Tiers
+	column 'GL PTB Recommendation'
+		dataType: string
+		lineageTag: ffc57190-2fd7-485c-9063-29c5a5ab5c06
+		summarizeBy: none
+		sourceColumn: GL PTB Recommendation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Workload based on Orders Yes/No
+	column 'Workload Flag'
+		dataType: string
+		lineageTag: fb4971cb-d812-4bfe-9c3b-f01473208ce9
+		summarizeBy: none
+		sourceColumn: Workload Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Contains Product Code
+	column Product_Line
+		dataType: string
+		lineageTag: 7565e908-3a0f-43da-a127-eeaab2d1eb1b
+		summarizeBy: none
+		sourceColumn: Product_Line
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies if the Order was DISA/Non DISA
+	column 'DISA Flag_BIADS'
+		dataType: string
+		lineageTag: b8e71b89-6ad2-4531-b4ce-0ddabf7d27a1
+		summarizeBy: none
+		sourceColumn: DISA Flag_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// sales order ID based on orders cube (legacy)
+	column 'Legacy Sales Order ID'
+		dataType: string
+		lineageTag: 370cdff0-7d5e-4baa-8b34-0eac15f9d40c
+		summarizeBy: none
+		sourceColumn: Legacy Sales Order ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Order ID
+	column 'Sales Order Identifier'
+		dataType: string
+		lineageTag: e8330c2a-9c57-4cef-b45c-c09281b5a1f1
+		summarizeBy: none
+		sourceColumn: Sales Order Identifier
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Contract ID based on Customers (Derived)
+	column 'Contract ID_BIADS'
+		dataType: string
+		lineageTag: 7f600578-ddb6-41fe-bb6b-cded3cd6202f
+		summarizeBy: none
+		sourceColumn: Contract ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates HPE GreenLake flag (Y)
+	column GL_Flag
+		dataType: string
+		lineageTag: 494f97c9-2898-4fab-a20f-c371221b8964
+		summarizeBy: none
+		sourceColumn: GL_Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates LightHouse flag (Y/N) 
+	column Lighthouse_Flag
+		dataType: string
+		lineageTag: 276f7760-cb97-40ee-bfef-3f0f2f1b55af
+		summarizeBy: none
+		sourceColumn: Lighthouse_Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// OpportunityName based on Product or service
+	column 'Opportunity Name'
+		dataType: string
+		lineageTag: 9c76452c-ad9e-4fd1-926e-b8917d9c6ea6
+		summarizeBy: none
+		sourceColumn: Opportunity Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column 'Account Name: Account Name'
+		dataType: string
+		lineageTag: b4d35103-866d-4a6f-a631-994a6bc92438
+		summarizeBy: none
+		sourceColumn: Account Name: Account Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Different stages of sales
+	column 'Sales Stage'
+		dataType: string
+		lineageTag: 5b3b1671-0f61-4b6f-ac35-014c9c78af3f
+		summarizeBy: none
+		sourceColumn: Sales Stage
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity Close Date
+	column 'Close Date'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 636f0e1f-da82-410a-a229-ebfedd6e9e54
+		summarizeBy: none
+		sourceColumn: Close Date
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// For development team use only.
+	column 'Total Opportunity Value (converted)'
+		dataType: double
+		lineageTag: 9407f001-0ecc-4fbc-b513-d71284147003
+		summarizeBy: sum
+		sourceColumn: Total Opportunity Value (converted)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// For development team use only.
+	column 'Total Value to HPE (converted)'
+		dataType: double
+		lineageTag: 003427c7-601d-425c-b49e-e30c50037088
+		summarizeBy: sum
+		sourceColumn: Total Value to HPE (converted)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Primary Reseller name
+	column 'Primary Reseller'
+		dataType: string
+		lineageTag: 1c8ec4df-e2f8-41d1-8989-d83920572e2a
+		summarizeBy: none
+		sourceColumn: Primary Reseller
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Latin capture Account name associated with partner
+	column 'Partner: Account Name Latin Capture'
+		dataType: string
+		lineageTag: 3eb32608-b870-4838-b424-5e2acea6d249
+		summarizeBy: none
+		sourceColumn: Partner: Account Name Latin Capture
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reseller ID
+	column 'Primary Reseller Party: ID'
+		dataType: string
+		lineageTag: 9d4e1507-b675-4398-a3e0-99fadd69b703
+		summarizeBy: none
+		sourceColumn: Primary Reseller Party: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// ID of Locator
+	column 'Locator ID'
+		dataType: string
+		lineageTag: 8cba687b-6997-4766-8814-fcd273ff2ed6
+		summarizeBy: none
+		sourceColumn: Locator ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Account name associated with partner
+	column 'Partner: Account Name'
+		dataType: string
+		lineageTag: b5188ef8-6ba7-4f91-831f-1241da8f2b18
+		summarizeBy: none
+		sourceColumn: Partner: Account Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Location Name
+	column 'Location Name'
+		dataType: string
+		lineageTag: fa3f31bd-fd1f-4b1f-b31d-b8774b8851a0
+		summarizeBy: none
+		sourceColumn: Location Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column 'Party ID: Source System Account ID'
+		dataType: string
+		lineageTag: 6b9f97cc-e0a5-4cec-a717-09747a292435
+		summarizeBy: none
+		sourceColumn: Party ID: Source System Account ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// PPID for each partner
+	column 'Party ID: Business Relationship'
+		dataType: string
+		lineageTag: 89054e58-2f46-4b5f-8943-9bf336e93289
+		summarizeBy: none
+		sourceColumn: Party ID: Business Relationship
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Sub region name
+	column 'Partner: SubRegion1'
+		dataType: string
+		lineageTag: e2c6244a-3dd5-4421-9c8b-e68ba839f9ab
+		summarizeBy: none
+		sourceColumn: Partner: SubRegion1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Forecast Category based on Opportunity ID (Derived)
+	column 'Forecast Category'
+		dataType: string
+		lineageTag: 5fc9b4eb-c334-4df0-83d4-fcf241eb30df
+		summarizeBy: none
+		sourceColumn: Forecast Category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of Country
+	column Country
+		dataType: string
+		lineageTag: af54c9a7-b68d-4600-a7a7-4fdbf2d76057
+		summarizeBy: none
+		sourceColumn: Country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of Account ST ID
+	column 'Account Name: Account ST ID'
+		dataType: string
+		lineageTag: 7d611383-d46e-4826-bbf5-5611cabe637d
+		summarizeBy: none
+		sourceColumn: Account Name: Account ST ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Account ST Name
+	column 'Account Name: Account ST Name'
+		dataType: string
+		lineageTag: 0d6f4c95-bff9-4f6b-827e-4157b933557b
+		summarizeBy: none
+		sourceColumn: Account Name: Account ST Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column 'Pipeline Exclusion'
+		dataType: string
+		lineageTag: 2a2b20e1-afa1-450b-a57f-3fe2389892ba
+		summarizeBy: none
+		sourceColumn: Pipeline Exclusion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// SI/ISV partners
+	column SI/ISV
+		dataType: string
+		lineageTag: 7e754037-a8a4-4fe1-ab20-51f9f0b81738
+		summarizeBy: none
+		sourceColumn: SI/ISV
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// SP Partner
+	column SP
+		dataType: string
+		lineageTag: fe7fc5d0-5d96-49a8-a5f3-9696557720cb
+		summarizeBy: none
+		sourceColumn: SP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner name
+	column Reseller
+		dataType: string
+		lineageTag: 0049f06f-d2f6-4632-b67d-371ee505ecaf
+		summarizeBy: none
+		sourceColumn: Reseller
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// SP Tier 1
+	column 'SP Tier 1'
+		dataType: string
+		lineageTag: 0021ac1d-003c-450e-aee7-fef35ff62fe3
+		summarizeBy: none
+		sourceColumn: SP Tier 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// SP sub Tier
+	column 'SP Sub-Tier'
+		dataType: string
+		lineageTag: 9b6f5a64-01c4-403f-b90d-d715e5f5ea12
+		summarizeBy: none
+		sourceColumn: SP Sub-Tier
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Account name associated with deal
+	column 'Account Name'
+		dataType: string
+		lineageTag: 6355b724-5f96-4dd7-bb20-0fa4c6e5afba
+		summarizeBy: none
+		sourceColumn: Account Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner associated with individual partner type
+	/// 
+	column Partner
+		dataType: string
+		lineageTag: 5cdb7660-2576-47e3-af71-88765fa646f7
+		summarizeBy: none
+		sourceColumn: Partner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Classification of each partner into sub levels as Tier1, Tier2 etc..,
+	/// 
+	column 'Partner Sub-Type'
+		dataType: string
+		lineageTag: 50f079cc-115b-4f81-9148-e4a63769d45e
+		summarizeBy: none
+		sourceColumn: Partner Sub-Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column 'Sales Motion'
+		dataType: string
+		lineageTag: 5052644b-e878-472d-a9d4-49d32d13b45d
+		summarizeBy: none
+		sourceColumn: Sales Motion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Main classification of partner as SI,ISV,SP, Reseller,CoLo,Hyperscale
+	/// 
+	column PartnerType
+		dataType: string
+		lineageTag: 7d7cb5c4-db26-4abd-bf16-4907c49c3b5e
+		summarizeBy: none
+		sourceColumn: PartnerType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales stage No. of days
+	column 'Current Stage # days'
+		dataType: string
+		lineageTag: 7d7a358a-41b9-4856-85bd-7305ddfc44e1
+		summarizeBy: none
+		sourceColumn: Current Stage # days
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column 'Primary Pipeline Owner User Email'
+		dataType: string
+		lineageTag: ad5fb7e0-bf61-4874-a9d1-984e74c4ab5e
+		summarizeBy: none
+		sourceColumn: Primary Pipeline Owner User Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column solution
+		dataType: string
+		lineageTag: 9e33164c-60e4-49ef-8ebd-99441bafd01d
+		summarizeBy: none
+		sourceColumn: solution
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionName
+		dataType: string
+		lineageTag: a9da8b15-97f7-49bf-9270-016e5eed7c20
+		summarizeBy: none
+		sourceColumn: RegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Workload_Cloud Module'
+		dataType: string
+		lineageTag: d0beeb99-e55a-4cee-ac90-44683516217c
+		summarizeBy: none
+		sourceColumn: Workload_Cloud Module
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Id Link'
+		dataType: string
+		lineageTag: 63d0d51c-7d1d-4009-9db1-ff0fbab306a1
+		summarizeBy: none
+		sourceColumn: Opportunity Id Link
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Value $'
+		dataType: double
+		lineageTag: 87a1c6da-25f4-403c-b1ca-48d86f3a615b
+		summarizeBy: sum
+		sourceColumn: Opportunity Value $
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'L06 BA Code'
+		dataType: string
+		lineageTag: 44d4359f-87c7-46df-88ed-1d21bbf102cb
+		summarizeBy: none
+		sourceColumn: L06 BA Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ralph_flag
+		dataType: string
+		lineageTag: fbddbf4c-2f56-490e-8989-cd385eddd8fa
+		summarizeBy: none
+		sourceColumn: Ralph_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gtm_Flag
+		dataType: string
+		lineageTag: 9eb811a1-25da-4f52-baca-4ba3d3cbcd81
+		summarizeBy: none
+		sourceColumn: Gtm_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Partner Pipeline-67289a97-297f-4bd8-bd1f-0864ea047469' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source = ```
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				   
+				    dbo_REP_Pipeline_Partner_VW = Source{[Schema="dbo",Item="REP_Pipeline_Partner_VW"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_REP_Pipeline_Partner_VW,{"HPE Opportunity Id", "DATE_KY", "BA_KY", "GEO_KY", "Opportunity Id", "OpportunityName", "OpportunityType", "SalesStatus", "SalesStage", "ForecastCategory_BIADS", "GoToMarketRoute", "OpportunityRecordType", "RenewalType", "FulfilmentRoute", "CustomerEngagement", "WonLostReason", "CloseDateKey", "HPSolution", "Opportunity Value", "Total Opportunity Value", "RegionName", "Geo", "CountryName", "Opportunity Owner Manager Name", "Primary Competitor", "Primary Channel Partner Name", "PrimaryCampaignName", "SalesTerritoryId", "SalesTerritoryName", "ScopeName", "SalesMotion", "Opportunity Close Date", "Current Stage # days", "Primary Distributor", "Category", "Created Date", "Primary Partner", "Opportunity Owner", "Workload", "Workload_Cloud Module", "Opportunity Owner Email", "Primary Pipeline Owner User Email", "Account Name Latin Capture", "Won/Lost Date", "New Logos Flag_BIADS", "EG Sales Coverage Segment", "Customer Segment", "targeted industry vertical name", "targeted industry segment name", "Coverage Segments Rank", "top sales territory id", "top sales territory id_MDM", "GL PTB GEO vetted account Flag", "GL PTB Recommendation", "Workload Flag", "Product_Line", "DISA Flag_BIADS", "Legacy Sales Order ID", "Sales Order Identifier", "Contract ID_BIADS", "GL_Flag", "Lighthouse_Flag", "solution", "Opportunity Id Link", "Ralph_flag", "Gtm_Flag", "Opportunity Name", "Account Name: Account Name", "Sales Stage", "Close Date", "Total Opportunity Value (converted)", "Total Value to HPE (converted)", "Primary Reseller", "Partner: Account Name Latin Capture", "Primary Reseller Party: ID", "Locator ID", "Partner: Account Name", "Location Name", "Party ID: Source System Account ID", "Party ID: Business Relationship", "Partner: SubRegion1", "Forecast Category", "Country", "Account Name: Account ST ID", "Account Name: Account ST Name", "Pipeline Exclusion", "SI/ISV", "SP", "Reseller", "SP Tier 1", "SP Sub-Tier", "Account Name", "Partner", "Partner Sub-Type", "Sales Motion", "L06 BA Code", "PartnerType"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Other Columns",{{"Close Date", type text}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type1", "Opportunity Value", "Opportunity Value $")
+				in
+				    #"Duplicated Column"
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

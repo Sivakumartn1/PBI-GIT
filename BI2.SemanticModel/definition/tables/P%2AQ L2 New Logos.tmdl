@@ -1,0 +1,93 @@
+table 'P*Q L2 New Logos'
+	lineageTag: ebdf8879-049b-4041-aedc-6d4aa098eb52
+
+	column 'Fact E2E load_c_Deal_Key'
+		lineageTag: 7664822c-3af9-4e48-ad8e-c3d8c38ebe98
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[c_Deal_Key]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_NET SALES ORDER USD AM'
+		lineageTag: 40f328ed-d93d-4009-b5d3-2d1b1714d0f3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Fact E2E load[NET SALES ORDER USD AM]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fact E2E load_Customer Segment'
+		lineageTag: d0b1d739-9c1c-4af8-bc74-f036004f0567
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Customer Segment]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_Region'
+		lineageTag: fceeaf50-35c6-4c7e-a9f8-4aa128f89633
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Region]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_Country'
+		lineageTag: 4a14506f-b964-4971-ac6e-103545619c34
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Country]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_Partner Type Lvl1'
+		lineageTag: cd8d0b24-389a-471e-9b83-ac07c816d2c6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Partner Type Lvl1]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_Partner Type'
+		lineageTag: 4c1a1adb-6b36-481e-974a-6b9a75b9a453
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Partner Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_BA_Level 6 Desc'
+		lineageTag: 23f10a8f-e9d0-4a7e-b7be-e1e99fc10ac0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[BA_Level 6 Desc]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_Final Customer Desc'
+		lineageTag: 8a46f57c-15df-456f-97eb-fcdca45380ae
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Final Customer Desc]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Amount'
+		lineageTag: 0268c504-b404-4d79-885a-c92122413c85
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Sales Amount]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'P*Q L2 New Logos' = calculated
+		mode: import
+		source = GROUPBY('Fact E2E load','Fact E2E load'[c_Deal_Key],'Fact E2E load'[NET SALES ORDER USD AM],'Fact E2E load'[Customer Segment],'Fact E2E load'[Region],'Fact E2E load'[Country],'Fact E2E load'[Partner Type Lvl1],'Fact E2E load'[Partner Type],'Fact E2E load'[BA_Level 6 Desc],'Fact E2E load'[Final Customer Desc],"Sales Amount",SUMX(CURRENTGROUP(),SUM('Fact E2E load'[NET SALES ORDER USD AM])))
+
+	annotation PBI_Id = 97a99e6ec7094a7c80dd9852ef2ca668
+

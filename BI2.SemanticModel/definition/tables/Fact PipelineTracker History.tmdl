@@ -1,0 +1,261 @@
+table 'Fact PipelineTracker History'
+	lineageTag: f2bf329b-1bf7-4489-9317-445d283b4139
+
+	column DATE_KY
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: f032d149-5202-457f-8ea7-cf375e8784a3
+		summarizeBy: none
+		sourceColumn: DATE_KY
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column BA_KY
+		dataType: string
+		isHidden
+		lineageTag: a6b6da7e-1b21-4976-8156-2637f20d08f0
+		summarizeBy: none
+		sourceColumn: BA_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEO_KY
+		dataType: string
+		isHidden
+		lineageTag: f77d405a-7f70-4df9-abf9-f57f1821957f
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesStage
+		dataType: string
+		lineageTag: c6ab3e4f-7a66-4c2a-9918-3accbe4bfb0f
+		summarizeBy: none
+		sourceColumn: SalesStage
+
+		annotation SummarizationSetBy = Automatic
+
+	column ForecastCategory_BIADS
+		dataType: string
+		lineageTag: e85d3692-0c2a-48ae-ac5d-5e8f98d17214
+		summarizeBy: none
+		sourceColumn: ForecastCategory_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Value'
+		dataType: double
+		lineageTag: 94137736-c395-4b44-b2eb-9c131f84b29a
+		summarizeBy: sum
+		sourceColumn: Opportunity Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Opportunity Value'
+		dataType: double
+		lineageTag: 01f11f83-e2e2-422b-be7e-4d95c967f481
+		summarizeBy: sum
+		sourceColumn: Total Opportunity Value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'New Logos Flag_BIADS'
+		dataType: string
+		lineageTag: d3d49028-2894-421c-be5b-a45eb67a09a6
+		summarizeBy: none
+		sourceColumn: New Logos Flag_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Segment'
+		dataType: string
+		lineageTag: 3c0e3fc6-6a52-45e9-bf6c-3c20f30410cf
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Coverage Segments Rank'
+		dataType: int64
+		formatString: 0
+		lineageTag: 39a0b840-a05d-4423-b54f-aad7cd66aca5
+		summarizeBy: sum
+		sourceColumn: Coverage Segments Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Flag
+		dataType: string
+		lineageTag: 1574c7a2-2e34-4d2a-9158-89e5ea68c4e7
+		summarizeBy: none
+		sourceColumn: GL_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lighthouse_Flag
+		dataType: string
+		lineageTag: a44df115-5c02-4152-aa6e-ebcd6db38c90
+		summarizeBy: none
+		sourceColumn: Lighthouse_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column CloseFiscalYearQuarterDisplayCode
+		dataType: string
+		lineageTag: 923216f2-a894-4081-899c-8d920bb507ff
+		summarizeBy: none
+		sourceColumn: CloseFiscalYearQuarterDisplayCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column History_DATE_KY
+		dataType: string
+		isHidden
+		lineageTag: ad80aaf9-cc21-4865-8650-f2213a4a457b
+		summarizeBy: none
+		sourceColumn: History_DATE_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEEK_NR
+		dataType: string
+		lineageTag: bf6d528b-210d-47d7-af04-e39e89cd89c9
+		summarizeBy: none
+		sourceColumn: WEEK_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_YEAR_QUARTER_NM
+		dataType: string
+		lineageTag: bafb1402-9c8f-4aef-b3a2-709e2ca1a2a0
+		summarizeBy: none
+		sourceColumn: FISCAL_YEAR_QUARTER_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Id'
+		dataType: string
+		lineageTag: ac7313f2-6553-49e2-92ab-076101ae5200
+		summarizeBy: none
+		sourceColumn: Opportunity Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column OpportunityName
+		dataType: string
+		lineageTag: 5081a0ec-d9b5-4e50-ad66-4cf556b431db
+		summarizeBy: none
+		sourceColumn: OpportunityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryId
+		dataType: string
+		lineageTag: a34137a0-00ed-4f46-997a-721dd9f68aba
+		summarizeBy: none
+		sourceColumn: SalesTerritoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryName
+		dataType: string
+		lineageTag: d0953a5b-252d-4615-8473-a514896eff4c
+		summarizeBy: none
+		sourceColumn: SalesTerritoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Id Link'
+		dataType: string
+		lineageTag: 8ffdcac2-40a5-4232-8526-c3406cb5c168
+		summarizeBy: none
+		sourceColumn: Opportunity Id Link
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Workload_Cloud Module'
+		dataType: string
+		lineageTag: 836a6d75-2f5a-4166-9097-f0bc29318ffd
+		summarizeBy: none
+		sourceColumn: Workload_Cloud Module
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'cloud services'
+		dataType: string
+		lineageTag: 2e84e203-310f-4e1e-b189-ce2ccfb1d98a
+		summarizeBy: none
+		sourceColumn: cloud services
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L06 BA Code'
+		dataType: string
+		lineageTag: 42dc5a8e-1329-44d5-9604-288c474c1d34
+		summarizeBy: none
+		sourceColumn: L06 BA Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alexia (GTM view)'
+		dataType: string
+		lineageTag: 79961b73-622f-4aa7-b34b-6ea6bebb3630
+		summarizeBy: none
+		sourceColumn: Alexia (GTM view)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipeline (Ralph)'
+		dataType: string
+		lineageTag: b7d84803-5f5e-4d17-9daa-705533b9ed85
+		summarizeBy: none
+		sourceColumn: Pipeline (Ralph)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Category Sorting'
+		dataType: string
+		lineageTag: 912a023f-691e-4399-96b2-13dfd3b5281e
+		summarizeBy: none
+		sourceColumn: Forecast Category Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact PipelineTracker History-82b8a256-94cb-4b89-b23d-cb6c08272025' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_REP_PipelineTracker_History_VW = Source{[Schema="dbo",Item="REP_PipelineTracker_History_VW"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_REP_PipelineTracker_History_VW,{"DATE_KY", "BA_KY", "GEO_KY", "Opportunity Id", "OpportunityName", "SalesStage", "ForecastCategory_BIADS", "CloseFiscalYearQuarterDisplayCode", "WEEK_NR", "FISCAL_YEAR_QUARTER_NM", "History_DATE_KY", "Opportunity Value", "Total Opportunity Value", "SalesTerritoryId", "SalesTerritoryName", "New Logos Flag_BIADS", "Customer Segment", "Coverage Segments Rank", "GL_Flag", "Lighthouse_Flag", "Opportunity Id Link", "Workload_Cloud Module", "cloud services", "L06 BA Code", "Alexia (GTM view)", "Pipeline (Ralph)"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"DATE_KY", type date}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type", "Forecast Category Sorting", each if [ForecastCategory_BIADS] = "Won" then 0 else if [ForecastCategory_BIADS] = "Commit" then 1 else if [ForecastCategory_BIADS] = "Upside" then 2 else if [ForecastCategory_BIADS] = "Pipeline" then 3 else 9)
+				in
+				    #"Added Conditional Column"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

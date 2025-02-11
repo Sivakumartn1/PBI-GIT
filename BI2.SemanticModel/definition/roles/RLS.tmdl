@@ -1,0 +1,7 @@
+role RLS
+	modelPermission: read
+
+	tablePermission 'RLS Stage 5 (Final)' = [EmailAddress] = userprincipalname()
+
+	annotation PBI_Id = 300e432a9a7e4a19ae6735a54869a82f
+

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.3.0/schema.json",
+  "name": "ReportSection3fe14bf5c83176452ba9",
+  "displayName": "NL_Cnt",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

@@ -1,0 +1,33 @@
+/// DataSourceParam
+expression DataSourceParam = "glaas.its.hpecorp.net" meta [IsParameterQuery=true, List={"mart2.its.hpecorp.net", "tsfsqltest-01.us.hpecorp.net", "glaas.its.hpecorp.net", "glaas01.its.hpecorp.net"}, DefaultValue="glaas.its.hpecorp.net", Type="Text", IsParameterQueryRequired=false]
+	lineageTag: ac00754f-d4be-4fd9-a5a5-e3d7ecb288e3
+	queryGroup: 'Inputs - Data Source and DB'
+
+	annotation PBI_ResultType = Text
+
+/// DBName
+expression DBName = "gl_connected_future" meta [IsParameterQuery=true, List={"gl_connected_future", "gl_connected_db"}, DefaultValue="gl_connected_future", Type="Text", IsParameterQueryRequired=false]
+	lineageTag: 46f653d1-86aa-46e4-a866-b235365894f6
+	queryGroup: 'Inputs - Data Source and DB'
+
+	annotation PBI_ResultType = Text
+
+expression Timeout = 16 meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: a801f69e-9127-48be-9eb7-bd61d51e5407
+	queryGroup: 'Inputs - Data Source and DB'
+
+	annotation PBI_ResultType = Number
+
+expression 'DIM BAT Opps' =
+		let
+		    Source = Sql.Database(#"DataSourceParam", #"DBName", [CommandTimeout=#duration(0, #"Timeout", 0, 0)]),
+		    dbo_MDM_VIEW = Source{[Schema="dbo",Item="BMT_BAT_Oppids"]}[Data]
+		in
+		    dbo_MDM_VIEW
+	lineageTag: 938dfdf4-a515-415e-b310-c19929c8995c
+	queryGroup: 'DIM Tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

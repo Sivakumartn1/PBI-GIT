@@ -1,0 +1,78 @@
+/// For development team use only.
+table 'Fact Targets by Customer segment $'
+	lineageTag: aeae4a42-c52f-40ab-87d1-7e7681b9bfe3
+
+	column 'Customer Segment'
+		dataType: string
+		isHidden
+		lineageTag: 09c6b2ae-8558-4e8b-829e-45ec9de35f18
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used to derive targets by Customer Segment
+	column Target
+		dataType: double
+		lineageTag: f3e79200-c39b-47df-9d9b-62a01d3684f5
+		summarizeBy: sum
+		sourceColumn: Target
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'New Logo'
+		dataType: string
+		lineageTag: b73db7b2-a9c2-49b5-a962-ca9f2b92db1c
+		summarizeBy: none
+		sourceColumn: New Logo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Segment'
+		dataType: string
+		lineageTag: 839fc72d-d85e-49ba-b2bc-77cec3dc5c7c
+		summarizeBy: none
+		sourceColumn: Business Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Min_Date_Quarter
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 07d6305d-4a39-48cb-a074-2ddccc0d02ba
+		summarizeBy: none
+		sourceColumn: Min_Date_Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column RTM
+		dataType: string
+		lineageTag: 2e995039-42a1-4cdc-a9ff-93f20daa4ec3
+		summarizeBy: none
+		sourceColumn: RTM
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Targets by Customer segment $-62c8a278-221a-4762-b3cb-9cd7649d01ce' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(#"DataSourceParam", #"DBName", [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_BMT_Tbl_Target_Master = Source{[Schema="dbo",Item="BMT_Customer_Segment_Target"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_BMT_Tbl_Target_Master,{"Customer Segment", "New Logo", "Business Segment", "Target", "Min_Date_Quarter", "RTM"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

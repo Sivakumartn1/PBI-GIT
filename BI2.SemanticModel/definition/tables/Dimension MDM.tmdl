@@ -1,0 +1,457 @@
+table 'Dimension MDM'
+	lineageTag: efea6b68-af2c-4f32-b48a-c0fd18e99081
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'NL Fiscal Quarter'
+		dataType: string
+		lineageTag: 6d67379c-883f-4a57-9627-d5fa4c515012
+		summarizeBy: none
+		sourceColumn: NL Fiscal Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'NL Fiscal Quarter Date'
+		dataType: string
+		lineageTag: b9db0e48-b284-43e2-9e72-ec734ea5f904
+		summarizeBy: none
+		sourceColumn: NL Fiscal Quarter Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Pipeline NL Fiscal Quarter'
+		dataType: string
+		lineageTag: cde8ec3c-75f9-4c11-83ac-001458d2653d
+		summarizeBy: none
+		sourceColumn: Pipeline NL Fiscal Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Pipeline NL Fiscal Quarter Date'
+		dataType: string
+		lineageTag: 1c535eef-3f8a-4431-aba6-810e2cd162d4
+		summarizeBy: none
+		sourceColumn: Pipeline NL Fiscal Quarter Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Tells you if the data comes from Pipeline for New Logos
+	column 'Pipeline NL Flag'
+		dataType: string
+		lineageTag: 0542e8c1-49ef-45ef-bc95-ab1061c75e72
+		summarizeBy: none
+		sourceColumn: Pipeline NL Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates HPE GreenLake flag (Y)
+	column 'GL Flag'
+		dataType: string
+		lineageTag: fef85803-1668-4f2d-a60d-08385e1862de
+		summarizeBy: none
+		sourceColumn: GL Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales territory id based on orders
+	column 'sales territory id'
+		dataType: string
+		lineageTag: ea7368e6-64bf-4354-89b9-e47b36f44bbd
+		summarizeBy: none
+		sourceColumn: sales territory id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales territory name based on Sales territory id
+	column 'sales territory name'
+		dataType: string
+		lineageTag: 447badca-113e-4481-9a99-07add01c2f35
+		summarizeBy: none
+		sourceColumn: sales territory name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'EG Sales Coverage Segment'
+		dataType: string
+		lineageTag: ceeec018-42b2-4063-9163-688594a63ac7
+		summarizeBy: none
+		sourceColumn: EG Sales Coverage Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Segment split as received from MDM
+	column 'Coverage Segment'
+		dataType: string
+		lineageTag: 8623183e-b939-409e-b141-fbef05b10e84
+		summarizeBy: none
+		sourceColumn: Coverage Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Segment split as received from MDM
+	column 'Customer Segment'
+		dataType: string
+		lineageTag: 1cafcb99-cb9c-43dd-b116-4e5cc80a64dc
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'targeted industry vertical'
+		dataType: string
+		lineageTag: 89a064dd-57f0-4411-905f-364fe9770ec9
+		summarizeBy: none
+		sourceColumn: targeted industry vertical
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// HPE Targeted different types of vertical Industries names
+	column 'targeted industry vertical name'
+		dataType: string
+		lineageTag: 91bac6e8-3f23-423b-8507-41b2c3b9150f
+		summarizeBy: none
+		sourceColumn: targeted industry vertical name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'targeted industry segment code'
+		dataType: string
+		lineageTag: 103a12a1-a896-4c8b-a74e-88431db605da
+		summarizeBy: none
+		sourceColumn: targeted industry segment code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Contains HPE different targeted industry segments. 
+	column 'targeted industry segement name'
+		dataType: string
+		lineageTag: be60795b-3b24-4a41-aa70-c466df67575f
+		summarizeBy: none
+		sourceColumn: targeted industry segement name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Top sales territory id's of Sales
+	column 'top sales territory id'
+		dataType: string
+		lineageTag: bb1dfa49-0cd6-46b1-82f9-8dfa2815664d
+		summarizeBy: none
+		sourceColumn: top sales territory id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of the Top sales territory id
+	column 'top sales territory name'
+		dataType: string
+		lineageTag: 0d6fce67-b249-4165-a53e-399d94f92016
+		summarizeBy: none
+		sourceColumn: top sales territory name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'HQ Country'
+		dataType: string
+		lineageTag: 540e7757-6415-4cf3-886b-de6ce899353a
+		summarizeBy: none
+		sourceColumn: HQ Country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'HQ Geo'
+		dataType: string
+		lineageTag: 544212ff-cd02-4ea8-9199-6c625b0e49c9
+		summarizeBy: none
+		sourceColumn: HQ Geo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Coverage Segments Rank'
+		dataType: int64
+		formatString: 0
+		lineageTag: 136d821a-0340-4500-8525-5be752e5eba8
+		summarizeBy: sum
+		sourceColumn: Coverage Segments Rank
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Org Level 1'
+		dataType: string
+		lineageTag: d841e3e9-5fdf-4588-8b6f-a07e305d4932
+		summarizeBy: none
+		sourceColumn: Org Level 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Standard Customer ST ID
+	column 'Customer ST ID_BIADS'
+		dataType: string
+		lineageTag: 5de46f89-c74b-4025-b7e6-d9093cefc29c
+		summarizeBy: none
+		sourceColumn: Customer ST ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer name as per the contract name 
+	column 'Customer Name_BIADS'
+		dataType: string
+		lineageTag: a03cc4b6-8473-4415-a7fe-0ba67240e3ff
+		summarizeBy: none
+		sourceColumn: Customer Name_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer ST ID as per the contract ST ID
+	column 'NL Customer ST ID_BIADS'
+		dataType: string
+		lineageTag: 9e04a6f8-5f51-4a1d-8a94-ced5e7ca6afc
+		summarizeBy: none
+		sourceColumn: NL Customer ST ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Alignment with Ranjan's team
+	column 'NL Customer Name_BIADS'
+		dataType: string
+		lineageTag: 25687fb9-d0f7-4581-9867-83ab5feee57f
+		summarizeBy: none
+		sourceColumn: NL Customer Name_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NL Customer Segment_BIADS'
+		dataType: string
+		lineageTag: 70fb0650-fc16-4558-acd8-57303141e9c2
+		summarizeBy: none
+		sourceColumn: NL Customer Segment_BIADS
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Parent account for Top accounts calculation as per Ranjan's team
+	column 'NL Parent Flag_BIADS'
+		dataType: string
+		lineageTag: 049ed2d5-f086-43de-9c3e-99f57f1c95a0
+		summarizeBy: none
+		sourceColumn: NL Parent Flag_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indentify NL accounts align with Ranjan's team.
+	column 'NL Flag_BIADS'
+		dataType: string
+		lineageTag: 44f27953-b104-4799-9552-df08eca39339
+		summarizeBy: none
+		sourceColumn: NL Flag_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// GreenLake PTB Recommendation based on Tiers
+	column 'GL PTB Recommendation'
+		dataType: string
+		lineageTag: b02ffd1c-712b-4aa4-907d-cc2c13df18a2
+		summarizeBy: none
+		sourceColumn: GL PTB Recommendation
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// GreenLake PTB Geo Vetted flag (Y/N)
+	column 'GL PTB Geo vetted account Flag'
+		dataType: string
+		lineageTag: 312b2c7c-854f-4518-9790-e375c0a3a25b
+		summarizeBy: none
+		sourceColumn: GL PTB Geo vetted account Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// DISA accounts flagged in PN orders cube + Some specific Purchase order id
+	column 'DISA Flag_BIADS'
+		dataType: string
+		lineageTag: 041585f6-1778-414f-b1cb-812a82df3ae4
+		summarizeBy: none
+		sourceColumn: DISA Flag_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Identify big accounts Alphabet , Iron Samurai & SPG
+	column 'customer Exclusion_BIADS'
+		dataType: string
+		lineageTag: 24a820cd-3cbd-47a2-ae7c-8013ea0db315
+		summarizeBy: none
+		sourceColumn: customer Exclusion_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates Top Accounts flag (Y/N)
+	column 'Top Account'
+		dataType: string
+		lineageTag: b90b11bd-3e5f-46cf-8606-643ee1a9e407
+		summarizeBy: none
+		sourceColumn: Top Account
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Coverage segment received from MDM
+	column 'MDM Customer Segment'
+		dataType: string
+		lineageTag: 69b98d97-63ce-4136-b714-ee27a536c713
+		summarizeBy: none
+		sourceColumn: MDM Customer Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Coverage segment received from MDM
+	column 'Customer Segment_BIADS'
+		dataType: string
+		lineageTag: 299d8f8c-9297-4c97-924a-43366a118a2a
+		summarizeBy: none
+		sourceColumn: Customer Segment_BIADS
+		sortByColumn: 'Customer Segment_BIADS Sorting'
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column 'Customer Segment_BIADS Sorting'
+		dataType: string
+		lineageTag: 0707acef-110d-44d8-99df-2f1475fc0439
+		summarizeBy: none
+		sourceColumn: Customer Segment_BIADS Sorting
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'NL Customer Segment_BIADS Sorting '
+		dataType: string
+		lineageTag: d8ac6510-baec-4200-80d9-3bc48a4a96f5
+		summarizeBy: none
+		sourceColumn: "NL Customer Segment_BIADS Sorting "
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exception
+		dataType: string
+		lineageTag: 942395fd-4a0b-4a03-8d68-868b10300cf4
+		summarizeBy: none
+		sourceColumn: Exception
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Territory Geo'
+		dataType: string
+		lineageTag: 66ff7902-baae-483b-b052-8ef9da1b7a28
+		summarizeBy: none
+		sourceColumn: Sales Territory Geo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NL Customer Segment BIADS' = 'Dimension MDM'[NL Customer Segment_BIADS]
+		lineageTag: c8132cce-1d6c-46ea-823c-e1b6dafc9559
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension MDM-08438ce6-85d3-4fc8-84de-3c8a75ad02e8' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_MDM_VIEW = Source{[Schema="dbo",Item="MDM_VIEW"]}[Data],
+				    #"Added Conditional Column" = Table.AddColumn(dbo_MDM_VIEW, "Customer Segment_BIADS Sorting", each if [Customer Segment_BIADS] = "Top Accounts" then 1 else if [Customer Segment_BIADS] = "Rising Stars" then 2 else if [Customer Segment_BIADS] = "Enterprise" then 3 else if [Customer Segment_BIADS] = "Commercial" then 4 else if [Customer Segment_BIADS] = "Acquisition" then 5 else if [Customer Segment_BIADS] = "US Public Sector" then 6 else if [Customer Segment_BIADS] = "MM/SMB" then 7 else 99),
+				    #"Replaced Value" = Table.ReplaceValue(#"Added Conditional Column",null,"No",Replacer.ReplaceValue,{"NL Flag_BIADS"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","Y","Yes",Replacer.ReplaceText,{"NL Flag_BIADS"}),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Replaced Value1", "NL Customer Segment_BIADS Sorting ", each if [NL Customer Segment_BIADS] = "Top Accounts" then 1 else if [NL Customer Segment_BIADS] = "Rising Stars" then 2 else if [NL Customer Segment_BIADS] = "Enterprise" then 3 else if [NL Customer Segment_BIADS] = "Commercial" then 4 else if [NL Customer Segment_BIADS] = "Acquisition" then 5 else if [NL Customer Segment_BIADS] = "MM/SMB" then 6 else if [NL Customer Segment_BIADS] = "Channel" then 7 else 99),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Added Conditional Column1",null,"UNKNOWN",Replacer.ReplaceValue,{"GL PTB Recommendation"}),
+				    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2",null,"UNKNOWN",Replacer.ReplaceValue,{"GL PTB Geo vetted account Flag"})
+				in
+				    #"Replaced Value3"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,86 @@
+table 'Dimension Workloads'
+	lineageTag: caa2847d-0e91-4d49-9abb-c7b9800fb27d
+
+	column 'Cloud Modules L1'
+		dataType: string
+		lineageTag: fcb6dfb1-d74a-4ebb-9c44-03fdc8993606
+		summarizeBy: none
+		sourceColumn: Cloud Modules L1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cloud Modules L2'
+		dataType: string
+		lineageTag: ad3a7520-bf76-499d-8936-a4c9528319dd
+		summarizeBy: none
+		sourceColumn: Cloud Modules L2
+		sortByColumn: 'Cloud Service Sorting'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cloud Modules L3'
+		dataType: string
+		lineageTag: 9c8337c3-35be-43ed-8fe4-b92255e8f916
+		summarizeBy: none
+		sourceColumn: Cloud Modules L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Workloads
+		dataType: string
+		lineageTag: ca5fce68-6114-4ff4-8b3c-a028ae69604b
+		summarizeBy: none
+		sourceColumn: Workloads
+
+		annotation SummarizationSetBy = Automatic
+
+	column Workload_BIADS
+		dataType: string
+		lineageTag: 6e19c99d-3d5b-496f-aa26-ba302c67421f
+		summarizeBy: none
+		sourceColumn: Workload_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cloud Service Sorting'
+		dataType: string
+		lineageTag: f7a7bf77-122a-43c8-8c6d-ce1d463826f3
+		summarizeBy: none
+		sourceColumn: Cloud Service Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	column Active_Flag
+		dataType: string
+		lineageTag: 9f49e456-4fb9-4b1f-a6dc-d0d5bb9c9b91
+		summarizeBy: none
+		sourceColumn: Active_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flag_Number =
+			IF('Dimension Workloads'[Active_Flag] ="FY23",2023
+			                 ,IF('Dimension Workloads'[Active_Flag] ="FY24",2024)
+			)
+		formatString: 0
+		lineageTag: c96d51be-06d7-416b-88ef-4615efa3f736
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Workloads-25d2f758-3261-4649-9b59-58af20a6cd1f' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_DIM_Workload_VW = Source{[Schema="dbo",Item="DIM_Workload_VW"]}[Data],
+				    #"Added Conditional Column" = Table.AddColumn(dbo_DIM_Workload_VW, "Cloud Service Sorting", each if [Cloud Modules L2] = "Private Cloud Enterprise (PCE)" then 0 else if [Cloud Modules L2] = "ISV Optimized" then 1 else if [Cloud Modules L2] = "SAP PE CDC" then 2 else if [Cloud Modules L2] = "HPCaaS" then 3 else 84),
+				    #"Filtered Rows" = Table.SelectRows(#"Added Conditional Column", each true)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+

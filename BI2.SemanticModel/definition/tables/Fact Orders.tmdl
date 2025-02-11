@@ -1,0 +1,611 @@
+table 'Fact Orders'
+	lineageTag: f8e31cf1-524b-4757-9356-00f522499f51
+
+	/// For development team use only
+	column DATE_KY
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 362a20b1-99e2-455b-ace9-36b38653ba05
+		summarizeBy: none
+		sourceColumn: DATE_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// For development team use only
+	column BA_KY
+		dataType: string
+		lineageTag: a67ab875-14d3-4034-8923-67f45b8cb426
+		summarizeBy: none
+		sourceColumn: BA_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only
+	column GEO_KY
+		dataType: string
+		lineageTag: 784a63dd-4615-40f6-b3b3-1e38c35ca9ad
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer ID that the order was sold to
+	column 'Final Customer ID'
+		dataType: string
+		lineageTag: a2ed1b24-de1a-4443-acf9-08b0d8e28c3b
+		summarizeBy: none
+		sourceColumn: Final Customer ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer Description
+	column 'Final Customer Desc'
+		dataType: string
+		lineageTag: 43e53365-2204-442d-9662-701ee26bb01a
+		summarizeBy: none
+		sourceColumn: Final Customer Desc
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// sales order ID based on orders cube
+	column 'Sales Order ID'
+		dataType: string
+		lineageTag: 2888eae0-468d-4199-9b44-c92a14fc97b2
+		summarizeBy: none
+		sourceColumn: Sales Order ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Net Sales US Dollar Amount'
+		dataType: double
+		lineageTag: ed6a5dc7-7868-4cb6-9fb4-cd2e77ecba56
+		summarizeBy: sum
+		sourceColumn: Net Sales US Dollar Amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Tells you if a deal was a direct or an indirect deal
+	column RTM
+		dataType: string
+		lineageTag: f6d999bf-b04a-4ecb-b06c-33dd16f2eaa5
+		summarizeBy: none
+		sourceColumn: RTM
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Greenlake flag'
+		dataType: string
+		lineageTag: fb9d4565-29af-489a-b760-1fe941ce8cc7
+		summarizeBy: none
+		sourceColumn: Greenlake flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Territory ID
+	column 'top sales territory id'
+		dataType: string
+		lineageTag: e4b3f029-dd4f-40aa-9d5e-e3aa52ca1ffc
+		summarizeBy: none
+		sourceColumn: top sales territory id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Contract ID (Derived based on E2E mapping logic)
+	column 'Contract ID_BIADS'
+		dataType: string
+		lineageTag: 8a9acacf-3b94-4975-8599-b7b6c2eac376
+		summarizeBy: none
+		sourceColumn: Contract ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// The day the respective order was booked
+	column 'Order Booking Date'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 2dd1a903-7219-46ad-a49d-85a360313eaf
+		summarizeBy: none
+		sourceColumn: Order Booking Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Opportunity ID
+	column 'Opportunity ID_BIADS'
+		dataType: string
+		lineageTag: 36659003-4b4f-45cf-9113-9c8c635791bd
+		summarizeBy: none
+		sourceColumn: Opportunity ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies if the Order was DISA/Non DISA
+	column 'DISA Flag_BIADS'
+		dataType: string
+		lineageTag: c20745bc-86e5-4271-a039-a68d7fcc21be
+		summarizeBy: none
+		sourceColumn: DISA Flag_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies type of customer : Alphabet, DISA, SPG, other (Derived)
+	column 'customer Exclusion_BIADS'
+		dataType: string
+		lineageTag: c62ab24b-391d-4d99-b069-b52c61836df8
+		summarizeBy: none
+		sourceColumn: customer Exclusion_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer ST ID BIADS
+	column 'Customer ST ID_BIADS'
+		dataType: string
+		lineageTag: 7723691c-0e29-4bbf-b155-ba8b4cd91dbf
+		summarizeBy: none
+		sourceColumn: Customer ST ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer Name (Derived)
+	column 'Customer Name_BIADS'
+		dataType: string
+		lineageTag: 74652c98-7a20-4962-bba9-e609c3f807aa
+		summarizeBy: none
+		sourceColumn: Customer Name_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact Orders","TableItemName":"SPG / Mega Deals","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	/// Signifies if it is New Logo customer or not (Derived)
+	column 'New Logos Flag_BIADS'
+		dataType: string
+		lineageTag: e4df08d8-210b-4811-b57d-f5a117f677d6
+		summarizeBy: none
+		sourceColumn: New Logos Flag_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'NL Customer ST ID_BIADS'
+		dataType: string
+		isHidden
+		lineageTag: 014061eb-ac6a-4651-bcf4-7b3cf8bba08e
+		summarizeBy: none
+		sourceColumn: NL Customer ST ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'NL Customer Name_BIADS'
+		dataType: string
+		lineageTag: 1483aa1c-44ca-4f02-be4c-4c2b6993be9f
+		summarizeBy: none
+		sourceColumn: NL Customer Name_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'NL Customer Segment_BIADS'
+		dataType: string
+		isHidden
+		lineageTag: ea497cb0-ba2d-46d8-a83b-b1915def03bb
+		summarizeBy: none
+		sourceColumn: NL Customer Segment_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies the segmentation like Commercial, Enterprise, etc
+	column 'Customer Segment'
+		dataType: string
+		isHidden
+		lineageTag: 8daaf1af-f5ef-4c25-956a-7d270fcbf319
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signfies forecast category of the order
+	column 'Text Range'
+		dataType: string
+		lineageTag: dca40a70-d067-46c6-898b-571ce47bc0d1
+		summarizeBy: none
+		sourceColumn: Text Range
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// ST ID
+	column 'SFDC ST ID'
+		dataType: string
+		lineageTag: 116685b4-4f55-44fa-a149-fdf6d1cb2cc0
+		summarizeBy: none
+		sourceColumn: SFDC ST ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// ST Name
+	column 'SFDC ST Name'
+		dataType: string
+		lineageTag: eaa3f9d9-3563-44d4-a017-e7e3b6fc0014
+		summarizeBy: none
+		sourceColumn: SFDC ST Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies to whom the order was shipped
+	column 'ST Ship To ID'
+		dataType: string
+		lineageTag: 4cbb3adf-ee48-45c4-88c3-ee1162509b2a
+		summarizeBy: none
+		sourceColumn: ST Ship To ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies to whom the order was shipped
+	column 'ST Ship To ID Name'
+		dataType: string
+		lineageTag: e6300f8a-826c-4e89-b630-4a18c25705cf
+		summarizeBy: none
+		sourceColumn: ST Ship To ID Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies to whom the order was Sold to
+	column 'ST Sold To ID'
+		dataType: string
+		lineageTag: 7785aa2a-fcee-4a3f-82ae-5d34e94e0a2b
+		summarizeBy: none
+		sourceColumn: ST Sold To ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies to whom the order was Sold to
+	column 'ST Sold To ID Name'
+		dataType: string
+		lineageTag: 3ef08e8f-f2f4-4522-b93b-31b5399160b0
+		summarizeBy: none
+		sourceColumn: ST Sold To ID Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Exclusion Yes/No'
+		dataType: string
+		lineageTag: 28356d2d-2182-4f00-9ed5-30287e012455
+		summarizeBy: none
+		sourceColumn: Customer Exclusion Yes/No
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLCS_WRK_Dl_FLAG
+		dataType: string
+		lineageTag: 5f795436-92d3-44cd-ab1c-1d8346194ea1
+		summarizeBy: none
+		sourceColumn: GLCS_WRK_Dl_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GL Cloud Services'
+		dataType: string
+		lineageTag: 495c7b5e-2361-418f-aab2-c77e4bc0115f
+		summarizeBy: none
+		sourceColumn: GL Cloud Services
+		sortByColumn: 'GL Cloud Services Sorting'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order type L2'
+		dataType: string
+		lineageTag: 2da133d7-687c-4c5a-abe7-15797ba338f0
+		summarizeBy: none
+		sourceColumn: order type L2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order type L3'
+		dataType: string
+		lineageTag: ab48c730-b232-45e3-9e63-9cff42ac46a2
+		summarizeBy: none
+		sourceColumn: order type L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order type L1'
+		dataType: string
+		lineageTag: c865e598-d59b-447d-8288-2e9bdc30f371
+		summarizeBy: none
+		sourceColumn: order type L1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Workload
+		dataType: string
+		lineageTag: a93591dd-8279-472d-872d-2165787696fa
+		summarizeBy: none
+		sourceColumn: Workload
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cloud_Module
+		dataType: string
+		lineageTag: 1f492955-90a0-4f21-b572-ed07ab67802b
+		summarizeBy: none
+		sourceColumn: Cloud_Module
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GL Cloud Services Sorting'
+		dataType: string
+		lineageTag: 72677b14-cb28-491e-aaaa-af8a7cc7805c
+		summarizeBy: none
+		sourceColumn: GL Cloud Services Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Purchase Order ID'
+		dataType: string
+		lineageTag: 59aa8a64-8204-48b9-a748-ea9da401a37d
+		summarizeBy: none
+		sourceColumn: Customer Purchase Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ST Payer ID'
+		dataType: string
+		lineageTag: 913aa184-9610-43ce-8a44-6186f9ad6c8b
+		summarizeBy: none
+		sourceColumn: ST Payer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ST Payer ID Name'
+		dataType: string
+		lineageTag: fcf32a59-a54b-43e4-87f1-8b53da69a76d
+		summarizeBy: none
+		sourceColumn: ST Payer ID Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Opp_id_Forecast_category_BIADS
+		dataType: string
+		lineageTag: 9d6f369d-f77c-4714-8e7e-a9cd9c15e848
+		summarizeBy: none
+		sourceColumn: Opp_id_Forecast_category_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Sales Amount'
+		dataType: double
+		lineageTag: d119b98e-f734-4f07-b994-b6b166f932f1
+		summarizeBy: sum
+		sourceColumn: Net Sales Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Sales Amount CS'
+		dataType: double
+		lineageTag: e9451224-be46-4c8a-bfb6-2a7c1581c34d
+		summarizeBy: sum
+		sourceColumn: Net Sales Amount CS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'NL,IB & SPG'
+		dataType: string
+		lineageTag: c107d25c-6b9e-48f3-b1a6-72d2f5a92a93
+		summarizeBy: none
+		sourceColumn: NL,IB & SPG
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NL,IB & SPG Sorting'
+		dataType: string
+		lineageTag: 1713d32d-0611-4c08-b657-a83ef476c528
+		summarizeBy: none
+		sourceColumn: NL,IB & SPG Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SPG / Mega Deals' =
+			SWITCH(
+				TRUE,
+				ISBLANK('Fact Orders'[Customer Name_BIADS]),
+				"(Blank)",
+				'Fact Orders'[Customer Name_BIADS] IN {"MICROSOFT CORPORATION - US"},
+				"With Microsoft",
+				'Fact Orders'[Customer Name_BIADS] IN {"STRATEGIC PROGRAMS GROUP - US",
+					"US STRATEGIC PROGRAMS GROUP IS - US"},
+				"With SPG / IS",
+				"Without SPG & Microsoft"
+			)
+		lineageTag: 1d444e75-9997-4f69-844f-454d597f2a5f
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact Orders"
+				          }
+				        },
+				        "Property": "Customer Name_BIADS"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact Orders"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Customer Name_BIADS"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"With Microsoft","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Customer Name_BIADS"}}],"Values":[[{"Literal":{"Value":"'MICROSOFT CORPORATION - US'"}}]]}}},{"DisplayName":"With SPG / IS","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Customer Name_BIADS"}}],"Values":[[{"Literal":{"Value":"'STRATEGIC PROGRAMS GROUP - US'"}}],[{"Literal":{"Value":"'US STRATEGIC PROGRAMS GROUP IS - US'"}}]]}}},{"DisplayName":"Without SPG & Microsoft"}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L06 BA Code'
+		dataType: string
+		lineageTag: 1099f705-9dc1-4b4b-88b7-b72f94bd7696
+		summarizeBy: none
+		sourceColumn: L06 BA Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alexia (GTM view)'
+		dataType: string
+		lineageTag: e52a7448-d4c6-443d-86fc-ec92b2a6d1e3
+		summarizeBy: none
+		sourceColumn: Alexia (GTM view)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipeline (Ralph)'
+		dataType: string
+		lineageTag: 58435124-2e2c-4682-83d5-7b74aec81bc8
+		summarizeBy: none
+		sourceColumn: Pipeline (Ralph)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CSM covered'
+		dataType: string
+		lineageTag: 5dd76a83-0153-4942-84a2-a3eb25bcc03f
+		summarizeBy: none
+		sourceColumn: CSM covered
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Full Name'
+		dataType: string
+		lineageTag: 8fded230-511b-49b4-a115-bdd260047aaf
+		summarizeBy: none
+		sourceColumn: Partner Full Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner ID'
+		dataType: string
+		lineageTag: 739b0dc4-82a4-4aba-b167-1020323360ab
+		summarizeBy: none
+		sourceColumn: Partner ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Type'
+		dataType: string
+		lineageTag: c7eb4d51-4d91-46aa-8137-048d1fd0f1ab
+		summarizeBy: none
+		sourceColumn: Partner Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Subtype'
+		dataType: string
+		lineageTag: 82734f6b-b2b5-41b4-9ab0-66dc5647feb3
+		summarizeBy: none
+		sourceColumn: Partner Subtype
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work Breakdown Structure Identifier'
+		dataType: string
+		lineageTag: de423cf8-a89b-43c9-9283-955ed1e60bd6
+		summarizeBy: none
+		sourceColumn: Work Breakdown Structure Identifier
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Orders-671f8204-7c36-41f3-b7cd-deb4e6d88073' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_REP_GL_Orders_ALL_VW = Source{[Schema="dbo",Item="REP_GL_Orders_ALL_VW"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_REP_GL_Orders_ALL_VW,{"DATE_KY", "BA_KY", "GEO_KY", "Contract ID_BIADS", "Order Booking Date", "Final Customer ID", "Final Customer Desc", "Sales Order ID", "Customer Purchase Order ID", "Opportunity ID_BIADS", "L06 BA Code", "Net Sales US Dollar Amount", "DISA Flag_BIADS", "customer Exclusion_BIADS", "RTM", "Customer ST ID_BIADS", "Customer Name_BIADS", "Greenlake flag", "New Logos Flag_BIADS", "NL Customer ST ID_BIADS", "NL Customer Name_BIADS", "NL Customer Segment_BIADS", "Customer Segment", "top sales territory id", "Opp_id_Forecast_category_BIADS", "SFDC ST ID", "SFDC ST Name", "ST Ship To ID", "ST Ship To ID Name", "ST Sold To ID", "ST Sold To ID Name", "ST Payer ID", "ST Payer ID Name", "GLCS_WRK_Dl_FLAG", "GL Cloud Services", "Work Breakdown Structure Identifier", "order type L2", "order type L3", "Workload", "order type L1", "CSM covered", "Cloud_Module", "Alexia (GTM view)", "Pipeline (Ralph)", "Partner Full Name", "Partner ID", "Partner Type", "Partner Subtype"}),
+				    #"Extracted Forecast Category" = Table.AddColumn(#"Removed Other Columns", "Text Range", each Text.Middle([Opp_id_Forecast_category_BIADS], 15, 50), type text),
+				    #"Conditional Col - Customer Exclusion" = Table.AddColumn(#"Extracted Forecast Category", "Customer Exclusion Yes/No", each if [customer Exclusion_BIADS] = "DISA" then "Yes" else "No"),
+				    #"Conditional Col - GL Cloud Services" = Table.AddColumn(#"Conditional Col - Customer Exclusion", "GL Cloud Services Sorting", each if [GL Cloud Services] = "Private Cloud Enterprise (PCE)" then 1 else if [GL Cloud Services] = "SAP PE CDC" then 2 else if [GL Cloud Services] = "HPCaaS" then 3 else 9),
+				    #"Duplicated Actuals column 1" = Table.DuplicateColumn(#"Conditional Col - GL Cloud Services", "Net Sales US Dollar Amount", "Net Sales Amount"),
+				    #"Duplicated Actuals column 2" = Table.DuplicateColumn(#"Duplicated Actuals column 1", "Net Sales Amount", "Net Sales Amount CS"),
+				    #"Capitalized Each Word - RTM" = Table.TransformColumns(#"Duplicated Actuals column 2",{{"RTM", Text.Proper, type text}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Capitalized Each Word - RTM", "NL,IB & SPG", each if [Customer Name_BIADS] = "STRATEGIC PROGRAMS GROUP - US" then "SPG" else if [Customer Name_BIADS] = "US STRATEGIC PROGRAMS GROUP IS - US" then "SPG" else if [New Logos Flag_BIADS] = "Yes" then "NL" else if [New Logos Flag_BIADS] = "No" then "IB" else null),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Added Conditional Column", "NL,IB & SPG Sorting", each if [#"NL,IB & SPG"] = "SPG" then 0 else if [#"NL,IB & SPG"] = "NL" then 1 else 2)
+				in
+				    #"Added Conditional Column1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

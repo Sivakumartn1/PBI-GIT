@@ -1,0 +1,85 @@
+table 'P*Q Median'
+	lineageTag: 56bec5e7-bce4-4fdd-a16c-ffa443ee6f13
+
+	column 'Fact E2E load_c_Deal_Key'
+		lineageTag: 8089c831-4356-4e37-be2b-1c0869582ca1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[c_Deal_Key]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_NET SALES ORDER USD AM'
+		lineageTag: ca0d4b9d-e3b4-4392-a448-c6f203e5d75b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Fact E2E load[NET SALES ORDER USD AM]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fact E2E load_Region'
+		lineageTag: a29ec72b-c9ec-453b-8cbb-30a0ac9264fc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Region]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_Country'
+		lineageTag: 6bfd93f8-3fef-42c6-b470-d086616d842e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Country]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_Partner Type Lvl1'
+		lineageTag: 53452d0c-3411-464c-94a3-5db4acd71ca0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Partner Type Lvl1]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_Partner Type'
+		lineageTag: 190c792c-7e8c-42a3-a662-31aef36ab9ee
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Partner Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_BA_Level 6 Desc'
+		lineageTag: 0cd58b09-9599-4d19-8ca4-363460d5b270
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[BA_Level 6 Desc]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fact E2E load_Final Customer Desc'
+		lineageTag: ad0d3873-0730-462d-acdd-2ef4ea953a42
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Fact E2E load[Final Customer Desc]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Amount'
+		lineageTag: f2c2838d-b446-4b6b-846d-c463b9b2dacc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Sales Amount]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'P*Q Median' = calculated
+		mode: import
+		source = GROUPBY('Fact E2E load','Fact E2E load'[c_Deal_Key],'Fact E2E load'[NET SALES ORDER USD AM],'Fact E2E load'[Region],'Fact E2E load'[Country],'Fact E2E load'[Partner Type Lvl1],'Fact E2E load'[Partner Type],'Fact E2E load'[BA_Level 6 Desc],'Fact E2E load'[Final Customer Desc],"Sales Amount",SUMX(CURRENTGROUP(),SUM('Fact E2E load'[NET SALES ORDER USD AM])))
+
+	annotation PBI_Id = 0931ad0e53824e01891a085688e16aa8
+

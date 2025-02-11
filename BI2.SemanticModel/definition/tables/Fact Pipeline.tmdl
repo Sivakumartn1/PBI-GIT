@@ -1,0 +1,690 @@
+table 'Fact Pipeline'
+	lineageTag: f8e5c1b0-1e1e-4986-b4fa-2b8269344aec
+
+	/// Sum of Opportunity value where Forecast Category is Commit,Pipeline,Won and Upside.
+	measure 'Pipe eng Total Pipeline_Full3' =
+			
+			CALCULATE(
+				SUM('Fact Pipeline'[Opportunity Value]),
+				'Fact Pipeline'[ForecastCategory_BIADS]
+					IN { "Commit", "Pipeline", "Won", "Upside" }
+			)/1000
+		lineageTag: eced3418-124a-4217-a481-fd6e4d92a4e7
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// For development team use only
+	column BA_KY
+		dataType: string
+		lineageTag: f4885700-1652-4af5-8f01-baea0fa1e04d
+		summarizeBy: none
+		sourceColumn: BA_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only
+	column GEO_KY
+		dataType: string
+		lineageTag: 47f3bfb0-244a-47c1-990a-c06b4c7ad54f
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of Opportunity
+	column OpportunityName
+		dataType: string
+		lineageTag: f97a111d-65f4-4bf6-87f4-5daaa753d671
+		summarizeBy: none
+		sourceColumn: OpportunityName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies type of opportunity like Upsell, Crossell, New Business, etc
+	column OpportunityType
+		dataType: string
+		lineageTag: d1b8b189-90f4-42ee-b558-6bfca9ceae3c
+		summarizeBy: none
+		sourceColumn: OpportunityType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Lost, Won , Open, Cancelled
+	column SalesStatus
+		dataType: string
+		lineageTag: 5d654d3f-c719-4dbd-b290-c1e3303c4486
+		summarizeBy: none
+		sourceColumn: SalesStatus
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales stages from SFDC
+	column SalesStage
+		dataType: string
+		lineageTag: 0780f3ad-f8e4-4e02-a69b-d97e7ecfd631
+		summarizeBy: none
+		sourceColumn: SalesStage
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indntify direct & Indirect
+	column GoToMarketRoute
+		dataType: string
+		lineageTag: 771e14fc-9edf-4e4d-9c6f-9b64afc06b16
+		summarizeBy: none
+		sourceColumn: GoToMarketRoute
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Either Channel, HPE or VSI fulfilled
+	column FulfilmentRoute
+		dataType: string
+		lineageTag: 61523940-cac1-4ef4-a540-ecd5b23aed2a
+		summarizeBy: none
+		sourceColumn: FulfilmentRoute
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reason why the opportunity was won or lost
+	column WonLostReason
+		dataType: string
+		lineageTag: 8e6232be-ec3e-4020-801f-380e090d4d65
+		summarizeBy: none
+		sourceColumn: WonLostReason
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Territory ID
+	column SalesTerritoryId
+		dataType: string
+		lineageTag: 0908d080-9178-442f-92f9-96f717b4d74f
+		summarizeBy: none
+		sourceColumn: SalesTerritoryId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Territory Name
+	column SalesTerritoryName
+		dataType: string
+		lineageTag: 5369b386-221a-48b2-990a-108d0c7b89c5
+		summarizeBy: none
+		sourceColumn: SalesTerritoryName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Attach, conversion, Renewal, etc
+	column SalesMotion
+		dataType: string
+		lineageTag: 22bc04a9-230d-464c-8a8f-54bc26c9e460
+		summarizeBy: none
+		sourceColumn: SalesMotion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Close date for opportunity. For close status, check sales stage
+	column 'Opportunity Close Date'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 56eb5657-9fe8-4d6f-a71d-b9f29da97c2b
+		summarizeBy: none
+		sourceColumn: Opportunity Close Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Primary Distributor
+	column 'Primary Distributor'
+		dataType: string
+		lineageTag: 78822e59-f4b9-4e7b-ba16-e75f3cf2250a
+		summarizeBy: none
+		sourceColumn: Primary Distributor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Pipeline Category
+	column Category
+		dataType: string
+		lineageTag: 10172ff7-675f-4ad6-9419-be0571924527
+		summarizeBy: none
+		sourceColumn: Category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity Create Date
+	column 'Created Date'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 5a3afc15-aafe-4c56-99ea-8f1b5f936785
+		summarizeBy: none
+		sourceColumn: Created Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// Opportunity Owned by
+	column 'Opportunity Owner'
+		dataType: string
+		lineageTag: 691187b9-3396-411e-95ce-37ff2fd364b9
+		summarizeBy: none
+		sourceColumn: Opportunity Owner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Type of workload attached to the opportunity
+	column Workload
+		dataType: string
+		lineageTag: 4a0544c2-20be-4a14-911e-e3c3a7382fd2
+		summarizeBy: none
+		sourceColumn: Workload
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Owner Email
+	column 'Opportunity Owner Email'
+		dataType: string
+		lineageTag: b67aaa44-bb77-4cde-8719-2ba5f6f37ce1
+		summarizeBy: none
+		sourceColumn: Opportunity Owner Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Won/Lost Date'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 4aef2b93-ea68-4669-940a-f0e976de5f56
+		summarizeBy: none
+		sourceColumn: Won/Lost Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Workload Flag'
+		dataType: string
+		lineageTag: 86007c03-3687-4791-8c0d-fb1341722ba3
+		summarizeBy: none
+		sourceColumn: Workload Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Order ID
+	column 'Sales Order Identifier'
+		dataType: string
+		lineageTag: d5144d08-1405-4696-980b-ad0838e9c2d5
+		summarizeBy: none
+		sourceColumn: Sales Order Identifier
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Whether GL Yes or No
+	column GL_Flag
+		dataType: string
+		lineageTag: a91b8a78-6475-4ef1-974c-11eb3a72936e
+		summarizeBy: none
+		sourceColumn: GL_Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Whether Lighyhouse business Yes/No
+	column Lighthouse_Flag
+		dataType: string
+		lineageTag: 31b3f156-c44e-4f5d-9bfe-af6be9729499
+		summarizeBy: none
+		sourceColumn: Lighthouse_Flag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Opportunity ID
+	column 'Opportunity Id'
+		dataType: string
+		lineageTag: 4bb083b3-cf5b-449d-bfdf-2fd8b8b5a897
+		summarizeBy: none
+		sourceColumn: Opportunity Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Syncing sales stage and Forecast category SFDC Issue.
+	column ForecastCategory_BIADS
+		dataType: string
+		lineageTag: 8ff4f39b-640c-4ee1-914f-c1bb823cf894
+		summarizeBy: none
+		sourceColumn: ForecastCategory_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Total Opportunity Value at the product line level
+	column 'Opportunity Value'
+		dataType: double
+		lineageTag: a28825af-5bec-4045-b707-948301d09409
+		summarizeBy: sum
+		sourceColumn: Opportunity Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total Opportunity Value at the Opportunity level
+	column 'Total Opportunity Value'
+		dataType: double
+		lineageTag: 6a1934ab-47da-4a4a-adc1-39a237f80989
+		summarizeBy: sum
+		sourceColumn: Total Opportunity Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Competitor for the given opportunity (if available or tracked)
+	column 'Primary Competitor'
+		dataType: string
+		lineageTag: 0411e6de-0049-4d38-8246-e16164b7aca7
+		summarizeBy: none
+		sourceColumn: Primary Competitor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Net Sales US Dollar Amount'
+		dataType: double
+		lineageTag: ab6d7771-b184-439f-966a-6d6cfcfbb9fd
+		summarizeBy: sum
+		sourceColumn: Net Sales US Dollar Amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// For development team use only
+	column 'Budget A$'
+		dataType: double
+		lineageTag: 6bc637db-00bd-4d5e-969c-389b54664cb8
+		summarizeBy: sum
+		sourceColumn: Budget A$
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// For development team use only
+	column 'Current Flash A$'
+		dataType: double
+		lineageTag: e220cb45-b71c-4387-b609-b0681e017525
+		summarizeBy: sum
+		sourceColumn: Current Flash A$
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Indentify NL accounts align with Ranjan's team.
+	column 'New Logos Flag_BIADS'
+		dataType: string
+		displayFolder: Whether New Logos Yes/No
+		lineageTag: 89f26774-ad48-464d-9054-8613893d9ca2
+		summarizeBy: none
+		sourceColumn: New Logos Flag_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// DISA accounts flagged in PN orders cube + Some specific Purchase order id
+	column 'DISA Flag_BIADS'
+		dataType: string
+		lineageTag: 016d2fbe-946c-489c-9c66-92fa36e7edeb
+		summarizeBy: none
+		sourceColumn: DISA Flag_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Contract ID (Derived)
+	column 'Contract ID_BIADS'
+		dataType: string
+		lineageTag: 42cbc4a2-9f82-457b-bbc6-794bbe1c83cd
+		summarizeBy: none
+		sourceColumn: Contract ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column Active/Inactive = if ([Pipe eng Total Pipeline_Full3] > 0 ,"Active", "Inactive")
+		lineageTag: 9cd0cd76-7abd-4d57-b935-b4033d741397
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Forecast Category Ecosystem' =
+			
+			
+			SWITCH(TRUE(),
+			
+			'Fact Pipeline'[SalesStage]= "06 - Won, Deploy & Expand","Won",
+			AND('Fact Pipeline'[ForecastCategory_BIADS]="Commit",NOT('Fact Pipeline'[SalesStage])="06 - Won, Deploy & Expand"),"Commit",
+			AND('Fact Pipeline'[ForecastCategory_BIADS]="Upside",NOT('Fact Pipeline'[SalesStage])="06 - Won, Deploy & Expand"),"Upside",
+			AND('Fact Pipeline'[ForecastCategory_BIADS]="Pipeline",'Fact Pipeline'[SalesStage] in {
+			    "01 - Understand Customer",
+			    "02 - Validate Opportunity",
+			    "03 - Qualify the Opportunity"
+			}), "Early",
+			AND('Fact Pipeline'[ForecastCategory_BIADS]="Pipeline",'Fact Pipeline'[SalesStage] in {
+			    "04A - Develop Solution",
+			    "04B - Propose Solution",
+			    "05 - Negotiate & Close"
+			}), "Late"
+			)
+		lineageTag: 697f3de3-76db-4dc2-ab1b-8e8ae6afe293
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column solution
+		dataType: string
+		lineageTag: 8eb5a4ed-a0d2-44b7-b50e-ff5626d21bbc
+		summarizeBy: none
+		sourceColumn: solution
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Workload_Cloud Module'
+		dataType: string
+		lineageTag: 455682bb-9c5c-4e11-ac87-71e40c460a92
+		summarizeBy: none
+		sourceColumn: Workload_Cloud Module
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ForecastCategory Sorter'
+		dataType: string
+		lineageTag: 0cb76dcd-325a-4854-a367-6331cf81d770
+		summarizeBy: none
+		sourceColumn: ForecastCategory Sorter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Workload Sorting'
+		dataType: string
+		lineageTag: 77ee1768-cf50-40ab-ac88-885bb9069898
+		summarizeBy: none
+		sourceColumn: Workload Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Id Link'
+		dataType: string
+		lineageTag: 572e0ceb-72cf-4454-ad4e-349297cbc777
+		summarizeBy: none
+		sourceColumn: Opportunity Id Link
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerEngagement
+		dataType: string
+		lineageTag: 0e86e68d-a208-4692-ae77-a20a453db840
+		summarizeBy: none
+		sourceColumn: CustomerEngagement
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Value US $'
+		dataType: double
+		lineageTag: b569857c-c117-42ca-a4c8-bcc699cc8092
+		summarizeBy: sum
+		sourceColumn: Opportunity Value US $
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Opportunity Value CS'
+		dataType: double
+		lineageTag: bb925a53-0822-4a20-b7f1-f22851e20769
+		summarizeBy: sum
+		sourceColumn: Opportunity Value CS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HPSolution
+		dataType: string
+		lineageTag: 9c79cfcf-0727-4844-855e-4ad532336912
+		summarizeBy: none
+		sourceColumn: HPSolution
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Channel Partner Name'
+		dataType: string
+		lineageTag: 910f490b-6ec3-497f-ba98-8c25704bc0ee
+		summarizeBy: none
+		sourceColumn: Primary Channel Partner Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryCampaignName
+		dataType: string
+		lineageTag: 8d79cbd1-d10f-414d-b87c-b78feb03ce64
+		summarizeBy: none
+		sourceColumn: PrimaryCampaignName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'top sales territory id_MDM'
+		dataType: string
+		lineageTag: c6562c77-d07e-4c6b-bf05-76220cf091c8
+		summarizeBy: none
+		sourceColumn: top sales territory id_MDM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Deal_Bucket
+		dataType: string
+		lineageTag: 50f106cf-587b-4097-98f7-5dc92f9037ce
+		summarizeBy: none
+		sourceColumn: Deal_Bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deal_Bucket Sortin'
+		dataType: string
+		lineageTag: 8856c7ca-083c-4a67-8925-245796a33998
+		summarizeBy: none
+		sourceColumn: Deal_Bucket Sortin
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L06 BA Code'
+		dataType: string
+		lineageTag: c7e5c896-ef7e-4c9d-afec-f138eeb1c8a4
+		summarizeBy: none
+		sourceColumn: L06 BA Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ralph_flag
+		dataType: string
+		lineageTag: 54ab1afd-dac8-4089-af2c-ce0eb363f18f
+		summarizeBy: none
+		sourceColumn: Ralph_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gtm_Flag
+		dataType: string
+		lineageTag: 2a97eceb-ae43-4610-82c7-eabdb9d70768
+		summarizeBy: none
+		sourceColumn: Gtm_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReportExecutionDateTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 348e2c0b-f15f-4632-b0eb-cdbdc2624d60
+		summarizeBy: none
+		sourceColumn: ReportExecutionDateTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Stage # days'
+		dataType: string
+		lineageTag: 42e1d3db-7f20-46bf-af17-b4420a046409
+		summarizeBy: none
+		sourceColumn: Current Stage # days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Stage Change Date'
+		dataType: string
+		lineageTag: 41fe60c4-1fa7-42ce-9993-7a9baa16268e
+		summarizeBy: none
+		sourceColumn: Last Stage Change Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CSM Covered'
+		dataType: string
+		lineageTag: daf1882a-7c94-4612-ac60-d2f02d5f3103
+		summarizeBy: none
+		sourceColumn: CSM Covered
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CSM Sales Flag'
+		dataType: string
+		lineageTag: ba184fa1-3128-4010-8e98-3f1486cc442e
+		summarizeBy: none
+		sourceColumn: CSM Sales Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HPE Opportunity ID'
+		dataType: string
+		lineageTag: 80c7ca2d-6851-49df-a4b4-51006e98b4ee
+		summarizeBy: none
+		sourceColumn: HPE Opportunity ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BAT Opps Flag'
+		dataType: string
+		lineageTag: b2df3d45-025f-4bff-96dd-c6a44b94c898
+		summarizeBy: none
+		sourceColumn: BAT Opps Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Pipeline-1e6975f3-8a6b-42c5-9294-246249bae2cb' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    Navigation = Source{[Schema="dbo",Item="REP_PipelineTracker_VW"]}[Data],
+				
+				
+				
+				
+				
+				    #"Removed Other Columns" = Table.SelectColumns(Navigation,{"BA_KY", "GEO_KY", "ReportExecutionDateTime", "Opportunity Id", "OpportunityName", "OpportunityType", "SalesStatus", "SalesStage", "ForecastCategory_BIADS", "GoToMarketRoute", "FulfilmentRoute", "CustomerEngagement", "WonLostReason", "HPSolution", "Opportunity Value", "Opportunity Value US $", "Opportunity Value CS", "Total Opportunity Value", "Primary Competitor", "Primary Channel Partner Name", "PrimaryCampaignName", "SalesTerritoryId", "SalesTerritoryName", "SalesMotion", "Opportunity Close Date", "Current Stage # days", "Primary Distributor", "Category", "Last Stage Change Date", "Created Date", "Opportunity Owner", "Workload", "Workload_Cloud Module", "Opportunity Owner Email", "Won/Lost Date", "Net Sales US Dollar Amount", "Budget A$", "Current Flash A$", "New Logos Flag_BIADS", "top sales territory id_MDM", "Workload Flag", "DISA Flag_BIADS", "Sales Order Identifier", "Contract ID_BIADS", "GL_Flag", "Lighthouse_Flag", "solution", "Opportunity Id Link", "L06 BA Code", "Deal_Bucket", "Ralph_flag", "Gtm_Flag", "CSM Covered", "CSM Sales Flag"}),
+				    #"Conditional Col - Forecast Category" = Table.AddColumn(#"Removed Other Columns", "ForecastCategory Sorter", each if [ForecastCategory_BIADS] = "Won" then 1 else if [ForecastCategory_BIADS] = "Commit" then 2 else if [ForecastCategory_BIADS] = "Upside" then 3 else if [ForecastCategory_BIADS] = "Pipeline" then 4 else 8),
+				    #"Conditional Col - Workload Sorting" = Table.AddColumn(#"Conditional Col - Forecast Category", "Workload Sorting", each if [Workload] = "Private Cloud Enterprise" then 1 else if [Workload] = "Microsoft Azure Stack HCI" then 2 else if [Workload] = "SAP" then 3 else if [Workload] = "High Performance Computing" then 4 else 9),
+				    #"Added Conditional Column" = Table.AddColumn(#"Conditional Col - Workload Sorting", "Deal_Bucket Sortin", each if [Deal_Bucket] = "<$250K" then 0 else if [Deal_Bucket] = "$250K - $500K" then 1 else if [Deal_Bucket] = "$500K - $1M" then 2 else if [Deal_Bucket] = "$1M - $5M" then 3 else if [Deal_Bucket] = "$5M - $10M" then 4 else 5),
+				    #"Merged Queries" = Table.NestedJoin(#"Added Conditional Column", {"Opportunity Id"}, #"DIM BAT Opps", {"HPE Opportunity ID"}, "DIM BAT Opps", JoinKind.LeftOuter),
+				    #"Expanded DIM BAT Opps" = Table.ExpandTableColumn(#"Merged Queries", "DIM BAT Opps", {"HPE Opportunity ID"}, {"HPE Opportunity ID"}),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Expanded DIM BAT Opps", "BAT Opps Flag", each if [HPE Opportunity ID] = null then "N" else "Y"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Conditional Column1",{{"BAT Opps Flag", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

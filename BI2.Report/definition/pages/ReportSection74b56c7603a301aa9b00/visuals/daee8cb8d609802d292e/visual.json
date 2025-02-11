@@ -1,0 +1,150 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "daee8cb8d609802d292e",
+  "position": {
+    "x": 36.8,
+    "y": 123.2,
+    "z": 0,
+    "height": 276.8,
+    "width": 1180.8,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV HPE SKUs"
+                    }
+                  },
+                  "Property": "Opportunity ID_BIADS"
+                }
+              },
+              "queryRef": "Query1.Opportunity ID_BIADS"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV HPE SKUs"
+                    }
+                  },
+                  "Property": "Category 1"
+                }
+              },
+              "queryRef": "Query1.Category 1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV HPE SKUs"
+                    }
+                  },
+                  "Property": "Category 2"
+                }
+              },
+              "queryRef": "Query1.Category 2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV HPE SKUs"
+                    }
+                  },
+                  "Property": "Business Area Code"
+                }
+              },
+              "queryRef": "Query1.Business Area Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV HPE SKUs"
+                    }
+                  },
+                  "Property": "RTM"
+                }
+              },
+              "queryRef": "Query1.RTM"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV HPE SKUs"
+                    }
+                  },
+                  "Property": "L06 BA Code"
+                }
+              },
+              "queryRef": "Query1.L06 BA Code"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

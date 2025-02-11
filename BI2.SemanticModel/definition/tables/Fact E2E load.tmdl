@@ -1,0 +1,567 @@
+table 'Fact E2E load'
+	lineageTag: 01e80fb5-9546-4cb5-962f-7ae27cfeda26
+
+	column 'Source System'
+		dataType: string
+		lineageTag: 9aa09403-954c-4678-8962-73cf1570b231
+		summarizeBy: none
+		sourceColumn: Source System
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		dataType: string
+		lineageTag: 6be9fabf-b1e6-471a-9381-4fa9c55e6abb
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter'
+		dataType: string
+		lineageTag: 7ea7290f-0828-4393-b11b-65a017c95b0f
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter Rank'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e1c1e9a-0b77-40d4-a6f7-2ecb716d2a9e
+		summarizeBy: sum
+		sourceColumn: Fiscal Quarter Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month'
+		dataType: string
+		lineageTag: 0ba1ed0c-7f77-4b04-b33c-e31b87af31de
+		summarizeBy: none
+		sourceColumn: Fiscal Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 31a7547b-c20e-42da-9395-fac98d4b9454
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 8759dccb-949c-4f5d-9c84-0f3868dd4251
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract ID'
+		dataType: string
+		lineageTag: 4d8453a8-5963-4a35-9c9c-daceda438dbe
+		summarizeBy: none
+		sourceColumn: Contract ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logo'
+		dataType: string
+		lineageTag: d2a4b830-a355-4a03-a6d1-3f056900d4c0
+		summarizeBy: none
+		sourceColumn: New Logo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Segment'
+		dataType: string
+		lineageTag: 92e8aa1d-8a0e-455c-ab20-5b9ef05895b0
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column RTM
+		dataType: string
+		lineageTag: beb793b4-0486-494b-b6e5-09dbd9b2ca05
+		summarizeBy: none
+		sourceColumn: RTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Segment'
+		dataType: string
+		lineageTag: a60c8f6c-e0a0-4dc7-aa4c-dae0c4156915
+		summarizeBy: none
+		sourceColumn: Business Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BA_Level 1 Desc'
+		dataType: string
+		lineageTag: 3f4e76b6-e5d5-4211-b3f2-9de151d7d131
+		summarizeBy: none
+		sourceColumn: BA_Level 1 Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BA_Level 2 Desc'
+		dataType: string
+		lineageTag: 89229d6d-e95b-4cbe-9132-6928819179fb
+		summarizeBy: none
+		sourceColumn: BA_Level 2 Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BA_Level 3 Desc'
+		dataType: string
+		lineageTag: 0a1e95a9-3900-4b11-a29a-5cf6a40f3b92
+		summarizeBy: none
+		sourceColumn: BA_Level 3 Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BA_Level 4 Desc'
+		dataType: string
+		lineageTag: 9f0bc970-f5d9-4b70-8f3c-e23e88ff90b1
+		summarizeBy: none
+		sourceColumn: BA_Level 4 Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BA_Level 5 Desc'
+		dataType: string
+		lineageTag: 6c4d2687-aa9b-47ce-bd39-ce0103caca29
+		summarizeBy: none
+		sourceColumn: BA_Level 5 Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BA_Level 6 Desc'
+		dataType: string
+		lineageTag: bdfe74d8-0a03-4721-9070-170ba9e3dc10
+		summarizeBy: none
+		sourceColumn: BA_Level 6 Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Line
+		dataType: string
+		lineageTag: 1e32481e-57b1-44e0-b908-f41c29f0105a
+		summarizeBy: none
+		sourceColumn: Product_Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final Customer ID'
+		dataType: string
+		lineageTag: c8bf3025-ea8f-48ec-8e82-9ae58a6439c6
+		summarizeBy: none
+		sourceColumn: Final Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final Customer Desc'
+		dataType: string
+		lineageTag: d84a1b3e-3f89-4608-a41e-f1744aeb557e
+		summarizeBy: none
+		sourceColumn: Final Customer Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column ForecastCategory
+		dataType: string
+		lineageTag: cdb16326-735d-4c9b-aea8-51ce5010ce00
+		summarizeBy: none
+		sourceColumn: ForecastCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesStage
+		dataType: string
+		lineageTag: 4d7a200f-4a16-443e-9e89-4b50cbfe1441
+		summarizeBy: none
+		sourceColumn: SalesStage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: 0348b90b-0f58-4135-ab2d-6bfd55429ff0
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Flash A$'
+		dataType: double
+		lineageTag: 771b4825-4b69-4619-a87b-635e476dc701
+		summarizeBy: sum
+		sourceColumn: Current Flash A$
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget A_Dollars'
+		dataType: double
+		lineageTag: 4042ecd1-e794-4fb4-9986-e8c49bb0cca2
+		summarizeBy: sum
+		sourceColumn: Budget A_Dollars
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'NET SALES ORDER USD AM'
+		dataType: double
+		lineageTag: 47afa676-780c-4829-b1b2-45a003d67999
+		summarizeBy: sum
+		sourceColumn: NET SALES ORDER USD AM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'New Logo Count'
+		dataType: int64
+		formatString: 0
+		lineageTag: 477d0efc-59d0-49f8-b10e-8d508f1bbf14
+		summarizeBy: sum
+		sourceColumn: New Logo Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logo Target Count'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c781f8b-353e-4de3-aa34-58d7fc86e8f1
+		summarizeBy: sum
+		sourceColumn: New Logo Target Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logo Order'
+		dataType: double
+		lineageTag: e1d30af8-5e5d-491b-8d66-d0ce8c38cae2
+		summarizeBy: sum
+		sourceColumn: New Logo Order
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'New Logo Order Target'
+		dataType: double
+		lineageTag: 75e319a8-0a94-4cdf-a59c-39e7a67cbca1
+		summarizeBy: sum
+		sourceColumn: New Logo Order Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Partner Type'
+		dataType: string
+		lineageTag: ea802dfc-c014-4f69-8571-cbeb83b4d5bb
+		summarizeBy: none
+		sourceColumn: Partner Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Type Rank'
+		dataType: int64
+		formatString: 0
+		lineageTag: 575f8d26-8e10-492c-86d5-e3dcc0f32966
+		summarizeBy: sum
+		sourceColumn: Partner Type Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Target'
+		dataType: double
+		lineageTag: 0675a770-0f88-4848-841e-94dca2e07152
+		summarizeBy: sum
+		sourceColumn: Partner Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Business Segments_L0_BIADS'
+		dataType: string
+		lineageTag: 765659b7-a983-4f08-93bb-59521c6f3e72
+		summarizeBy: none
+		sourceColumn: Business Segments_L0_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Segments_L1_BIADS'
+		dataType: string
+		lineageTag: 2fcc3254-e29f-40f6-859f-392961b8b80e
+		summarizeBy: none
+		sourceColumn: Business Segments_L1_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Segments_L2_BIADS'
+		dataType: string
+		lineageTag: d9958d82-598d-4e2c-9011-770b637e00a2
+		summarizeBy: none
+		sourceColumn: Business Segments_L2_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Segments_L3_BIADS'
+		dataType: string
+		lineageTag: b6bb3111-090a-4378-bf47-fd4be4247516
+		summarizeBy: none
+		sourceColumn: Business Segments_L3_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Segments_L4_BIADS'
+		dataType: string
+		lineageTag: a7a0a21b-497a-49e7-972f-ba503d3a7aea
+		summarizeBy: none
+		sourceColumn: Business Segments_L4_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CSM Covered'
+		dataType: string
+		lineageTag: e597642e-a64c-4342-a9d5-f3cf4d46f375
+		summarizeBy: none
+		sourceColumn: CSM Covered
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CSM Name'
+		dataType: string
+		lineageTag: 2081c3d0-0125-41a7-bf1f-e9312529a5ab
+		summarizeBy: none
+		sourceColumn: CSM Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GreenLake Flag'
+		dataType: string
+		lineageTag: ae9b5a07-d6ce-4af9-a243-276414eeb0bf
+		summarizeBy: none
+		sourceColumn: GreenLake Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logo Parent Count'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0820c1c4-6e2b-487c-bdfd-a13017c9d7da
+		summarizeBy: sum
+		sourceColumn: New Logo Parent Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order type L1'
+		dataType: string
+		lineageTag: 96e0bfe4-cd73-406a-ac68-ae1dd8e2d360
+		summarizeBy: none
+		sourceColumn: order type L1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order type L2'
+		dataType: string
+		lineageTag: f593268c-c911-4caf-93ce-eb861066e66b
+		summarizeBy: none
+		sourceColumn: order type L2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order type L3'
+		dataType: string
+		lineageTag: 6d09aa9d-0b2d-4d0a-b4a7-7a7028e728eb
+		summarizeBy: none
+		sourceColumn: order type L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deal Key'
+		dataType: string
+		lineageTag: c55ae9f5-7e11-4d18-bcfc-eaf1796981f8
+		summarizeBy: none
+		sourceColumn: Deal Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Target'
+		dataType: double
+		lineageTag: 5fb9396f-6e3f-45e5-9cc8-e2b5eee85d1f
+		summarizeBy: sum
+		sourceColumn: Order Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Quantity Target'
+		dataType: double
+		lineageTag: df0823d9-9b7e-4511-9b48-900e00487fd6
+		summarizeBy: sum
+		sourceColumn: Order Quantity Target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'New Logo Count Flag'
+		dataType: string
+		lineageTag: 5f241b5e-0192-453f-9435-fc1133b7d977
+		summarizeBy: none
+		sourceColumn: New Logo Count Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Derived Final Customer ID Top Parent'
+		dataType: string
+		lineageTag: a4e9acb2-3fa8-4a65-b0fa-c157f9c5ca00
+		summarizeBy: none
+		sourceColumn: Derived Final Customer ID Top Parent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deal Key Correction'
+		dataType: string
+		lineageTag: b8e39ca9-fcf5-4df2-8ba9-252eedf319de
+		summarizeBy: none
+		sourceColumn: Deal Key Correction
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deal Correction'
+		dataType: string
+		lineageTag: 609e7d8a-dc21-435e-a054-0e6971b0c627
+		summarizeBy: none
+		sourceColumn: Deal Correction
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Quarter'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e67f0cd0-a62f-495b-a2ec-c25d46395693
+		summarizeBy: none
+		sourceColumn: Start of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column GEO_KY
+		dataType: string
+		lineageTag: d0b21f8d-f668-4ebc-b877-66ffe23dcd5c
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alexia (GTM view)'
+		dataType: string
+		lineageTag: a5336eff-f94d-400b-b078-efea5bfb3409
+		summarizeBy: none
+		sourceColumn: Alexia (GTM view)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type L1 Rank'
+		dataType: double
+		lineageTag: d2784f9a-337d-494c-932a-425ac5304039
+		summarizeBy: sum
+		sourceColumn: Order Type L1 Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Type L2 Rank'
+		dataType: double
+		lineageTag: e974e4d2-184e-4aaa-b41c-748e79a0482a
+		summarizeBy: sum
+		sourceColumn: Order Type L2 Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Type L3 Rank'
+		dataType: double
+		lineageTag: ebe38f65-1cba-4b20-b37b-ede9ca450173
+		summarizeBy: sum
+		sourceColumn: Order Type L3 Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column business_segment_rank
+		dataType: string
+		lineageTag: 44fa8a93-16b0-4e3f-b192-21aa51a5a9eb
+		summarizeBy: none
+		sourceColumn: business_segment_rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer segment Sorting'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a34af57-0484-4dc7-92e5-964d58fca0ea
+		summarizeBy: sum
+		sourceColumn: Customer segment Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	column c_Deal_Key = if('Fact E2E load'[order type L2]="Unmapped","", 'Fact E2E load'[Deal Key]&'Fact E2E load'[order type L3])
+		lineageTag: 49489e64-0b60-4974-840a-53d471aea75d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'C_NewLogo_TopfinalSTID Key' = if(LEN( 'Fact E2E load'[Derived Final Customer ID Top Parent])>0,  'Fact E2E load'[Derived Final Customer ID Top Parent]& 'Fact E2E load'[New Logo Count Flag])
+		lineageTag: 3c47b174-27e5-4329-b1a3-49e2af8308f8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column c_order_target = 'Fact E2E load'[Order Target]*1000000
+		lineageTag: 51239508-672c-4d6f-91be-303bb53e25ef
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Partner Type Lvl1' = if('Fact E2E load'[Partner Type] = "Non Ecosystem","Non Ecosystem","Ecosystem")
+		lineageTag: a95f9a9e-a7ad-45e2-8411-d54abd512121
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact E2E load' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [Query="select a.*,b.date_rank,c.[Order Type L1 Rank],c.[Order Type L2 Rank],c.[Order Type L3 Rank] from  #(lf)(select *#(lf)--,[SC Status Owner]#(lf)--,[CUSTOMER REQUESTED DELIVER DATE]#(lf)--,[SC BAcklog Category]#(lf)--,[Order Create Calendar Date]#(lf)--,[Revenue Recognition Date]#(lf)--,[MIN Revenue Recognition Date]#(lf)--,[MAX Revenue Recognition Date]#(lf),case when [MAX Revenue Recognition Date]>=[min_Financial Close calender date]then datediff(dd,[min_Financial Close calender date],[MAX Revenue Recognition Date]) end [Revenue Recognition TAT]#(lf),case when [week nbr] is null then concat(concat(5,[Fiscal Year]),'100') else concat([Fiscal Year],right(concat('0',[week nbr]),2)) end week_no#(lf),dense_rank() over( order by case when [week nbr] is null then concat(5,[Fiscal Year],'100') else concat([Fiscal Year],right(concat('0',[week nbr]),2)) end) week_rank#(lf)from tbl_E2E_fact_load --a left join GL_Connected_Future..REP_EGI_PIPELINE_FULLFILLMENT b#(lf)--on a.[Sales Order ID] = b.[Sales Order Identifier]#(lf)where [Fiscal Year] >= 2020 and [Source System]= 'orders_merged_final') a#(lf)left join #(lf)(select DATE_KY,RANK() over(order by DATE_KY) date_rank from GL_Connected_Future..DIM_DATE) b#(lf)on a.[Financial Close calender date] = b.DATE_KY#(lf)left join #(lf)(select * from dim_order_type) c#(lf)on ISNULL(c.[order type L3],'')=ISNULL(a.[order type L3],'') and ISNULL(c.[order type L2],'') = ISNULL(a.[order type L2],'')", CommandTimeout=#duration(0, 5, 0, 0)]),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Source System", "Fiscal Year", "Fiscal Quarter", "Fiscal Quarter Rank", "Fiscal Month", "Region", "Country", "Contract ID", "New Logo", "Customer Segment", "RTM", "Business Segment", "BA_Level 1 Desc", "BA_Level 2 Desc", "BA_Level 3 Desc", "BA_Level 4 Desc", "BA_Level 5 Desc", "BA_Level 6 Desc", "Product_Line", "Final Customer ID", "Final Customer Desc", "ForecastCategory", "SalesStage", "Order Type", "Current Flash A$", "Budget A_Dollars", "NET SALES ORDER USD AM", "New Logo Count", "New Logo Target Count", "New Logo Order", "New Logo Order Target", "Partner Type", "Partner Type Rank", "Partner Target", "Business Segments_L0_BIADS", "Business Segments_L1_BIADS", "Business Segments_L2_BIADS", "Business Segments_L3_BIADS", "Business Segments_L4_BIADS", "CSM Covered", "CSM Name", "GreenLake Flag", "New Logo Parent Count", "order type L1", "order type L2", "order type L3", "Deal Key", "Order Target", "Order Quantity Target", "New Logo Count Flag", "Derived Final Customer ID Top Parent", "Deal Key Correction", "Deal Correction", "Start of Quarter", "GEO_KY", "Alexia (GTM view)", "Order Type L1 Rank", "Order Type L2 Rank", "Order Type L3 Rank"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Other Columns",null,"(Default)",Replacer.ReplaceValue,{"Business Segment"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Replaced Value", each true),
+				    #"Added Conditional Column" = Table.AddColumn(#"Filtered Rows", "business_segment_rank", each if [Business Segment] = "GL OS/IS" then 1 else if [Business Segment] = "GL A&PS" then 2 else if [Business Segment] = "GL HW/SW" then 3 else if [Business Segment] = "GL SaaS" then 4 else if [Business Segment] = "SaaS Offerings" then 5 else if [Business Segment] = "Edge" then 6 else if [Business Segment] = "Corp Other" then 7 else 9),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Added Conditional Column", "Customer segment Sorting", each if [Customer Segment] = "Top Accounts" then 11 else if [Customer Segment] = "Rising Stars" then 12 else if [Customer Segment] = "Enterprise" then 13 else if [Customer Segment] = "Commercial" then 14 else if [Customer Segment] = "Acquisition" then 15 else if [Customer Segment] = "MM/SMB" then 16 else if [Customer Segment] = "Public Sector" then 17 else if [Customer Segment] = "Channel" then 18 else if [Customer Segment] = "US SPT1" then 19 else if [Customer Segment] = "No segment" then 20 else 35),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Conditional Column1",{{"Customer segment Sorting", Int64.Type}, {"Start of Quarter", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,24 @@
+table 'Dimension RTM'
+	excludeFromModelRefresh
+	lineageTag: ffd98df2-c313-496f-8029-0d748b205338
+
+	column RTM
+		dataType: string
+		lineageTag: 9065a778-f0e8-48a6-b0a4-46fb2f8195c9
+		summarizeBy: none
+		sourceColumn: RTM
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension RTM' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WcsksSk0uUYrViVbyzEuBcmIB", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [RTM = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"RTM", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,54 @@
+table 'Dimension Opportunities'
+	lineageTag: 9e35d3ad-5a1f-4af3-9212-2ad8b2c40bc2
+
+	column 'Opportunity ID_BIADS'
+		dataType: string
+		lineageTag: 26e89bd9-b72c-49b5-b929-839e90c7fec8
+		summarizeBy: none
+		sourceColumn: Opportunity ID_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BAT Analysis Owner'
+		dataType: string
+		lineageTag: be7d5d10-b149-48af-aa55-aa5a18f2ec9a
+		summarizeBy: none
+		sourceColumn: BAT Analysis Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BAT Flag'
+		dataType: string
+		lineageTag: c14e733d-5c44-4981-a6a2-147cc2639c2a
+		summarizeBy: none
+		sourceColumn: BAT Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Opportunities-b1fd7e8f-c3a0-4138-a32f-9f837a19ce50' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source = ```
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_DIM_Workload_VW = Source{[Schema="dbo",Item="Opportunity_VW"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(dbo_DIM_Workload_VW,{"Opportunity ID_BIADS_Display"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Removed Columns", {"Opportunity ID_BIADS"}, #"DIM BAT Opps", {"HPE Opportunity ID"}, "DIM BAT Opps", JoinKind.LeftOuter),
+				    #"Expanded DIM BAT Opps" = Table.ExpandTableColumn(#"Merged Queries", "DIM BAT Opps", {"HPE Opportunity ID", "BAT Analysis owner "}, {"HPE Opportunity ID", "BAT Analysis owner "}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Expanded DIM BAT Opps", "BAT Flag", each if [HPE Opportunity ID] = null then "No" else "Yes"),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Added Conditional Column",{"HPE Opportunity ID"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns1",{{"BAT Flag", type text}}),
+				    #"Grouped Rows" = Table.Group(#"Changed Type", {"Opportunity ID_BIADS"}, {
+				         
+				        {"BAT Analysis Owner", each Text.Combine(List.Distinct([#"BAT Analysis owner "],Comparer.OrdinalIgnoreCase), ", "), type text},
+				        {"BAT Flag", each List.Min([BAT Flag]), type nullable text}
+				
+				    })
+				in
+				    #"Grouped Rows"
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

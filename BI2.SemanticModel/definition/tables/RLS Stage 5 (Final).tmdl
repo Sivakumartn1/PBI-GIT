@@ -1,0 +1,47 @@
+/// For development team use only.
+table 'RLS Stage 5 (Final)'
+	lineageTag: 415034ff-6eb7-466c-9fe6-f47c2336d87c
+
+	column EmailAddress
+		dataType: string
+		lineageTag: 7e6f2f3f-6106-4a9a-b88d-cf6ee55223ff
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geo
+		dataType: string
+		lineageTag: 56db5d37-0be8-4495-a705-1e32453823f7
+		summarizeBy: none
+		sourceColumn: Geo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flag
+		dataType: string
+		lineageTag: ed2c9817-d401-429d-8484-5a6fce8a49c3
+		summarizeBy: none
+		sourceColumn: Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'RLS Stage 5 (Final)-b89c1c6a-c71d-4730-8cc1-c80feeffe976' = m
+		mode: import
+		queryGroup: RLS
+		source =
+				let
+				    Source = PowerPlatform.Dataflows([]),
+				    Workspaces = Source{[Id="Workspaces"]}[Data],
+				    #"c5c330b0-74df-456b-a6d1-9f2b7117c29d" = Workspaces{[workspaceId="c5c330b0-74df-456b-a6d1-9f2b7117c29d"]}[Data],
+				    #"448393cc-4740-4f09-8285-08c342baf60f" = #"c5c330b0-74df-456b-a6d1-9f2b7117c29d"{[dataflowId="448393cc-4740-4f09-8285-08c342baf60f"]}[Data],
+				    #"GTM2 RLS Stage 5 (Final)_" = #"448393cc-4740-4f09-8285-08c342baf60f"{[entity="GTM2 RLS Stage 5 (Final)",version=""]}[Data]
+				in
+				    #"GTM2 RLS Stage 5 (Final)_"
+
+	annotation PBI_ResultType = Table
+

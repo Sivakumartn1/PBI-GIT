@@ -1,0 +1,315 @@
+table 'Dimension Date'
+	excludeFromModelRefresh
+	lineageTag: 8959dca0-4865-45e9-8c07-cdb44aea0c54
+	dataCategory: Time
+
+	/// Date in format mm/dd/yyyy
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: mm/dd/yyyy
+		lineageTag: 95b54d83-2b65-498e-9261-626e3a7e014b
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Indicates the Order booking fiscal year or Opportunity closed fiscal year depending on the page selection
+	column 'Fiscal - Year'
+		dataType: string
+		lineageTag: 13ed1dea-bcd8-4ba3-9a63-0b8762c6a31e
+		summarizeBy: none
+		sourceColumn: Fiscal - Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates the Order booking fiscal quarter or Opportunity closed fiscal quarter depending on the page selection
+	column 'Fiscal Year Quarter'
+		dataType: string
+		lineageTag: 494ff09e-c2c8-4e90-8d10-cfaebf805157
+		summarizeBy: none
+		sourceColumn: Fiscal Year Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates the Order booking fiscal month or Opportunuty closed fiscal month depending on the page selection
+	column 'Fiscal Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f8f3e4a-192a-4f97-899e-ef9228e34721
+		summarizeBy: sum
+		sourceColumn: Fiscal Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates the Order booking week number or Opportunuty closed week number depending on the page selection
+	column 'Week Number'
+		dataType: string
+		lineageTag: ea699980-c569-4748-88a9-24ad6053ab6b
+		summarizeBy: none
+		sourceColumn: Week Number
+		sortByColumn: 'WEEK Rank'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates the Order booking fiscal quarter or Opportunity closed fiscal quarter depending on the page selection
+	column 'Fiscal Year Quarter 2'
+		dataType: int64
+		formatString: 0
+		lineageTag: faa9fed4-d3db-4c1e-9c47-ae06be282962
+		summarizeBy: sum
+		sourceColumn: Fiscal Year Quarter 2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column 'Start of Quarter'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 135c14a2-f738-4600-bc87-a6e358b98579
+		summarizeBy: none
+		sourceColumn: Start of Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// represents Fiscal Quarter
+	column 'Fiscal Quarter' = RIGHT('Dimension Date'[Fiscal Year Quarter],2)
+		lineageTag: 56bc72dc-d791-423c-8c0c-f12d61b3ed32
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicates the Order booking fiscal year or Opportunity closed fiscal year depending on the page selection
+	column 'Fiscal Year' = "FY"&'Dimension Date'[Fiscal - Year]
+		lineageTag: 4d5a943f-6a50-4d4d-afb1-6f90e914c4f7
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Combination Key YQW'
+		dataType: string
+		lineageTag: 9795d6a0-ecd3-4116-a08c-1322f1ae3054
+		summarizeBy: none
+		sourceColumn: Combination Key YQW
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name_ew' = FORMAT('Dimension Date'[Date],"mmmm")
+		lineageTag: 540e7792-b7e2-42e8-9d65-817c4cf9655a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Sort_ew' = FORMAT('Dimension Date'[Fiscal Month],"00")
+		lineageTag: ca0f2268-c49c-457b-814f-656d5214e34c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sequence
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ca128e2-b83d-4473-8334-c414fe063f47
+		summarizeBy: sum
+		sourceColumn: Sequence
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WEEK Rank'
+		dataType: int64
+		formatString: 0
+		lineageTag: c4b8675c-d08e-454c-9705-46b6d1aaf575
+		summarizeBy: sum
+		sourceColumn: WEEK Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_YEAR_NR
+		dataType: string
+		lineageTag: 0f224db6-011b-4862-ae82-29bb124905db
+		summarizeBy: none
+		sourceColumn: CALENDAR_YEAR_NR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_Month_NR
+		dataType: double
+		lineageTag: 675163e5-4d1f-42bf-94bc-a3a9e2f2ddd4
+		summarizeBy: sum
+		sourceColumn: CALENDAR_Month_NR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALENDAR_MONTH_Name
+		dataType: string
+		lineageTag: 9159a10f-3c7e-43bb-951a-5f98eb12883f
+		summarizeBy: none
+		sourceColumn: CALENDAR_MONTH_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_QUARTER_NM
+		dataType: string
+		lineageTag: a5bf37da-329b-4746-a02a-c4e404d1c1e0
+		summarizeBy: none
+		sourceColumn: FISCAL_QUARTER_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Week'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b71f4edb-6063-4026-920e-3f082482cb36
+		summarizeBy: none
+		sourceColumn: Start of Week
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End of Week'
+		dataType: string
+		lineageTag: 88b27f65-1d1d-44fc-af99-58de2eb17352
+		summarizeBy: none
+		sourceColumn: End of Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekSequence
+		dataType: string
+		lineageTag: 3fa2b3c1-2fad-4a98-ae73-7866a0b6436e
+		summarizeBy: none
+		sourceColumn: WeekSequence
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEEK_NR_OPS
+		dataType: double
+		lineageTag: acaa0b4e-f6f1-407d-9edd-3ce5f5b2b61d
+		summarizeBy: sum
+		sourceColumn: WEEK_NR_OPS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WEEK_IN_FISCAL_YEAR_NR
+		dataType: double
+		lineageTag: 03960303-7d8e-4f79-a83a-21e237222481
+		summarizeBy: sum
+		sourceColumn: WEEK_IN_FISCAL_YEAR_NR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WEEK_IN_FISCAL_YEAR_NR_OPS
+		dataType: string
+		lineageTag: 2d843e46-d8bf-4276-b627-0edc9a63cdab
+		summarizeBy: none
+		sourceColumn: WEEK_IN_FISCAL_YEAR_NR_OPS
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEEK_NR_Incremental
+		dataType: string
+		lineageTag: 47eb8312-4da0-4386-9a95-06fd95e49c78
+		summarizeBy: none
+		sourceColumn: WEEK_NR_Incremental
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEEK_NR_Incremental_Ops
+		dataType: string
+		lineageTag: a68af925-f9ff-453d-b4bb-f06ab219dcd5
+		summarizeBy: none
+		sourceColumn: WEEK_NR_Incremental_Ops
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Seq
+		dataType: int64
+		formatString: 0
+		lineageTag: 306f5ffc-3bd5-487c-855e-9c42e1fd1135
+		summarizeBy: sum
+		sourceColumn: Month_Seq
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_MONTH_NUMBER_YYYYMM
+		dataType: string
+		lineageTag: 26806292-e69c-49dd-b793-e4b9bf0b3203
+		summarizeBy: none
+		sourceColumn: FISCAL_MONTH_NUMBER_YYYYMM
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_HALF_NM
+		dataType: string
+		lineageTag: 1e90e653-4bcc-48d7-a72f-f8b549cd5595
+		summarizeBy: none
+		sourceColumn: FISCAL_HALF_NM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rolling_6mon
+		dataType: string
+		lineageTag: 6bd0befa-cdd0-432f-bc16-64ff4236df7c
+		summarizeBy: none
+		sourceColumn: Rolling_6mon
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rolling_3mon
+		dataType: string
+		lineageTag: d6c5a64a-054d-47e6-b923-e3030f6f6702
+		summarizeBy: none
+		sourceColumn: Rolling_3mon
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Date-10584ed8-5497-4e35-83c5-0aa7d92ad22e' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_DATE_VIEW = Source{[Schema="dbo",Item="DATE_VIEW"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(dbo_DATE_VIEW,{{"FISCAL_YEAR_QUARTER_NM", "Fiscal Year Quarter"}, {"DATE_KY", "Date"}, {"FISCAL_YEAR_NR", "Fiscal - Year"}, {"FISCAL_MONTH_NUMBER", "Fiscal Month"}, {"WEEK_NR", "Week Number"}, {"WEEK_Rank", "WEEK Rank"}, {"FISCAL_YEAR_NR_FMT", "Fiscal Year Quarter 2"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

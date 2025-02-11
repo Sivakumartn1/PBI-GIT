@@ -1,0 +1,229 @@
+table 'Fact GL Partner Consolidated Data'
+	lineageTag: fbc9460d-aeb2-4cb2-a411-78c25f4f4109
+
+	/// Name of Opportunity
+	column 'Opportunity Name'
+		dataType: string
+		lineageTag: d24af201-6247-4852-8cae-747d9c2074ea
+		summarizeBy: none
+		sourceColumn: Opportunity Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column 'Account Name: Account Name'
+		dataType: string
+		lineageTag: a647dd06-3d32-49b9-b8de-f0e456c7a5d6
+		summarizeBy: none
+		sourceColumn: Account Name: Account Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column 'Total Opportunity Value (converted)'
+		dataType: double
+		lineageTag: b7bad7d5-21f2-4f14-a955-9c8b4052c092
+		summarizeBy: sum
+		sourceColumn: Total Opportunity Value (converted)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// For development team use only.
+	column 'Total Value to HPE (converted)'
+		dataType: double
+		lineageTag: 4585c714-0920-458e-918c-4dd0de8206d1
+		summarizeBy: sum
+		sourceColumn: Total Value to HPE (converted)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Name of Primary Reseller
+	column 'Primary Reseller'
+		dataType: string
+		lineageTag: be12c04e-6f61-4ddd-9317-bf5cef6524f6
+		summarizeBy: none
+		sourceColumn: Primary Reseller
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// PPID for Reseller
+	column 'Primary Reseller Party: ID'
+		dataType: string
+		lineageTag: 0a959d78-1dfd-490a-8a72-8f4eb727bcb1
+		summarizeBy: none
+		sourceColumn: Primary Reseller Party: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Party ID: Source System Account ID'
+		dataType: string
+		lineageTag: 3b7f67ee-3766-4e11-93c8-52f6226e4661
+		summarizeBy: none
+		sourceColumn: Party ID: Source System Account ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// PPID for partner
+	column 'Party ID: Business Relationship'
+		dataType: string
+		lineageTag: 54170578-ed14-479b-b904-ba0b3ca12eaf
+		summarizeBy: none
+		sourceColumn: Party ID: Business Relationship
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner's sub-Region 
+	column 'Partner: SubRegion1'
+		dataType: string
+		lineageTag: 7570b484-d0a6-46e1-ab0c-12bca5b3423f
+		summarizeBy: none
+		sourceColumn: Partner: SubRegion1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner classified into SI/ISV
+	column SI/ISV
+		dataType: string
+		lineageTag: ae713768-893c-445b-a6c6-dd3d37e895c3
+		summarizeBy: none
+		sourceColumn: SI/ISV
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner classified into SP
+	column SP
+		dataType: string
+		lineageTag: 415bfc82-5a2e-46e7-8bfd-219096e2c5dd
+		summarizeBy: none
+		sourceColumn: SP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner classified into reseller
+	column Reseller
+		dataType: string
+		lineageTag: b5e33057-4f3b-4e35-93ea-afd7d3f2bcb7
+		summarizeBy: none
+		sourceColumn: Reseller
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Tier 1 of SP Partner
+	column 'SP Tier 1'
+		dataType: string
+		lineageTag: cbd4234b-0ae2-4fac-b6e2-d3dd8b4225ba
+		summarizeBy: none
+		sourceColumn: SP Tier 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// SP sub tier classfication
+	column 'SP Sub-Tier'
+		dataType: string
+		lineageTag: ed08f1de-4202-4a21-9fac-5b0414f76624
+		summarizeBy: none
+		sourceColumn: SP Sub-Tier
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column 'Account Name'
+		dataType: string
+		lineageTag: 8addfe46-18ee-49ea-877d-7a95c80da185
+		summarizeBy: none
+		sourceColumn: Account Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner associated with individual partner type
+	/// 
+	column Partner
+		dataType: string
+		lineageTag: 846cb205-b7ab-4603-87e6-8a773049002a
+		summarizeBy: none
+		sourceColumn: Partner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Classification of each partner into sub levels as Tier1, Tier2 etc..,
+	/// 
+	column 'Partner Sub-Type'
+		dataType: string
+		lineageTag: aae93317-80b0-447c-9530-37ce5ac7144a
+		summarizeBy: none
+		sourceColumn: Partner Sub-Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Main classification of partner as SI,ISV,SP, Reseller,CoLo,Hyperscale
+	/// 
+	column PartnerType
+		dataType: string
+		lineageTag: 42dde676-2d26-4888-8983-576df9c3cef6
+		summarizeBy: none
+		sourceColumn: PartnerType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity ID'
+		dataType: string
+		lineageTag: 3b20c720-727e-402c-a42d-43d48296bd4a
+		summarizeBy: none
+		sourceColumn: Opportunity ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact GL Partner Consolidated Data-2a1cf46d-b657-4a59-95f7-ea1d33085d8d' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [Query="select * from [GL_Partner_Consolidated]", CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Opportunity Name", "Account Name: Account Name", "Total Opportunity Value (converted)", "Total Value to HPE (converted)", "Primary Reseller", "Primary Reseller Party: ID", "Party ID: Source System Account ID", "Party ID: Business Relationship", "Partner: SubRegion1", "SI/ISV", "SP", "Reseller", "SP Tier 1", "SP Sub-Tier", "Account Name", "Partner", "Partner Sub-Type", "PartnerType", "Opportunity ID"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

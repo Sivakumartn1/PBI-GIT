@@ -1,0 +1,118 @@
+table 'Fact New Logo Target Pipeline'
+	lineageTag: cf5809ea-f96d-4d78-8546-998574c7a1d7
+
+	/// For development team use only.
+	column Geo
+		dataType: string
+		lineageTag: e820d29c-fa04-4055-a60d-fe58c6e49372
+		summarizeBy: none
+		sourceColumn: Geo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer segments names
+	column 'Customer Segment'
+		dataType: string
+		isHidden
+		lineageTag: 497d6ef2-1090-4481-8450-b0186b09a55f
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies forecast category like enterprise, Rising Stars, etc
+	column ForecastCategory
+		dataType: string
+		lineageTag: 3a24909a-1ad7-4501-b383-f67505ade037
+		summarizeBy: none
+		sourceColumn: ForecastCategory
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only.
+	column Value
+		dataType: double
+		lineageTag: 2d6575c9-51ed-4146-835e-41753836480b
+		summarizeBy: sum
+		sourceColumn: Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// New Logo Pipeline ST ID
+	column Count_ST_Ids
+		dataType: int64
+		formatString: 0
+		lineageTag: 7847e9b7-8e1f-485e-b301-8a2175341ad6
+		summarizeBy: sum
+		sourceColumn: Count_ST_Ids
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Close date
+	column 'Financial Close Calendar Date'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 644d41f0-e356-49cf-aafd-7e043b62371c
+		summarizeBy: none
+		sourceColumn: Financial Close Calendar Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Count_Top_ST_Ids
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a6a034f-8884-464b-9940-9943cc01b340
+		summarizeBy: sum
+		sourceColumn: Count_Top_ST_Ids
+
+		annotation SummarizationSetBy = Automatic
+
+	column Business_Unit
+		dataType: string
+		lineageTag: 2435b899-019b-46b8-94e0-0a61a0e17b98
+		summarizeBy: none
+		sourceColumn: Business_Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity Id'
+		dataType: string
+		lineageTag: b954303b-0692-430b-b01c-2c4608493863
+		summarizeBy: none
+		sourceColumn: Opportunity Id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact New Logo Target Pipeline-651ab1d7-3564-4e73-a1ce-00e1c7e72fc5' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_REP_New_Logo_Target_Pipeline_Final = Source{[Schema="dbo",Item="REP_New_Logo_Target_Pipeline_Final"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_REP_New_Logo_Target_Pipeline_Final,{"Geo", "Customer Segment", "ForecastCategory", "Value", "Count_ST_Ids", "Count_Top_ST_Ids", "Business_Unit", "Financial Close Calendar Date", "Opportunity Id"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

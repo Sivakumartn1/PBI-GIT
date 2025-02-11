@@ -1,0 +1,31 @@
+table 'Dimension Partner Types'
+	lineageTag: ac029738-a9dc-4bcb-9136-f5635247fddb
+
+	column 'Partner Types'
+		dataType: string
+		lineageTag: bda83448-daf4-47bb-9cd8-feb42d75022d
+		summarizeBy: none
+		sourceColumn: Partner Types
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner Sub Types'
+		dataType: string
+		lineageTag: e89daf34-97ae-4d87-b8e3-a2e70fa24763
+		summarizeBy: none
+		sourceColumn: Partner Sub Types
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Partner Types' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wcs5IzMtLzVHSUfKoTCrKTFGK1UEWDEotTs3JSS2CCOfn5APFwBSIH+wJ5LkDSTgnCJkTDOMEgDQBSTgHySow3xdZ0i/UxwfBQ3GAZ3AYUAhEgnhwKR0lpdhYAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Partner Types" = _t, #"Partner Sub Types" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Partner Types", type text}, {"Partner Sub Types", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

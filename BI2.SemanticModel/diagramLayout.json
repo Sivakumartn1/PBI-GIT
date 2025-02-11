@@ -1,0 +1,756 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 285.35126399566241,
+        "y": 754.63375553421906
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 7687.9515695067257,
+            "y": 0
+          },
+          "nodeIndex": "RLS Stage 5 (Final)",
+          "nodeLineageTag": "415034ff-6eb7-466c-9fe6-f47c2336d87c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 27
+        },
+        {
+          "location": {
+            "x": 1255.0502242152468,
+            "y": 371.3004484304933
+          },
+          "nodeIndex": "Dimension Date",
+          "nodeLineageTag": "8959dca0-4865-45e9-8c07-cdb44aea0c54",
+          "size": {
+            "height": 385.65022421524662,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 607.68145175814084,
+            "y": 912.780269058296
+          },
+          "nodeIndex": "Dimension Geo",
+          "nodeLineageTag": "10c4ac21-30a5-4ae3-a550-f05b972788da",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 374.85557890493442,
+            "y": 0
+          },
+          "nodeIndex": "Dimension MDM",
+          "nodeLineageTag": "efea6b68-af2c-4f32-b48a-c0fd18e99081",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 916.627159755998,
+            "y": 1742.171654617174
+          },
+          "nodeIndex": "Fact Orders",
+          "nodeLineageTag": "f8e31cf1-524b-4757-9356-00f522499f51",
+          "size": {
+            "height": 455,
+            "width": 234
+          },
+          "zIndex": 31
+        },
+        {
+          "location": {
+            "x": 285.53425446137049,
+            "y": 854.4157548075832
+          },
+          "nodeIndex": "Fact Pipeline",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 578.38719395932048,
+            "y": 1365.4299206182798
+          },
+          "nodeIndex": "Fact GL Partner Consolidated Data",
+          "nodeLineageTag": "fbc9460d-aeb2-4cb2-a411-78c25f4f4109",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 8222.9,
+            "y": 0
+          },
+          "nodeIndex": "Last Refresh",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 5755.7470852017923,
+            "y": 2086.4125560538114
+          },
+          "nodeIndex": "Fact Ecosystem Partner Target",
+          "nodeLineageTag": "2448c961-a8f6-4524-872e-dcb46c0e6d74",
+          "size": {
+            "height": 314.04399580992282,
+            "width": 234
+          },
+          "zIndex": 32
+        },
+        {
+          "location": {
+            "x": 3757.4801059570709,
+            "y": 489.21107449514727
+          },
+          "nodeIndex": "Fact New Logo Target Pipeline",
+          "nodeLineageTag": "cf5809ea-f96d-4d78-8546-998574c7a1d7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 19
+        },
+        {
+          "location": {
+            "x": 6213.2023312692691,
+            "y": 0
+          },
+          "nodeIndex": "Fact Partner Pipeline",
+          "nodeLineageTag": "adb5e388-e504-4ba3-bac0-8f1223f6fa86",
+          "size": {
+            "height": 210.98654708520189,
+            "width": 226.81020855156657
+          },
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 2052.7501895826281,
+            "y": 945.19354979218292
+          },
+          "nodeIndex": "Fact NL Target Master $",
+          "nodeLineageTag": "144d66ee-abd5-40ed-92fb-028805d254e2",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 2264.2892382233081,
+            "y": 1517.9869331257366
+          },
+          "nodeIndex": "Fact NL Target Count",
+          "nodeLineageTag": "3e866719-ab6c-4888-ab16-85b8c1a86a23",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 8132.418385650225,
+            "y": 436.6636771300449
+          },
+          "nodeIndex": "Fact Targets by Customer segment $",
+          "nodeLineageTag": "aeae4a42-c52f-40ab-87d1-7e7681b9bfe3",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 9687.281165919283,
+            "y": 755.493273542601
+          },
+          "nodeIndex": "Fact PipelineTracker History",
+          "nodeLineageTag": "f2bf329b-1bf7-4489-9317-445d283b4139",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 25
+        },
+        {
+          "location": {
+            "x": 10326.494170403585,
+            "y": 631.72645739910308
+          },
+          "nodeIndex": "Fact NL Actual Count Drill through",
+          "nodeLineageTag": "5b534671-7030-4ce3-beff-342f983cfa2a",
+          "size": {
+            "height": 300,
+            "width": 282.99103139013459
+          },
+          "zIndex": 26
+        },
+        {
+          "location": {
+            "x": 12083.880269058298,
+            "y": 925.67264573991019
+          },
+          "nodeIndex": "Fact TBL PenRate Cumulative",
+          "nodeLineageTag": "fba1a795-4078-4891-b676-9819fb180e13",
+          "size": {
+            "height": 209.75336322869953,
+            "width": 234
+          },
+          "zIndex": 33
+        },
+        {
+          "location": {
+            "x": 11664.939013452915,
+            "y": 964.36771300448424
+          },
+          "nodeIndex": "Dimension RTM",
+          "nodeLineageTag": "ffd98df2-c313-496f-8029-0d748b205338",
+          "size": {
+            "height": 230.34529147982067,
+            "width": 234
+          },
+          "zIndex": 28
+        },
+        {
+          "location": {
+            "x": 13081.972197309417,
+            "y": 0
+          },
+          "nodeIndex": "Fact ISV Non HPE",
+          "nodeLineageTag": "12b023e1-d386-4911-9cfe-1f86b51fc187",
+          "size": {
+            "height": 140.13452914798208,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 12706.865022421523,
+            "y": 0
+          },
+          "nodeIndex": "Fact ISV HPE SKUs",
+          "nodeLineageTag": "bd8eb748-8e8d-46ab-9850-c0ee22cce975",
+          "size": {
+            "height": 387.66816143497761,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 13858.21524663677,
+            "y": 603.38116591928247
+          },
+          "nodeIndex": "Dimension Opportunities",
+          "nodeLineageTag": "9e35d3ad-5a1f-4af3-9212-2ad8b2c40bc2",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 14220.552017937222,
+            "y": 317.2690582959641
+          },
+          "nodeIndex": "Dimension Workloads",
+          "nodeLineageTag": "caa2847d-0e91-4d49-9abb-c7b9800fb27d",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 14033.367539260604,
+            "y": 827.69058295964123
+          },
+          "nodeIndex": "Fact Budget & Flash",
+          "nodeLineageTag": "150c04af-47ac-45c5-8c1e-715ce5d745ec",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 34
+        },
+        {
+          "location": {
+            "x": 14190.6545347763,
+            "y": 1687.9217176839445
+          },
+          "nodeIndex": "Fact E2E load",
+          "nodeLineageTag": "01e80fb5-9546-4cb5-962f-7ae27cfeda26",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 14351.564226503269,
+            "y": 770.99346656286832
+          },
+          "nodeIndex": "P*Q L2 New Logos",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 14351.564226503269,
+            "y": 770.99346656286832
+          },
+          "nodeIndex": "P*Q Median",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 13356.27274668264,
+            "y": 1546.1055741861865
+          },
+          "nodeIndex": "Fact Ecosystem GL-30",
+          "nodeLineageTag": "bab31488-b19c-4e75-995d-f5851e792632",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 13161.352841997057,
+            "y": 2277.6110830572188
+          },
+          "nodeIndex": "Dimension Partner Types",
+          "nodeLineageTag": "ac029738-a9dc-4bcb-9136-f5635247fddb",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 13759.559120023963,
+            "y": 1449.8919530619119
+          },
+          "nodeIndex": "Dimension BA View",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 13809.040185000513,
+            "y": 144.39461883408072
+          },
+          "nodeIndex": "Dimension Forecast Category",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10713.74932735426,
+            "y": 505.38116591928241
+          },
+          "nodeIndex": "Dimension New Logos",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 38.782608695652179,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 770.04176646925862,
+        "y": 1596.6667175292969
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 948.07017078118679,
+            "y": 1849.1425508436739
+          },
+          "nodeIndex": "Dimension Date",
+          "nodeLineageTag": "8959dca0-4865-45e9-8c07-cdb44aea0c54",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1350.6952294035045,
+            "y": 2081.3118185837266
+          },
+          "nodeIndex": "Dimension Geo",
+          "nodeLineageTag": "10c4ac21-30a5-4ae3-a550-f05b972788da",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1300.6740932534681,
+            "y": 1361.4563588395881
+          },
+          "nodeIndex": "Dimension MDM",
+          "nodeLineageTag": "efea6b68-af2c-4f32-b48a-c0fd18e99081",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 2198.5417664692586,
+            "y": 1596.7047391818173
+          },
+          "nodeIndex": "Dimension Opportunities",
+          "nodeLineageTag": "9e35d3ad-5a1f-4af3-9212-2ad8b2c40bc2",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 2222.3144870925971,
+            "y": 1982.5380846509668
+          },
+          "nodeIndex": "Dimension RTM",
+          "nodeLineageTag": "ffd98df2-c313-496f-8029-0d748b205338",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 2491.3022287002223,
+            "y": 1304.2669791950689
+          },
+          "nodeIndex": "Dimension Workloads",
+          "nodeLineageTag": "caa2847d-0e91-4d49-9abb-c7b9800fb27d",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1972.2800189347358,
+            "y": 1658.6819609347576
+          },
+          "nodeIndex": "Fact Budget & Flash",
+          "nodeLineageTag": "150c04af-47ac-45c5-8c1e-715ce5d745ec",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 29
+        },
+        {
+          "location": {
+            "x": 1275.9245503783977,
+            "y": 2654.1834846696
+          },
+          "nodeIndex": "Fact Ecosystem Partner Target",
+          "nodeLineageTag": "2448c961-a8f6-4524-872e-dcb46c0e6d74",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 2765.3022287002223,
+            "y": 1490.1367547730483
+          },
+          "nodeIndex": "Fact GL Partner Consolidated Data",
+          "nodeLineageTag": "fbc9460d-aeb2-4cb2-a411-78c25f4f4109",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 1762.1909884115021,
+            "y": 2760.101173193143
+          },
+          "nodeIndex": "Fact ISV HPE SKUs",
+          "nodeLineageTag": "bd8eb748-8e8d-46ab-9850-c0ee22cce975",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 159.60039469984258,
+            "y": 748.18481817745351
+          },
+          "nodeIndex": "Fact ISV Non HPE",
+          "nodeLineageTag": "12b023e1-d386-4911-9cfe-1f86b51fc187",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 1025.7414942844559,
+            "y": 647.87466598083893
+          },
+          "nodeIndex": "Fact New Logo Target Pipeline",
+          "nodeLineageTag": "cf5809ea-f96d-4d78-8546-998574c7a1d7",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 387.15015069236688
+          },
+          "nodeIndex": "Fact NL Actual Count Drill through",
+          "nodeLineageTag": "5b534671-7030-4ce3-beff-342f983cfa2a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 450.89967331122125,
+            "y": 387.34656196500282
+          },
+          "nodeIndex": "Fact NL Target Count",
+          "nodeLineageTag": "3e866719-ab6c-4888-ab16-85b8c1a86a23",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 19
+        },
+        {
+          "location": {
+            "x": 607.21368121488513,
+            "y": 1408.6600711522867
+          },
+          "nodeIndex": "Fact NL Target Master $",
+          "nodeLineageTag": "144d66ee-abd5-40ed-92fb-028805d254e2",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 27
+        },
+        {
+          "location": {
+            "x": 1929.518970355522,
+            "y": 2045.9581192023777
+          },
+          "nodeIndex": "Fact Orders",
+          "nodeLineageTag": "f8e31cf1-524b-4757-9356-00f522499f51",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 20
+        },
+        {
+          "location": {
+            "x": 494.54371041627542,
+            "y": 2181.0653638301142
+          },
+          "nodeIndex": "Fact Partner Pipeline",
+          "nodeLineageTag": "adb5e388-e504-4ba3-bac0-8f1223f6fa86",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 21
+        },
+        {
+          "location": {
+            "x": 1574.7351155125148,
+            "y": 733.37549884263535
+          },
+          "nodeIndex": "Fact Pipeline",
+          "nodeLineageTag": "f8e5c1b0-1e1e-4986-b4fa-2b8269344aec",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 22
+        },
+        {
+          "location": {
+            "x": 693.17903513324791,
+            "y": 270.00395646318748
+          },
+          "nodeIndex": "Fact PipelineTracker History",
+          "nodeLineageTag": "f2bf329b-1bf7-4489-9317-445d283b4139",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 26
+        },
+        {
+          "location": {
+            "x": 1061.7154183131133,
+            "y": 2349.4304765815659
+          },
+          "nodeIndex": "Fact Targets by Customer segment $",
+          "nodeLineageTag": "aeae4a42-c52f-40ab-87d1-7e7681b9bfe3",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 23
+        },
+        {
+          "location": {
+            "x": 2720.9758935561217,
+            "y": 903.09284306654035
+          },
+          "nodeIndex": "Fact TBL PenRate Cumulative",
+          "nodeLineageTag": "fba1a795-4078-4891-b676-9819fb180e13",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 28
+        },
+        {
+          "location": {
+            "x": 3049.3022287002223,
+            "y": 1576.1367547730483
+          },
+          "nodeIndex": "Last Refresh",
+          "nodeLineageTag": "5b1a088d-b3e3-4a6a-874b-52401495c56c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 24
+        },
+        {
+          "location": {
+            "x": 1666.3505050934214,
+            "y": 3118.2735095460966
+          },
+          "nodeIndex": "RLS Stage 5 (Final)",
+          "nodeLineageTag": "415034ff-6eb7-466c-9fe6-f47c2336d87c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 25
+        },
+        {
+          "location": {
+            "x": 1035.7659477684474,
+            "y": 119.84638053343224
+          },
+          "nodeIndex": "Dimension Forecast Category",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2053.9142555273411,
+            "y": 3022.6579677896902
+          },
+          "nodeIndex": "Dimension New Logos",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Layout 1",
+      "zoomValue": 40,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

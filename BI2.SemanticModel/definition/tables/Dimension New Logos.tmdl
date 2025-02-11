@@ -1,0 +1,39 @@
+/// To Join Customer segments targets table and Orders.
+table 'Dimension New Logos'
+	excludeFromModelRefresh
+	lineageTag: e39d0b34-8022-4ef2-9b03-49f528538e31
+
+	column 'New Logo'
+		dataType: string
+		lineageTag: 3fb82837-9471-446e-a8c6-857dffb54e03
+		summarizeBy: none
+		sourceColumn: New Logo
+		sortByColumn: Sorting
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sorting
+		dataType: int64
+		formatString: 0
+		lineageTag: 3dffe42e-a504-4926-96c4-6ce04e37695f
+		summarizeBy: sum
+		sourceColumn: Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension New Logos-c604b2ed-9756-4636-80db-cd640debce12' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WikwtVtJRMlSK1YlW8ssHMo2UYmMB", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"New Logo" = _t, Sorting = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"New Logo", type text}, {"Sorting", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

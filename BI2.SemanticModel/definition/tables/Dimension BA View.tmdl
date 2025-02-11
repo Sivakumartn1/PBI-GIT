@@ -1,0 +1,281 @@
+table 'Dimension BA View'
+	lineageTag: 3630f60e-4e30-4aad-9891-791f5b4814c0
+
+	column 'S4 Profit Center'
+		dataType: string
+		lineageTag: 6ee4144f-ef3d-4104-9783-69ec056b989e
+		summarizeBy: none
+		sourceColumn: S4 Profit Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L01 BA Name'
+		dataType: string
+		lineageTag: 4e433fe9-2868-47f5-b8e9-4dfff3dcadd1
+		summarizeBy: none
+		sourceColumn: L01 BA Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L02 BA Name'
+		dataType: string
+		lineageTag: 7b85253e-4709-4263-8d31-dcfc182cf31b
+		summarizeBy: none
+		sourceColumn: L02 BA Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L02.0 BA Name'
+		dataType: string
+		lineageTag: 65c0083b-0abd-432b-9e53-79cf7e1673cd
+		summarizeBy: none
+		sourceColumn: L02.0 BA Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L03 BA Name'
+		dataType: string
+		lineageTag: 1d4da0f4-1513-4f55-b446-6421765bd15f
+		summarizeBy: none
+		sourceColumn: L03 BA Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L04 BA Name'
+		dataType: string
+		lineageTag: b3175d8e-bc1a-4972-8939-204d5321e396
+		summarizeBy: none
+		sourceColumn: L04 BA Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L05 BA Name'
+		dataType: string
+		lineageTag: 354a67bc-836c-46ae-8edc-6056e80d7000
+		summarizeBy: none
+		sourceColumn: L05 BA Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L06 BA Name'
+		dataType: string
+		lineageTag: f25dc6ef-6a9b-4d46-8a82-8da39ed67f24
+		summarizeBy: none
+		sourceColumn: L06 BA Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column BA_KY
+		dataType: string
+		lineageTag: ffd05822-9d55-483b-8459-e9d5ed51721a
+		summarizeBy: none
+		sourceColumn: BA_KY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Line_BIADS'
+		dataType: string
+		lineageTag: 316785ec-60ef-4073-815c-a823593f520c
+		summarizeBy: none
+		sourceColumn: Product Line_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipeline (Ralph)'
+		dataType: string
+		lineageTag: 2a16b161-25e8-4f12-94d9-316a9babea42
+		summarizeBy: none
+		sourceColumn: Pipeline (Ralph)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Keep for reporting'
+		dataType: string
+		lineageTag: 802c5c16-df05-4c2c-96b2-17de06053ef4
+		summarizeBy: none
+		sourceColumn: Keep for reporting
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alexia (GTM view)'
+		dataType: string
+		lineageTag: 02bc458e-4e17-41fe-a876-983a1664c966
+		summarizeBy: none
+		sourceColumn: Alexia (GTM view)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hybrid Cloud'
+		dataType: string
+		lineageTag: c5a7ec40-06ef-43ce-9624-013b26f78d5d
+		summarizeBy: none
+		sourceColumn: Hybrid Cloud
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cloud Services'
+		dataType: string
+		lineageTag: b305052c-4512-4625-bc88-614bfd5cc3a9
+		summarizeBy: none
+		sourceColumn: Cloud Services
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Unit'
+		dataType: string
+		lineageTag: e983a86a-8cd8-48ec-9923-91e4bab2ad16
+		summarizeBy: none
+		sourceColumn: Business Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 1 Mgr'
+		dataType: string
+		lineageTag: c01df034-89cf-49bd-b4d4-bbc06ba20bae
+		summarizeBy: none
+		sourceColumn: Level 1 Mgr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BIADS Business Segments L1'
+		dataType: string
+		lineageTag: 06e8bb57-d46c-417f-b42b-7b653710bf9b
+		summarizeBy: none
+		sourceColumn: BIADS Business Segments L1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BIADS Business Segments L2'
+		dataType: string
+		lineageTag: f6cb2a32-f04e-43fe-9822-3ab07234ee2c
+		summarizeBy: none
+		sourceColumn: BIADS Business Segments L2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BIADS Business Segments L3'
+		dataType: string
+		lineageTag: 98c2828f-77e0-4670-812a-56229e6cee88
+		summarizeBy: none
+		sourceColumn: BIADS Business Segments L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BIADS Business Segments L4'
+		dataType: string
+		lineageTag: d44a76c1-9044-492b-b846-8d7b06d07f54
+		summarizeBy: none
+		sourceColumn: BIADS Business Segments L4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BIADS Business Segments L5'
+		dataType: string
+		lineageTag: df4ce5f7-1ea1-4da6-816c-e4a5c9158a2b
+		summarizeBy: none
+		sourceColumn: BIADS Business Segments L5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BIADS Business Segments L6'
+		dataType: string
+		lineageTag: ccd7daf0-b744-4424-af3e-766440bef734
+		summarizeBy: none
+		sourceColumn: BIADS Business Segments L6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BIADS Business Segments L7'
+		dataType: string
+		lineageTag: f841c06c-b2fe-4d89-be8a-db230310dace
+		summarizeBy: none
+		sourceColumn: BIADS Business Segments L7
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GL Flag'
+		dataType: string
+		lineageTag: 5961126a-b15d-411c-9b45-7b23015c0e27
+		summarizeBy: none
+		sourceColumn: GL Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL/Core
+		dataType: string
+		lineageTag: 2dc2d1d0-6ab4-43b6-9c99-387a43e7e4ed
+		summarizeBy: none
+		sourceColumn: GL/Core
+
+		annotation SummarizationSetBy = Automatic
+
+	column obsolete
+		dataType: string
+		lineageTag: 8d6284ed-6e3f-47f3-b452-cc73045a31c8
+		summarizeBy: none
+		sourceColumn: obsolete
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY25 Cat 1'
+		dataType: string
+		lineageTag: 64c80ac3-737f-4031-b4c9-5fe26251d8d4
+		summarizeBy: none
+		sourceColumn: FY25 Cat 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY25 Cat 2'
+		dataType: string
+		lineageTag: ff727f65-228b-448c-b1ec-0be2a78c105b
+		summarizeBy: none
+		sourceColumn: FY25 Cat 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY25 Cat 3'
+		dataType: string
+		lineageTag: 06680138-7320-4213-b934-3c0d8f94a3f8
+		summarizeBy: none
+		sourceColumn: FY25 Cat 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY25 Cat 4'
+		dataType: string
+		lineageTag: 3bee7ef8-467b-48ed-877c-35dc6056ff16
+		summarizeBy: none
+		sourceColumn: FY25 Cat 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY25 Cat 5'
+		dataType: string
+		lineageTag: e3548cec-127b-4c3a-bab4-aa4f6f4884e1
+		summarizeBy: none
+		sourceColumn: FY25 Cat 5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY25 Cat 7'
+		dataType: string
+		lineageTag: 2a5b011f-1e6b-4f1e-a50c-a809f7b42e13
+		summarizeBy: none
+		sourceColumn: FY25 Cat 7
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension BA View' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_BA_VIEW = Source{[Schema="dbo",Item="BA_VIEW_FY25"]}[Data]
+				in
+				    dbo_BA_VIEW
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

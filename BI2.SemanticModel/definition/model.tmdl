@@ -1,0 +1,70 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup RLS
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'DIM Tables'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Fact Tables'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Inputs - Data Source and DB'
+
+	annotation PBI_QueryGroupOrder = 3
+
+annotation PBIDesktopVersion = 2.139.2054.0 (24.12)+334ca1c95b576cc53924655643b0d36f21caac55
+
+annotation PBI_QueryOrder = ["Dimension Date","Dimension Geo","Dimension MDM","Dimension New Logos","Dimension Workloads","Dimension Opportunities","Fact Budget & Flash","Fact Orders","Fact Pipeline","Fact NL Target Master $","Fact NL Target Count","Fact GL Partner Consolidated Data","Fact New Logo Target Pipeline","DataSourceParam","DBName","Timeout","Fact Partner Pipeline","Fact Ecosystem Partner Target","RLS Stage 5 (Final)","Fact Targets by Customer segment $","Fact NL Actual Count Drill through","Fact TBL PenRate Cumulative","Fact ISV Non HPE","Fact ISV HPE SKUs","Fact PipelineTracker History","Fact E2E load","Dimension RTM","Last Refresh","Dimension Forecast Category","Fact Ecosystem GL-30","Dimension Partner Types","DIM BAT Opps","Dimension BA View"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Dimension Date'
+ref table 'Dimension Geo'
+ref table 'Dimension MDM'
+ref table 'Fact Orders'
+ref table 'Fact Pipeline'
+ref table 'Fact NL Target Master $'
+ref table 'Fact NL Target Count'
+ref table 'Fact GL Partner Consolidated Data'
+ref table 'Fact New Logo Target Pipeline'
+ref table 'Fact Partner Pipeline'
+ref table 'Fact Ecosystem Partner Target'
+ref table 'RLS Stage 5 (Final)'
+ref table 'Fact Targets by Customer segment $'
+ref table 'Last Refresh'
+ref table 'Fact PipelineTracker History'
+ref table 'Dimension New Logos'
+ref table 'Fact NL Actual Count Drill through'
+ref table 'Fact TBL PenRate Cumulative'
+ref table 'Dimension RTM'
+ref table 'Fact ISV Non HPE'
+ref table 'Fact ISV HPE SKUs'
+ref table 'Dimension Workloads'
+ref table 'Dimension Opportunities'
+ref table 'Dimension Forecast Category'
+ref table 'Fact Budget & Flash'
+ref table 'Fact E2E load'
+ref table 'P*Q L2 New Logos'
+ref table 'P*Q Median'
+ref table 'Fact Ecosystem GL-30'
+ref table 'Dimension Partner Types'
+ref table 'Dimension BA View'
+
+ref role RLS
+
+ref cultureInfo en-US
+

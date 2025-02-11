@@ -1,0 +1,44 @@
+/// For development team use only.
+table 'Last Refresh'
+	lineageTag: 5b1a088d-b3e3-4a6a-874b-52401495c56c
+
+	column Name
+		dataType: string
+		lineageTag: 20629ebf-1954-4e74-98f0-e66b1ccff1d7
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastTime
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 7f166f89-a6fd-4b07-925d-061798ec0abc
+		summarizeBy: none
+		sourceColumn: LastTime
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition 'Last Refresh-0cfef240-39ba-458d-b56d-9c0b51b65bc1' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_Last_Refresh = Source{[Schema="dbo",Item="Last_Refresh"]}[Data]
+				in
+				    dbo_Last_Refresh
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

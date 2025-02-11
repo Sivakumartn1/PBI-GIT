@@ -1,0 +1,374 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "eb2b59acf4c42d32f801",
+  "position": {
+    "x": 9.5364238410596034,
+    "y": 319.4701986754967,
+    "z": 2000,
+    "height": 400.5298013245033,
+    "width": 619.86754966887418
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact NL Target Count"
+                    }
+                  },
+                  "Property": "NL Customer Segment_BIADS"
+                }
+              },
+              "queryRef": "REP_TARGET_MASTER_COUNT_VW.NL Customer Segment_BIADS"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dimension MDM"
+                    }
+                  },
+                  "Property": "NL Customer Segment_BIADS"
+                }
+              },
+              "queryRef": "MDM_VIEW.NL Customer Segment_BIADS"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact NL Target Count"
+                        }
+                      },
+                      "Property": "Target_Count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(REP_TARGET_MASTER_COUNT_VW.Target_Count)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact NL Target Count"
+                        }
+                      },
+                      "Property": "Derived Final Customer ID Count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(REP_TARGET_MASTER_COUNT_VW.Derived Final Customer ID Count)",
+              "displayName": "ST Count"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact NL Target Count"
+                        }
+                      },
+                      "Property": "Derived Final Customer ID Top Parent Count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(REP_TARGET_MASTER_COUNT_VW.Derived Final Customer ID Top Parent Count)",
+              "displayName": "Parent Count"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact NL Target Count"
+                        }
+                      },
+                      "Property": "Existing GL Accounts"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(REP_TARGET_MASTER_COUNT_VW.Existing GL Accounts)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact NL Target Count"
+                        }
+                      },
+                      "Property": "MDM_HPE_Accounts"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(REP_TARGET_MASTER_COUNT_VW.MDM_HPE_Accounts)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dimension MDM"
+                    }
+                  },
+                  "Property": "Customer Segment_BIADS"
+                }
+              },
+              "queryRef": "MDM_VIEW.Customer Segment_BIADS"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fact NL Target Count"
+                      }
+                    },
+                    "Property": "Existing GL Accounts"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter08a7725df0cea455bad2",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension MDM"
+              }
+            },
+            "Property": "Customer Segment_BIADS"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "Filterdc1cdeb59b47435f6245",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact NL Target Count"
+              }
+            },
+            "Property": "NL Customer Segment_BIADS"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "Filter28e3fd6fa31384392536",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimension MDM"
+              }
+            },
+            "Property": "NL Customer Segment_BIADS"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "Filter31b1004fccdab08590f2",
+        "ordinal": 3,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact NL Target Count"
+                  }
+                },
+                "Property": "Derived Final Customer ID Top Parent Count"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter8e35392d718c0b8f9996",
+        "ordinal": 4,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact NL Target Count"
+                  }
+                },
+                "Property": "Derived Final Customer ID Count"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter21d1ff5ead9ea5c49491",
+        "ordinal": 5,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact NL Target Count"
+                  }
+                },
+                "Property": "Existing GL Accounts"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter4acdab09e2651392e975",
+        "ordinal": 6,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact NL Target Count"
+                  }
+                },
+                "Property": "MDM_HPE_Accounts"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter56e783bfe92009720006",
+        "ordinal": 7,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact NL Target Count"
+                  }
+                },
+                "Property": "Target_Count"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

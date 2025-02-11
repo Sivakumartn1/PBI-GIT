@@ -1,0 +1,106 @@
+table 'Fact NL Target Master $'
+	lineageTag: 144d66ee-abd5-40ed-92fb-028805d254e2
+
+	/// Hardware or Services
+	column Business_Unit
+		dataType: string
+		lineageTag: 5012cecc-21cf-4d23-9cf2-142d280998fd
+		summarizeBy: none
+		sourceColumn: Business_Unit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Actuals $ for New Logos
+	column 'Net Sales US Dollar Amount'
+		dataType: double
+		lineageTag: 3b1b0453-5f42-4b86-b2f1-100861042834
+		summarizeBy: none
+		sourceColumn: Net Sales US Dollar Amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Target for New Logo $
+	column Target
+		dataType: double
+		lineageTag: 1e491431-cd95-4c82-b030-a5381144efde
+		summarizeBy: none
+		sourceColumn: Target
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Segment split
+	column 'Customer Segment'
+		dataType: string
+		isHidden
+		lineageTag: e232980d-8ff3-4d2d-80d5-fc0a74afe291
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only
+	column DATE_KY
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 6c714c96-4892-48f7-ab2d-ee1ab30cc00c
+		summarizeBy: none
+		sourceColumn: DATE_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// For development team use only
+	column GEO_KY
+		dataType: string
+		lineageTag: 5b272405-bc7b-4641-bd9c-7d2fd2b34c1c
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geo
+		dataType: string
+		lineageTag: c8635f47-95a7-447a-ab34-c5d3b472efed
+		summarizeBy: none
+		sourceColumn: Geo
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTR_Adjusted
+		dataType: string
+		lineageTag: 0b479a84-45ee-4af8-b62c-ab50ec3e5a47
+		summarizeBy: none
+		sourceColumn: QTR_Adjusted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact NL Target Master $-56bf5591-dea3-4615-8d31-df1d7631094b' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    #"dbo_REP_TARGET_MASTER_$$_VW" = Source{[Schema="dbo",Item="REP_TARGET_MASTER_$$_VW"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(#"dbo_REP_TARGET_MASTER_$$_VW",{"Business_Unit", "Net Sales US Dollar Amount", "Target", "Customer Segment", "Geo", "GEO_KY", "QTR_Adjusted", "DATE_KY"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

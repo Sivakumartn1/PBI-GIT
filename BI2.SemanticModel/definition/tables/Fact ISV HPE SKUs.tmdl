@@ -1,0 +1,503 @@
+table 'Fact ISV HPE SKUs'
+	lineageTag: bd8eb748-8e8d-46ab-9850-c0ee22cce975
+
+	column DATE_KY
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 48435281-317b-4447-8fcb-4b7578317b45
+		summarizeBy: none
+		sourceColumn: DATE_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column BA_KY
+		dataType: string
+		isHidden
+		lineageTag: 3f1062fe-78d2-4ced-99d6-b3c6c95dc425
+		summarizeBy: none
+		sourceColumn: BA_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEO_KY
+		dataType: string
+		isHidden
+		lineageTag: fc735a61-b28d-4c6f-bdd0-b4fe5e7e613d
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract ID_BIADS'
+		dataType: string
+		lineageTag: 79e1d176-32de-4303-8718-8cf7cd37a5b5
+		summarizeBy: none
+		sourceColumn: Contract ID_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Booking Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9d8b6e1b-cadd-4152-8924-4bb395b2b70b
+		summarizeBy: none
+		sourceColumn: Order Booking Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Final Customer ID'
+		dataType: string
+		lineageTag: d492f3bf-ff53-470a-8bad-ad8b98a1e8b7
+		summarizeBy: none
+		sourceColumn: Final Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final Customer Desc'
+		dataType: string
+		lineageTag: 1a128dd7-27eb-45a0-947d-247d144b88ea
+		summarizeBy: none
+		sourceColumn: Final Customer Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Order ID'
+		dataType: string
+		lineageTag: 03aeb04f-fd2f-4745-88c7-8efdea2f980b
+		summarizeBy: none
+		sourceColumn: Sales Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Legacy Sales Order ID'
+		dataType: string
+		lineageTag: 606d5db1-3c63-44f7-baca-e68390e84fd2
+		summarizeBy: none
+		sourceColumn: Legacy Sales Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Purchase Order ID'
+		dataType: string
+		lineageTag: 3364821a-38a9-4e4c-981e-3fb92de235a8
+		summarizeBy: none
+		sourceColumn: Customer Purchase Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity ID_BIADS'
+		dataType: string
+		lineageTag: f57ac55a-80b2-4542-a1b0-c1340ad3a443
+		summarizeBy: none
+		sourceColumn: Opportunity ID_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Booking OPE ID'
+		dataType: string
+		lineageTag: 61069e70-396d-4ac6-ac79-779bc86c4add
+		summarizeBy: none
+		sourceColumn: First Booking OPE ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Area Code'
+		dataType: string
+		lineageTag: c42f954e-6a20-4578-bfd8-055885030ed1
+		summarizeBy: none
+		sourceColumn: Business Area Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L06 BA Code'
+		dataType: string
+		lineageTag: 122b4c56-7001-470f-a8b6-925a433b44c6
+		summarizeBy: none
+		sourceColumn: L06 BA Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Sales US Dollar Amount'
+		dataType: double
+		lineageTag: 36ca6bb8-3600-4590-a343-0cd81ca93308
+		summarizeBy: sum
+		sourceColumn: Net Sales US Dollar Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Actual Source System'
+		dataType: string
+		lineageTag: aa48f7e7-36b2-47e5-a7ff-1286281b873c
+		summarizeBy: none
+		sourceColumn: Actual Source System
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Derived Source System'
+		dataType: string
+		lineageTag: 55ee2ba7-2d32-4417-a1fe-47ffe0acdda7
+		summarizeBy: none
+		sourceColumn: Derived Source System
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISA_FLAG
+		dataType: string
+		lineageTag: 49929b29-057e-441d-a8df-98ef424c40a1
+		summarizeBy: none
+		sourceColumn: DISA_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DISA Flag_BIADS'
+		dataType: string
+		lineageTag: 59b87eb2-18e6-4996-b0e1-a35439c07bca
+		summarizeBy: none
+		sourceColumn: DISA Flag_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'customer Exclusion_BIADS'
+		dataType: string
+		lineageTag: d9f6ed5d-6224-41ab-a3d4-948654e8b854
+		summarizeBy: none
+		sourceColumn: customer Exclusion_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column RTM
+		dataType: string
+		lineageTag: 4aa3ae1a-c550-441a-b8a4-9b95d40772d0
+		summarizeBy: none
+		sourceColumn: RTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer ST ID_BIADS'
+		dataType: string
+		isHidden
+		lineageTag: f27d63e3-d212-4f9a-9b2d-b4fbcc687372
+		summarizeBy: none
+		sourceColumn: Customer ST ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name_BIADS'
+		dataType: string
+		lineageTag: 5c4ecfb7-7c49-466e-9ed5-865221c83773
+		summarizeBy: none
+		sourceColumn: Customer Name_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logos Flag_BIADS'
+		dataType: string
+		lineageTag: 72baebc9-c854-4a17-b41d-cff740d36736
+		summarizeBy: none
+		sourceColumn: New Logos Flag_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NL Customer ST ID_BIADS'
+		dataType: string
+		isHidden
+		lineageTag: 50fe7e1f-56f2-46bc-ab04-ea6fef2808b7
+		summarizeBy: none
+		sourceColumn: NL Customer ST ID_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NL Customer Name_BIADS'
+		dataType: string
+		lineageTag: eaa0b99a-2546-446f-b6f8-4cd035f2c74d
+		summarizeBy: none
+		sourceColumn: NL Customer Name_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NL Customer Segment_BIADS'
+		dataType: string
+		isHidden
+		lineageTag: bfeb1acd-ad22-444d-8cbf-14d481905ab3
+		summarizeBy: none
+		sourceColumn: NL Customer Segment_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Segment'
+		dataType: string
+		isHidden
+		lineageTag: b8a83b88-112d-42cd-a0d5-43c122cec480
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Logos Parent Flag_BIADS'
+		dataType: string
+		lineageTag: e37381cf-8397-4319-936b-55c0e1c1ce13
+		summarizeBy: none
+		sourceColumn: New Logos Parent Flag_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'top sales territory id'
+		dataType: string
+		lineageTag: acb8c553-5f3e-4957-9b52-3c348e7ff798
+		summarizeBy: none
+		sourceColumn: top sales territory id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Portfolio LI3'
+		dataType: string
+		lineageTag: ac2bfc31-9202-403f-a162-873dde936c04
+		summarizeBy: none
+		sourceColumn: Portfolio LI3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'A&PS Flag'
+		dataType: string
+		lineageTag: 8e20039a-1850-45de-9cd5-f0ba81add184
+		summarizeBy: none
+		sourceColumn: A&PS Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GMS Flag'
+		dataType: string
+		lineageTag: 0a23e7e1-b3c5-4dee-8250-f3652df8de21
+		summarizeBy: none
+		sourceColumn: GMS Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Order Type Code'
+		dataType: string
+		lineageTag: 9c2548fc-4a84-40f0-9b83-a050a1a5c87d
+		summarizeBy: none
+		sourceColumn: Sales Order Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Order Type Desc'
+		dataType: string
+		lineageTag: 48b40720-395c-4a19-bbdf-25aa5ea56ed5
+		summarizeBy: none
+		sourceColumn: Sales Order Type Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Tracked Opp Flag_BIADS'
+		dataType: string
+		lineageTag: 977b2d61-58b5-478d-ac06-300aa9850de4
+		summarizeBy: none
+		sourceColumn: Sales Tracked Opp Flag_BIADS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: c01acb7b-ce78-40ec-8eb1-be432ea0f24c
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SFDC ST ID'
+		dataType: string
+		lineageTag: 814c74ba-6667-4438-a677-20015200a7bd
+		summarizeBy: none
+		sourceColumn: SFDC ST ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SFDC ST Name'
+		dataType: string
+		lineageTag: 6a91343e-9728-4990-9883-7ee154d643ec
+		summarizeBy: none
+		sourceColumn: SFDC ST Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ST Sold To ID'
+		dataType: string
+		lineageTag: 446846c0-6a5f-4cfc-84d4-2ce19b99a05e
+		summarizeBy: none
+		sourceColumn: ST Sold To ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ST Sold To ID Name'
+		dataType: string
+		lineageTag: 0af4ee4f-80a7-41fe-9327-82440b3f70dd
+		summarizeBy: none
+		sourceColumn: ST Sold To ID Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ST Payer ID'
+		dataType: string
+		lineageTag: 8ab7f693-2f54-4b5c-810e-625ac7855fbd
+		summarizeBy: none
+		sourceColumn: ST Payer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ST Payer ID Name'
+		dataType: string
+		lineageTag: 44041234-c710-4659-b273-a9724c5ccee4
+		summarizeBy: none
+		sourceColumn: ST Payer ID Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ST Derived End ID'
+		dataType: string
+		lineageTag: 70756998-7e45-412d-bfb9-7579ddba430d
+		summarizeBy: none
+		sourceColumn: ST Derived End ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ST Derived End ID Name'
+		dataType: string
+		lineageTag: 1ce44167-dd31-4cc1-b9d3-2ee4bf681dea
+		summarizeBy: none
+		sourceColumn: ST Derived End ID Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column DealName
+		dataType: string
+		lineageTag: 73020b9e-a28e-4211-a507-40ae8ed2973b
+		summarizeBy: none
+		sourceColumn: DealName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order type L2'
+		dataType: string
+		lineageTag: ce0633db-e7fd-4cf8-a46e-0774d47c2b26
+		summarizeBy: none
+		sourceColumn: order type L2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order type L3'
+		dataType: string
+		lineageTag: 2583311b-a28a-4e24-9122-427a865396c2
+		summarizeBy: none
+		sourceColumn: order type L3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deal Key'
+		dataType: string
+		lineageTag: 3f2a3937-45df-4d70-bfcc-1213b308c56f
+		summarizeBy: none
+		sourceColumn: Deal Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order type L1'
+		dataType: string
+		lineageTag: f576fb37-0c8c-42a3-8ba7-fe5a07ba728a
+		summarizeBy: none
+		sourceColumn: order type L1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deal Correction'
+		dataType: string
+		lineageTag: 7ce7f77a-e482-413f-9307-fc041a85b992
+		summarizeBy: none
+		sourceColumn: Deal Correction
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CSM covered'
+		dataType: string
+		lineageTag: 57041c11-cae2-44af-8eeb-5e5f0ba677a9
+		summarizeBy: none
+		sourceColumn: CSM covered
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cloud_Module
+		dataType: string
+		lineageTag: ac6897a7-4f80-48ee-bb6a-fef217d61a4e
+		summarizeBy: none
+		sourceColumn: Cloud_Module
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category 1'
+		dataType: string
+		lineageTag: 130daa0a-c835-464f-ac98-443a7c2df3e0
+		summarizeBy: none
+		sourceColumn: Category 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category 2'
+		dataType: string
+		lineageTag: cee015c6-c43b-4d6b-b0fc-7f73e9418ad6
+		summarizeBy: none
+		sourceColumn: Category 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category 3'
+		dataType: string
+		lineageTag: 68ea55a4-0459-4597-9b0a-6f1d367073ad
+		summarizeBy: none
+		sourceColumn: Category 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category 4'
+		dataType: string
+		lineageTag: 6c64e93a-ca25-4626-9195-35b7958704f3
+		summarizeBy: none
+		sourceColumn: Category 4
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact ISV HPE SKUs' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    #"dbo_Fact ISV HPE SKUs" = Source{[Schema="dbo",Item="Fact ISV HPE SKUs"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(#"dbo_Fact ISV HPE SKUs",{"DATE_KY", "BA_KY", "GEO_KY", "Contract ID_BIADS", "Order Booking Date", "Final Customer ID", "Final Customer Desc", "Sales Order ID", "Legacy Sales Order ID", "Customer Purchase Order ID", "Opportunity ID_BIADS", "First Booking OPE ID", "Business Area Code", "L06 BA Code", "Net Sales US Dollar Amount", "Actual Source System", "Derived Source System", "DISA_FLAG", "DISA Flag_BIADS", "customer Exclusion_BIADS", "RTM", "Customer ST ID_BIADS", "Customer Name_BIADS", "New Logos Flag_BIADS", "NL Customer ST ID_BIADS", "NL Customer Name_BIADS", "NL Customer Segment_BIADS", "Customer Segment", "New Logos Parent Flag_BIADS", "top sales territory id", "Portfolio LI3", "A&PS Flag", "GMS Flag", "Sales Order Type Code", "Sales Order Type Desc", "Sales Tracked Opp Flag_BIADS", "Order Type", "SFDC ST ID", "SFDC ST Name", "ST Sold To ID", "ST Sold To ID Name", "ST Payer ID", "ST Payer ID Name", "ST Derived End ID", "ST Derived End ID Name", "DealName", "order type L2", "order type L3", "Deal Key", "order type L1", "Deal Correction", "CSM covered", "Cloud_Module", "Category 1", "Category 2", "Category 3", "Category 4"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

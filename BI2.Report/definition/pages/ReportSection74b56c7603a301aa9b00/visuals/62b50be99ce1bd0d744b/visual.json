@@ -1,0 +1,168 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "62b50be99ce1bd0d744b",
+  "position": {
+    "x": 36.8,
+    "y": 417.6,
+    "z": 1000,
+    "height": 283.2,
+    "width": 1180.8,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV Non HPE"
+                    }
+                  },
+                  "Property": "Create Date"
+                }
+              },
+              "queryRef": "Fact ISV Non HPE.Create Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV Non HPE"
+                    }
+                  },
+                  "Property": "End User Company Name"
+                }
+              },
+              "queryRef": "Fact ISV Non HPE.End User Company Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV Non HPE"
+                    }
+                  },
+                  "Property": "Opportunity ID / SFDC ID"
+                }
+              },
+              "queryRef": "Fact ISV Non HPE.Opportunity ID / SFDC ID"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact ISV Non HPE"
+                        }
+                      },
+                      "Property": "Quote Amount"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact ISV Non HPE.Quote Amount)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV Non HPE"
+                    }
+                  },
+                  "Property": "Region"
+                }
+              },
+              "queryRef": "Fact ISV Non HPE.Region"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact ISV Non HPE"
+                    }
+                  },
+                  "Property": "Third Party Software Vendor"
+                }
+              },
+              "queryRef": "Fact ISV Non HPE.Third Party Software Vendor"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dimension Date"
+                    }
+                  },
+                  "Property": "Fiscal Year Quarter"
+                }
+              },
+              "queryRef": "Dimension Date.Fiscal Year Quarter"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

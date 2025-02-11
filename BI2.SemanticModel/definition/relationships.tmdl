@@ -1,0 +1,304 @@
+relationship 00502bf9-92d3-4cd5-a3c3-4d99145bb183
+	fromColumn: 'Fact NL Target Count'.DATE_KY
+	toColumn: 'Dimension Date'.Date
+
+relationship 4ce53c46-01db-44aa-894d-a48d836f63d7
+	fromColumn: 'Fact NL Target Master $'.DATE_KY
+	toColumn: 'Dimension Date'.Date
+
+relationship e596e63e-37f2-44df-844a-1af523139bca
+	fromColumn: 'Fact NL Target Master $'.GEO_KY
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship ec63e9a4-c9ae-4874-97c7-afd66a8c116b
+	fromColumn: 'Fact Orders'.'Customer ST ID_BIADS'
+	toColumn: 'Dimension MDM'.'Customer ST ID_BIADS'
+
+relationship 2cfd0823-68c8-496f-bd99-f213a2549e57
+	toCardinality: many
+	fromColumn: 'Fact NL Target Count'.'NL Customer Segment_BIADS'
+	toColumn: 'Dimension MDM'.'NL Customer Segment_BIADS'
+
+relationship a998fcb7-f2b3-4335-83e8-6ac0f4481475
+	toCardinality: many
+	fromColumn: 'Fact NL Target Master $'.'Customer Segment'
+	toColumn: 'Dimension MDM'.'NL Customer Segment_BIADS'
+
+relationship ec5004c3-3b1e-4a4c-b57e-afd2f24eac21
+	fromColumn: 'Fact New Logo Target Pipeline'.'Financial Close Calendar Date'
+	toColumn: 'Dimension Date'.Date
+
+relationship d4771174-25a7-41a5-b611-b7f5bf17b5bb
+	toCardinality: many
+	fromColumn: 'Fact New Logo Target Pipeline'.Geo
+	toColumn: 'Dimension Geo'.Geo
+
+relationship e38d911a-bb2b-47fa-a0c1-6917974b7ae5
+	toCardinality: many
+	fromColumn: 'Fact New Logo Target Pipeline'.'Customer Segment'
+	toColumn: 'Dimension MDM'.'NL Customer Segment_BIADS'
+
+relationship 73c8fed6-d144-414b-8283-df7ae6c4ff99
+	fromColumn: 'Fact Partner Pipeline'.GEO_KY
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship 50d9e820-ca41-4997-9d54-8ff469958f31
+	fromColumn: 'Fact Partner Pipeline'.DATE_KY
+	toColumn: 'Dimension Date'.Date
+
+relationship 1a055f03-6aea-4464-9192-b0b863c11534
+	fromColumn: 'Fact Ecosystem Partner Target'.GEO_KY
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship f6b121d1-2898-4bfb-96e4-d314513b5b72
+	fromColumn: 'Fact Partner Pipeline'.SalesTerritoryId
+	toColumn: 'Dimension MDM'.'Customer ST ID_BIADS'
+
+relationship b6f7d65f-6276-4b26-8025-a86d79be1ba9
+	toCardinality: many
+	fromColumn: 'Fact Targets by Customer segment $'.'Customer Segment'
+	toColumn: 'Dimension MDM'.'Customer Segment_BIADS'
+
+relationship 467450d6-003e-40d4-900a-ac2da6be72d3
+	toCardinality: many
+	fromColumn: 'Dimension Geo'.Geo
+	toColumn: 'RLS Stage 5 (Final)'.Geo
+
+relationship de9e252a-8fdc-4f19-bfea-bda1e286c14b
+	fromColumn: 'Fact PipelineTracker History'.GEO_KY
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship e17edc3d-2a8e-426b-a724-aa98f717618d
+	fromColumn: 'Fact Targets by Customer segment $'.'New Logo'
+	toColumn: 'Dimension New Logos'.'New Logo'
+
+relationship 7c2672ae-e12c-482c-bbb0-6d91179c4934
+	fromColumn: 'Fact Orders'.'New Logos Flag_BIADS'
+	toColumn: 'Dimension New Logos'.'New Logo'
+
+relationship 8755e27e-2633-472b-84cf-c1ceec6b79ac
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Fact NL Actual Count Drill through'.Multi_Key
+	toColumn: 'Fact NL Target Count'.Multi_Key
+
+relationship 51388c28-4b51-498b-b04e-6e0475a0b433
+	fromColumn: 'Fact PipelineTracker History'.DATE_KY
+	toColumn: 'Dimension Date'.Date
+
+relationship 783686f4-500f-4ba3-a9c8-3b1425fa595d
+	fromColumn: 'Fact TBL PenRate Cumulative'.Date_KY
+	toColumn: 'Dimension Date'.Date
+
+relationship a12c5753-3f14-4849-b67f-019d1d346b91
+	fromColumn: 'Fact Pipeline'.GEO_KY
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship 776757a4-af0c-46cd-a192-ac00e44289bc
+	fromColumn: 'Fact Pipeline'.SalesTerritoryId
+	toColumn: 'Dimension MDM'.'Customer ST ID_BIADS'
+
+relationship 33373a66-83c5-43f4-bea2-60ff293b6dc8
+	fromColumn: 'Fact Orders'.RTM
+	toColumn: 'Dimension RTM'.RTM
+
+relationship 059ca838-da46-4d9a-9021-d85dfec03ce9
+	fromColumn: 'Fact Pipeline'.GoToMarketRoute
+	toColumn: 'Dimension RTM'.RTM
+
+relationship c5d53946-7c48-4ec3-9779-1561f68db57a
+	fromColumn: 'Fact Orders'.DATE_KY
+	toColumn: 'Dimension Date'.Date
+
+relationship 42ed2115-b17a-45e6-9d70-8210e9ffb923
+	fromColumn: 'Fact Orders'.GEO_KY
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship 375233ec-d64f-45eb-ab57-46a8a61fb3d7
+	fromColumn: 'Fact ISV HPE SKUs'.GEO_KY
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship 6ffef11c-ba7b-4719-8e90-955c6f7c7f41
+	fromColumn: 'Fact ISV HPE SKUs'.DATE_KY
+	toColumn: 'Dimension Date'.Date
+
+relationship 84334abf-10e9-465a-a48c-453eb7b55b8a
+	fromColumn: 'Fact ISV Non HPE'.'Create Date'
+	toColumn: 'Dimension Date'.Date
+
+relationship 7fa9e5e1-5d39-46e2-94cf-eb574f2edb3b
+	fromColumn: 'Fact Partner Pipeline'.GoToMarketRoute
+	toColumn: 'Dimension RTM'.RTM
+
+relationship e190c541-eae9-429b-8e09-0e7c83ebfff0
+	fromColumn: 'Fact Pipeline'.'Opportunity Close Date'
+	toColumn: 'Dimension Date'.Date
+
+relationship 7ea63a2e-63a6-49ff-9f17-bc16edb94317
+	fromColumn: 'Fact Orders'.'Opportunity ID_BIADS'
+	toColumn: 'Dimension Opportunities'.'Opportunity ID_BIADS'
+
+relationship afc3ca4b-0b69-4aec-9d0c-d9f3e822e53e
+	fromColumn: 'Fact Pipeline'.'Opportunity Id'
+	toColumn: 'Dimension Opportunities'.'Opportunity ID_BIADS'
+
+relationship 09f98e79-1270-4fc1-928f-108c0829ab4c
+	fromColumn: 'Fact Orders'.Workload
+	toColumn: 'Dimension Workloads'.Workload_BIADS
+
+relationship 19a51a71-cb32-4e7b-a90e-3e92630221e9
+	fromColumn: 'Fact Pipeline'.Workload
+	toColumn: 'Dimension Workloads'.Workload_BIADS
+
+relationship 0e2d334e-d01d-4f6d-a189-a2d52fceec69
+	fromColumn: 'Fact Partner Pipeline'.'Opportunity Id'
+	toColumn: 'Dimension Opportunities'.'Opportunity ID_BIADS'
+
+relationship 59ddd9f4-6cf4-4342-b917-6649ce8711a4
+	fromColumn: 'Fact Targets by Customer segment $'.Min_Date_Quarter
+	toColumn: 'Dimension Date'.Date
+
+relationship c92485e0-4f0f-460c-9c53-afa61f6b2368
+	toCardinality: many
+	fromColumn: 'Fact Pipeline'.ForecastCategory_BIADS
+	toColumn: 'Dimension Forecast Category'.'FC BIADS Parent'
+
+relationship ac2fc3be-98a8-4b7a-9dec-7fbba6c0da93
+	toCardinality: many
+	fromColumn: 'Fact Partner Pipeline'.ForecastCategory_BIADS
+	toColumn: 'Dimension Forecast Category'.'FC BIADS Parent'
+
+relationship 6941c336-e337-49fa-ba3d-a3c71232f149
+	toCardinality: many
+	fromColumn: 'Fact New Logo Target Pipeline'.ForecastCategory
+	toColumn: 'Dimension Forecast Category'.'FC BIADS Parent'
+
+relationship 7c6cb07e-d9d1-4465-b9e6-c9fa0d334128
+	fromColumn: 'Fact Ecosystem Partner Target'.'Start of Quarter'
+	toColumn: 'Dimension Date'.Date
+
+relationship 8c079dfd-442d-4c72-b355-648a68d6ed79
+	fromColumn: 'Fact Budget & Flash'.DATE_KY
+	toColumn: 'Dimension Date'.Date
+
+relationship 5d464d35-893e-4741-90c2-debad45749c9
+	fromColumn: 'Fact Budget & Flash'.GEO_KY
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship eb17cf5f-b271-4d8c-b64c-6af2614a0362
+	fromColumn: 'Fact Budget & Flash'.RTM
+	toColumn: 'Dimension RTM'.RTM
+
+relationship 44cba5b3-3463-4c8a-beb6-24f3f63b1a27
+	fromColumn: 'Fact Budget & Flash'.Workloads
+	toColumn: 'Dimension Workloads'.Workload_BIADS
+
+relationship e5ede67a-558b-5bcc-1533-eca11e912035
+	toCardinality: many
+	fromColumn: 'Fact TBL PenRate Cumulative'.Geo_Ky
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship 24044925-dd44-4922-b3a1-8f27aa7ccdd7
+	toCardinality: many
+	fromColumn: 'Fact TBL PenRate Cumulative'.'Customer Segment'
+	toColumn: 'Dimension MDM'.'NL Customer Segment BIADS'
+
+relationship 1c5a22be-5bb2-44da-a661-e027fa28c286
+	fromColumn: 'Fact NL Target Count'.GEO_KY
+	toColumn: 'Dimension Geo'.GEO_KY
+
+relationship 5a70272e-c961-4358-81f3-627dc77d7986
+	toCardinality: many
+	fromColumn: 'Fact PipelineTracker History'.'Customer Segment'
+	toColumn: 'Dimension MDM'.'Customer Segment_BIADS'
+
+relationship aa9a0128-1870-4a64-9f69-96ce3ae2686b
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Fact E2E load'.c_Deal_Key
+	toColumn: 'P*Q L2 New Logos'.'Fact E2E load_c_Deal_Key'
+
+relationship 215f3840-574a-49f8-935e-c3c129c6d975
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Fact E2E load'.c_Deal_Key
+	toColumn: 'P*Q Median'.'Fact E2E load_c_Deal_Key'
+
+relationship e661ffa6-d526-40e6-ac3f-8074dadc4cb5
+	fromColumn: 'Fact Targets by Customer segment $'.RTM
+	toColumn: 'Dimension RTM'.RTM
+
+relationship 18e9b509-f7b1-4fab-bc58-b3e5dc15901f
+	toCardinality: many
+	fromColumn: 'Fact Ecosystem Partner Target'.Partner
+	toColumn: 'Dimension Partner Types'.'Partner Types'
+
+relationship 476da85c-ff02-4f9a-af9c-822642533215
+	fromColumn: 'Fact Pipeline'.'New Logos Flag_BIADS'
+	toColumn: 'Dimension New Logos'.'New Logo'
+
+relationship e576532b-07bf-42ae-9bb7-6a383d551e56
+	fromColumn: 'Fact PipelineTracker History'.'New Logos Flag_BIADS'
+	toColumn: 'Dimension New Logos'.'New Logo'
+
+relationship 03b14f1f-30f1-4573-a9d8-ba6a578d2853
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Fact Ecosystem GL-30'.SalesID
+	toColumn: 'Fact Orders'.'Sales Order ID'
+
+relationship eb9e74c0-22a7-4502-b84a-8f3e963c9990
+	fromColumn: 'Fact ISV HPE SKUs'.RTM
+	toColumn: 'Dimension RTM'.RTM
+
+relationship 15535833-442d-4387-a8b6-11a46f57c228
+	fromColumn: 'Fact ISV HPE SKUs'.'New Logos Flag_BIADS'
+	toColumn: 'Dimension New Logos'.'New Logo'
+
+relationship 9fc22968-2d34-4066-a71b-baa3a3ab5048
+	fromColumn: 'Fact ISV HPE SKUs'.'Opportunity ID_BIADS'
+	toColumn: 'Dimension Opportunities'.'Opportunity ID_BIADS'
+
+relationship 849a1bb3-47a0-4013-99d3-0ce66c719f76
+	fromColumn: 'Fact ISV Non HPE'.'Opportunity ID / SFDC ID'
+	toColumn: 'Dimension Opportunities'.'Opportunity ID_BIADS'
+
+relationship 988eebdb-9ba6-4194-a4fd-bedc960a767e
+	toCardinality: many
+	fromColumn: 'Fact Partner Pipeline'.PartnerType
+	toColumn: 'Dimension Partner Types'.'Partner Types'
+
+relationship b786041a-e7f1-4f8d-b3f4-7392f03605c2
+	toCardinality: many
+	fromColumn: 'Fact Orders'.'Partner Type'
+	toColumn: 'Dimension Partner Types'.'Partner Types'
+
+relationship b646a717-dae4-a022-83fd-d3ee5db46583
+	fromColumn: 'Fact Orders'.BA_KY
+	toColumn: 'Dimension BA View'.BA_KY
+
+relationship 8ba8453e-c5bc-3f60-ff47-5cade2d528fe
+	fromColumn: 'Fact Budget & Flash'.BA_KY
+	toColumn: 'Dimension BA View'.BA_KY
+
+relationship dbf12ad0-327b-b8ac-2677-8401d282e8be
+	fromColumn: 'Fact PipelineTracker History'.'L06 BA Code'
+	toColumn: 'Dimension BA View'.BA_KY
+
+relationship 3c882e63-f186-9cc0-2eaa-0b5aa4a2aa95
+	fromColumn: 'Fact Partner Pipeline'.BA_KY
+	toColumn: 'Dimension BA View'.BA_KY
+
+relationship 89577fce-9703-102b-967d-493ecc9600f1
+	fromColumn: 'Fact ISV HPE SKUs'.BA_KY
+	toColumn: 'Dimension BA View'.BA_KY
+
+relationship c880172b-680a-576d-cc59-08dcc905f32d
+	toCardinality: many
+	fromColumn: 'Fact PipelineTracker History'.ForecastCategory_BIADS
+	toColumn: 'Dimension Forecast Category'.'FC BIADS Parent'
+
+relationship 451dce45-6d55-0d09-beaa-77a587d34b02
+	fromColumn: 'Fact Pipeline'.BA_KY
+	toColumn: 'Dimension BA View'.BA_KY
+

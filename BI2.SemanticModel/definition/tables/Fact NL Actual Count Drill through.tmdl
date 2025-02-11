@@ -1,0 +1,188 @@
+table 'Fact NL Actual Count Drill through'
+	lineageTag: 5b534671-7030-4ce3-beff-342f983cfa2a
+
+	column GBU
+		dataType: string
+		lineageTag: e894109f-1e33-47c7-aa2d-2d9c9752ac5c
+		summarizeBy: none
+		sourceColumn: GBU
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final ST ID'
+		dataType: string
+		lineageTag: 170af608-1e13-4fbe-8ed6-82599d6c6668
+		summarizeBy: none
+		sourceColumn: Final ST ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final ST Name'
+		dataType: string
+		lineageTag: 0768e2e8-b4c9-4c65-828d-2a1d8f57b65e
+		summarizeBy: none
+		sourceColumn: Final ST Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Order ID'
+		dataType: string
+		lineageTag: 1d922c01-6c3b-445e-8c47-5e3ca0870007
+		summarizeBy: none
+		sourceColumn: Sales Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Oppty ID'
+		dataType: string
+		lineageTag: 3d7479b7-0793-48da-acc7-e2c2b72a126e
+		summarizeBy: none
+		sourceColumn: Oppty ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscal_QTR
+		dataType: string
+		lineageTag: 5876a2b7-9c20-4219-af40-85777953edc3
+		summarizeBy: none
+		sourceColumn: fiscal_QTR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'top sales territory id'
+		dataType: string
+		lineageTag: f1eddf5a-ba70-455e-8a54-a4996a703d0f
+		summarizeBy: none
+		sourceColumn: top sales territory id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'top sales territory name'
+		dataType: string
+		lineageTag: 4c1336a3-a312-431e-b776-67c6a0d66ddf
+		summarizeBy: none
+		sourceColumn: top sales territory name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FY21 Segment'
+		dataType: string
+		lineageTag: e75317c2-60f7-418b-8ca0-fb71a6a162e0
+		summarizeBy: none
+		sourceColumn: FY21 Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Top Account'
+		dataType: string
+		lineageTag: f82ac46a-b2dd-49da-82ea-dd6f9a5e1cd3
+		summarizeBy: none
+		sourceColumn: Top Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HQ Country'
+		dataType: string
+		lineageTag: 658e9757-4971-4fea-a1f2-5788ca67c3b7
+		summarizeBy: none
+		sourceColumn: HQ Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HQ Geo'
+		dataType: string
+		lineageTag: b751d108-e8f6-4a4f-b86c-217ebd4ed28b
+		summarizeBy: none
+		sourceColumn: HQ Geo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Territory Country'
+		dataType: string
+		lineageTag: ec5b5fb1-89a0-403d-9b2f-fbde84df624e
+		summarizeBy: none
+		sourceColumn: Sales Territory Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Territory Geo'
+		dataType: string
+		lineageTag: 4910ab2d-deba-4594-a36a-799c1f9e1b09
+		summarizeBy: none
+		sourceColumn: Sales Territory Geo
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Parent logic'
+		dataType: string
+		lineageTag: 4a03bea4-3dbb-4283-b60f-5a94b3a983d1
+		summarizeBy: none
+		sourceColumn: " Parent logic"
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Coverage Segments (Coverage Tiers)'
+		dataType: string
+		lineageTag: abfa7d87-4d25-45a1-9a4d-f6162a2ebfaf
+		summarizeBy: none
+		sourceColumn: Coverage Segments (Coverage Tiers)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Consider Flag'
+		dataType: string
+		lineageTag: 0d790725-3b20-4ccf-a856-1387fddf1aaa
+		summarizeBy: none
+		sourceColumn: Consider Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column BMT_RTM
+		dataType: string
+		lineageTag: 507e4540-3b87-4dcd-ac39-a62468c60504
+		summarizeBy: none
+		sourceColumn: BMT_RTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exception
+		dataType: string
+		lineageTag: 30692095-41da-4121-b674-1b511f774b6e
+		summarizeBy: none
+		sourceColumn: Exception
+
+		annotation SummarizationSetBy = Automatic
+
+	column Extraction_date
+		dataType: string
+		lineageTag: 8c9fff85-0eb9-4a2f-ab01-774fde0f02aa
+		summarizeBy: none
+		sourceColumn: Extraction_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Multi_Key
+		dataType: string
+		lineageTag: 93328bf0-7a75-4021-8695-7eeded218c4e
+		summarizeBy: none
+		sourceColumn: Multi_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact NL Actual Count Drill through-81cb4259-8b39-41f5-8d4b-3404c2e65682' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_BMT_New_Logo_Closure_VIEW = Source{[Schema="dbo",Item="BMT_New_Logo_Closure_VIEW"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_BMT_New_Logo_Closure_VIEW,{"GBU", "Final ST ID", "Final ST Name", "Sales Order ID", "Oppty ID", "fiscal_QTR", "top sales territory id", "top sales territory name", "FY21 Segment", "Top Account", "HQ Country", "HQ Geo", "Sales Territory Country", "Sales Territory Geo", " Parent logic", "Coverage Segments (Coverage Tiers)", "Consider Flag", "BMT_RTM", "Exception", "Extraction_date", "Multi_Key"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Other Columns",null,"N",Replacer.ReplaceValue,{"Exception"}),
+				    #"Parent Logic null replace with NO" = Table.ReplaceValue(#"Replaced Value",null,"NO",Replacer.ReplaceValue,{" Parent logic"})
+				in
+				    #"Parent Logic null replace with NO"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

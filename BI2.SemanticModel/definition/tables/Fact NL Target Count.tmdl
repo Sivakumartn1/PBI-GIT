@@ -1,0 +1,137 @@
+table 'Fact NL Target Count'
+	lineageTag: 3e866719-ab6c-4888-ab16-85b8c1a86a23
+
+	/// For development team use only.
+	column DATE_KY
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 32eec4bd-7883-44d9-8a44-6423f711c211
+		summarizeBy: none
+		sourceColumn: DATE_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Final Customer ID Derived
+	column 'Derived Final Customer ID Count'
+		dataType: int64
+		formatString: 0
+		lineageTag: f0dd686d-1f80-41fb-be66-43c14ef8097b
+		summarizeBy: sum
+		sourceColumn: Derived Final Customer ID Count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Target Count for New Logos
+	column Target_Count
+		dataType: double
+		formatString: 0
+		lineageTag: 18d2e92c-dac1-4e03-9472-a3317e266e5a
+		summarizeBy: sum
+		sourceColumn: Target_Count
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	/// For development team use only.
+	column GEO_KY
+		dataType: string
+		lineageTag: d58e1ab8-561b-485c-b461-6e9b551b317a
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Derived Final Customer ID (Parent)
+	column 'Derived Final Customer ID Top Parent Count'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f7a464b-14f0-4506-bab8-cf916917940e
+		summarizeBy: sum
+		sourceColumn: Derived Final Customer ID Top Parent Count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Alignment with Ranjan's team
+	column 'NL Customer Segment_BIADS'
+		dataType: string
+		lineageTag: e46b4cd0-7ed3-495d-8a55-8f6e77cf62b9
+		summarizeBy: none
+		sourceColumn: NL Customer Segment_BIADS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Existing Greenlake accounts
+	column 'Existing GL Accounts'
+		dataType: double
+		formatString: 0
+		lineageTag: cc7b416e-c5bb-422f-abf6-f5aab6d345a7
+		summarizeBy: sum
+		sourceColumn: Existing GL Accounts
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Accounts coming from Entity master
+	column MDM_HPE_Accounts
+		dataType: double
+		formatString: 0
+		lineageTag: 223ef209-625b-44e5-a3d7-8ad79439877a
+		summarizeBy: sum
+		sourceColumn: MDM_HPE_Accounts
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Multi_Flag
+		dataType: string
+		lineageTag: 0b49c242-7118-43cd-a32f-28bd41a9ecde
+		summarizeBy: none
+		sourceColumn: Multi_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Multi_Key
+		dataType: string
+		lineageTag: f0ec0aa9-7f14-4913-b569-71e4fc28c537
+		summarizeBy: none
+		sourceColumn: Multi_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact NL Target Count-b8e22a66-5069-4237-b9da-c4f80ccf6355' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_REP_TARGET_MASTER_COUNT_VW = Source{[Schema="dbo",Item="REP_TARGET_MASTER_COUNT_VW"]}[Data],
+				    #"Replaced Value" = Table.ReplaceValue(dbo_REP_TARGET_MASTER_COUNT_VW,null,"N",Replacer.ReplaceValue,{"Multi_Flag"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Replaced Value",{"NL Customer Segment_BIADS", "DATE_KY", "GEO_KY", "Derived Final Customer ID Count", "Derived Final Customer ID Top Parent Count", "Target_Count", "Existing GL Accounts", "MDM_HPE_Accounts", "Multi_Flag", "Multi_Key"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,67 @@
+table 'Dimension Forecast Category'
+	lineageTag: fab2113a-0866-4e32-80ec-f8a4674f1818
+
+	column 'Sales Stage'
+		dataType: string
+		lineageTag: 289e68b2-592e-40f2-8598-fcfb4bd05670
+		summarizeBy: none
+		sourceColumn: Sales Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FC BIADS Child'
+		dataType: string
+		lineageTag: 2ef6ab53-953d-452f-baaa-6bf9277fde1e
+		summarizeBy: none
+		sourceColumn: FC BIADS Child
+		sortByColumn: 'FC BIADS Child Sorting'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FC BIADS Parent'
+		dataType: string
+		lineageTag: b33071d0-559a-42d7-9a2d-26d7eb821692
+		summarizeBy: none
+		sourceColumn: FC BIADS Parent
+		sortByColumn: 'FC BIADS Parent Sorting'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FC BIADS Parent Sorting'
+		dataType: string
+		lineageTag: e5e834b4-cc48-45cd-9349-00141f4f03f9
+		summarizeBy: none
+		sourceColumn: FC BIADS Parent Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FC BIADS Child Sorting'
+		dataType: string
+		lineageTag: 04446e54-6d38-432a-b9cc-ca23b36fcaa8
+		summarizeBy: none
+		sourceColumn: FC BIADS Child Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Forecast Category' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_Dim_Forecast_Category = Source{[Schema="dbo",Item="Dim_Forecast_Category"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(dbo_Dim_Forecast_Category,{"Forecast Category"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Forecast Category BIADS", "FC BIADS Child"}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Renamed Columns", "FC BIADS Parent", each if [FC BIADS Child] = "Early" then "Pipeline" else if [FC BIADS Child] = "Late" then "Pipeline" else [FC BIADS Child]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Conditional Column",{{"FC BIADS Parent", type text}}),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Changed Type", "FC BIADS Parent Sorting", each if [FC BIADS Parent] = "Won" then 1 else if [FC BIADS Parent] = "Commit" then 2 else if [FC BIADS Parent] = "Upside" then 3 else if [FC BIADS Parent] = "Pipeline" then 4 else 9),
+				    #"Added Conditional Column2" = Table.AddColumn(#"Added Conditional Column1", "FC BIADS Child Sorting", each if [FC BIADS Child] = "Won" then 1 else if [FC BIADS Child] = "Commit" then 2 else if [FC BIADS Child] = "Upside" then 3 else if [FC BIADS Child] = "Late" then 4 else if [FC BIADS Child] = "Early" then 5 else 9)
+				in
+				    #"Added Conditional Column2"
+
+	annotation PBI_ResultType = Table
+

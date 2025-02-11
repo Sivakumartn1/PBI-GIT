@@ -1,0 +1,100 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "24645ef3b8171ac61022",
+  "position": {
+    "x": 85.930069930069934,
+    "y": 409.958041958042,
+    "z": 7000,
+    "height": 248.83916083916083,
+    "width": 263.16083916083915,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dimension Forecast Category"
+                    }
+                  },
+                  "Property": "FC BIADS Parent"
+                }
+              },
+              "queryRef": "Dimension ForecastCategory.FC BIADS Parent",
+              "nativeQueryRef": "FC BIADS Parent"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact Pipeline"
+                    }
+                  },
+                  "Property": "ForecastCategory_BIADS"
+                }
+              },
+              "queryRef": "Fact Pipeline.ForecastCategory_BIADS",
+              "nativeQueryRef": "ForecastCategory_BIADS"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

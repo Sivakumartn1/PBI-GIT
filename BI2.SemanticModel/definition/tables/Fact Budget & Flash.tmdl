@@ -1,0 +1,228 @@
+table 'Fact Budget & Flash'
+	lineageTag: 150c04af-47ac-45c5-8c1e-715ce5d745ec
+
+	column DATE_KY
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 2f356565-ac74-425a-8de5-19c2b8957e4c
+		summarizeBy: none
+		sourceColumn: DATE_KY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column BA_KY
+		dataType: string
+		lineageTag: 47d53056-e746-4d14-a631-d2c0f95b6dc6
+		summarizeBy: none
+		sourceColumn: BA_KY
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEO_KY
+		dataType: string
+		lineageTag: 51643633-d9a9-49b3-96d2-89f11f35240c
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L06 BA Code'
+		dataType: string
+		lineageTag: 76870c74-f916-471b-b632-9ea73c0851c0
+		summarizeBy: none
+		sourceColumn: L06 BA Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Actual Source System'
+		dataType: string
+		lineageTag: ab6ef487-8943-48a8-9a7a-b12c375b3646
+		summarizeBy: none
+		sourceColumn: Actual Source System
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Flash A$'
+		dataType: double
+		lineageTag: dce62301-047d-4602-97fb-b62eb2131e6c
+		summarizeBy: sum
+		sourceColumn: Current Flash A$
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RTM
+		dataType: string
+		lineageTag: c772ee30-a149-4c1b-b452-a6b691608480
+		summarizeBy: none
+		sourceColumn: RTM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Greenlake flag'
+		dataType: string
+		lineageTag: d292a2c1-84d1-469e-a111-60030bd3cf52
+		summarizeBy: none
+		sourceColumn: Greenlake flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter'
+		dataType: string
+		lineageTag: 3b2bbf8d-49a7-4b28-9a08-82c46f628385
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Previous Flash A$'
+		dataType: double
+		lineageTag: 43da0dcf-7e51-4cf7-bebd-2e14893f8a25
+		summarizeBy: sum
+		sourceColumn: Previous Flash A$
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget A_Dollars'
+		dataType: double
+		lineageTag: 1742afb2-06c3-4372-ad38-73baae1e2261
+		summarizeBy: sum
+		sourceColumn: Budget A_Dollars
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Source System Name'
+		dataType: string
+		lineageTag: 9e0cb5a7-4865-4c1f-ad67-604adc82caf1
+		summarizeBy: none
+		sourceColumn: Source System Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: aef4ba31-1ce3-42ab-a95a-2f4da5599423
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Flag
+		dataType: string
+		lineageTag: 0ac92de4-0379-4545-84d1-baf1eb76d596
+		summarizeBy: none
+		sourceColumn: ID_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ezmeral_Flag
+		dataType: string
+		lineageTag: a8c59dc0-5b99-41ad-bb61-2f003d388f2b
+		summarizeBy: none
+		sourceColumn: Ezmeral_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_MONTH_NUMBER
+		dataType: int64
+		formatString: 0
+		lineageTag: 1362ba56-4feb-4674-89a8-2d9d7301c792
+		summarizeBy: sum
+		sourceColumn: FISCAL_MONTH_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flash_FISCAL_MONTH_NUMBER
+		dataType: int64
+		formatString: 0
+		lineageTag: fddfa866-2567-405b-adc5-be9bd10874f8
+		summarizeBy: sum
+		sourceColumn: Flash_FISCAL_MONTH_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Derived Current Flash A$'
+		dataType: double
+		lineageTag: ed622466-59bd-47d8-80be-5bd80e365646
+		summarizeBy: sum
+		sourceColumn: Derived Current Flash A$
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Quarter Number'
+		dataType: string
+		lineageTag: 5dee2041-591f-4956-a6e1-155a18a847d9
+		summarizeBy: none
+		sourceColumn: Quarter Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Month'
+		dataType: string
+		lineageTag: df26994a-6791-4fb4-b5e6-f0f941fe7ff4
+		summarizeBy: none
+		sourceColumn: Quarter Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLCS_WRK_Dl_FLAG
+		dataType: string
+		lineageTag: b9891dec-ffb9-4b5f-8807-40282da30998
+		summarizeBy: none
+		sourceColumn: GLCS_WRK_Dl_FLAG
+
+		annotation SummarizationSetBy = Automatic
+
+	column Workloads
+		dataType: string
+		lineageTag: 00dac056-ed33-4513-8421-c991a499fa0c
+		summarizeBy: none
+		sourceColumn: Workloads
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Alexia (GTM view)'
+		dataType: string
+		lineageTag: dfed81b0-7a30-4e03-adcb-3347287802bc
+		summarizeBy: none
+		sourceColumn: Alexia (GTM view)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pipeline (Ralph)'
+		dataType: string
+		lineageTag: a94fad55-c866-47bc-a4a4-8dcbfe0235a4
+		summarizeBy: none
+		sourceColumn: Pipeline (Ralph)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Budget & Flash' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_DIM_Workload_VW = Source{[Schema="dbo",Item="REP_GL_Orders_ALL_Flash"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_DIM_Workload_VW,{"DATE_KY", "BA_KY", "GEO_KY", "L06 BA Code", "Actual Source System", "Current Flash A$", "RTM", "Greenlake flag", "Fiscal Quarter", "Previous Flash A$", "Budget A_Dollars", "Source System Name", "Month", "ID_Flag", "GLCS_WRK_Dl_FLAG", "Workloads", "Ezmeral_Flag", "FISCAL_MONTH_NUMBER", "Flash_FISCAL_MONTH_NUMBER", "Derived Current Flash A$", "Alexia (GTM view)", "Pipeline (Ralph)"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"DATE_KY", type date}}),
+				    #"Inserted Last Characters" = Table.AddColumn(#"Changed Type", "Quarter Number", each Text.End([Fiscal Quarter], 2), type text),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Inserted Last Characters", "Quarter Month", each Text.Combine({[Quarter Number], Text.From([Flash_FISCAL_MONTH_NUMBER], "en-US")}, ""), type text)
+				in
+				    #"Inserted Merged Column"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

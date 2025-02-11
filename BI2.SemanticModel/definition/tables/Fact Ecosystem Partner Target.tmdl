@@ -1,0 +1,82 @@
+/// Partner target and actuals with Geo 
+table 'Fact Ecosystem Partner Target'
+	lineageTag: 2448c961-a8f6-4524-872e-dcb46c0e6d74
+
+	/// Partner associated with individual partner type
+	/// 
+	column Partner
+		dataType: string
+		lineageTag: 523bd736-32ae-4d02-9808-a96a742b3705
+		summarizeBy: none
+		sourceColumn: Partner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Signifies type of Order
+	column actuals
+		dataType: double
+		lineageTag: 30e87c84-bfa1-4f1d-acfa-d81d6dde98bd
+		summarizeBy: sum
+		sourceColumn: actuals
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Targets of Partner
+	column target
+		dataType: double
+		lineageTag: 72d47660-0060-4541-a669-77af4c9ab780
+		summarizeBy: sum
+		sourceColumn: target
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Signifies type of Order
+	column GEO_KY
+		dataType: string
+		isHidden
+		lineageTag: 0d5ce254-6d90-455b-9402-7f02d21c8a96
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Quarter'
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 44955911-0bf2-4e70-8d27-276b6e9b3e7a
+		summarizeBy: none
+		sourceColumn: Start of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	partition 'Fact Ecosystem Partner Target-825a3468-7a41-492d-a5a9-3b97be375d9e' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_REP_ECOSYSTEM_PARTNER_TARGET_VW = Source{[Schema="dbo",Item="REP_ECOSYSTEM_PARTNER_TARGET_VW"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(dbo_REP_ECOSYSTEM_PARTNER_TARGET_VW,{"Partner", "GEO_KY", "actuals", "target", "Start of Quarter"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

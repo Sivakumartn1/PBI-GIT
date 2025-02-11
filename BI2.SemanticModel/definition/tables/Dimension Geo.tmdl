@@ -1,0 +1,175 @@
+table 'Dimension Geo'
+	excludeFromModelRefresh
+	lineageTag: 10c4ac21-30a5-4ae3-a550-f05b972788da
+
+	/// Standard Country Name
+	column 'Country Name'
+		dataType: string
+		lineageTag: 6e97124a-b67b-471a-ae6c-f0c74aed9503
+		summarizeBy: none
+		sourceColumn: Country Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GEO_KY
+		dataType: string
+		lineageTag: 9d60a535-0429-4a80-ad2c-330d08a5759b
+		summarizeBy: none
+		sourceColumn: GEO_KY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Standard Geo Name
+	column Geo
+		dataType: string
+		lineageTag: 056f216e-d1cf-4d3b-b7a1-8762abdfe00e
+		summarizeBy: none
+		sourceColumn: Geo
+		sortByColumn: 'Geo Heiko Sorting'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Used for calculations by development team. Refrain from using it.
+	column Geo_Ranking
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f86134a-4514-48d8-bbbe-e4f67d894ad9
+		summarizeBy: sum
+		sourceColumn: Geo_Ranking
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Standard Geography name
+	column Geography =
+			
+			
+			SWITCH('Dimension Geo'[Geo],
+			"North America","N America",
+			"Latin America", "L America",
+			"North West Europe", "NWE",
+			"Europe South", "EU South",
+			'Dimension Geo'[Geo]
+			
+			
+			)
+		lineageTag: 7157aea5-167b-4906-9d8a-b305c29360b8
+		summarizeBy: none
+		sortByColumn: 'Geo Heiko Sorting'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Level 4 Geography group
+	column 'L04 - Group'
+		dataType: string
+		lineageTag: 78af270f-cb39-4c2e-b897-364eb3abc17d
+		summarizeBy: none
+		sourceColumn: L04 - Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Level 5 Geography sub group
+	column 'L05 - Sub-Group'
+		dataType: string
+		lineageTag: 94187931-9fd2-45e1-9475-36e27b03c2e2
+		summarizeBy: none
+		sourceColumn: L05 - Sub-Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Level 6 Country sub group
+	column 'L06 - Country Sub-Group'
+		dataType: string
+		lineageTag: a29373c2-a48b-429e-a0d7-d46d5d7b98c3
+		summarizeBy: none
+		sourceColumn: L06 - Country Sub-Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Level 2 Geography sub group
+	column 'L02 - Geo'
+		dataType: string
+		lineageTag: e3764e40-4179-4265-91a9-000ae6e84dcb
+		summarizeBy: none
+		sourceColumn: L02 - Geo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Level 3 Geography sub group
+	column 'L03 - Sub-Geo'
+		dataType: string
+		lineageTag: 169204b7-04bf-466d-9ff2-c35875878d8f
+		summarizeBy: none
+		sourceColumn: L03 - Sub-Geo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Geo Heiko Sorting'
+		dataType: string
+		lineageTag: d3a47e14-537a-4c56-b516-f4f634a02d9b
+		summarizeBy: none
+		sourceColumn: Geo Heiko Sorting
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L01 - Geo'
+		dataType: string
+		lineageTag: 0c741763-cedd-44e3-aae1-371d4b2b6be1
+		summarizeBy: none
+		sourceColumn: L01 - Geo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 7f184e08-2d66-4f2f-84dd-5c657ef93271
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Combine_Geo
+		dataType: string
+		lineageTag: caa18160-9235-441f-86cb-f586e5369780
+		summarizeBy: none
+		sourceColumn: Combine_Geo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Geo-01c6d740-30e4-4ea7-98a7-7fd736936bd7' = m
+		mode: import
+		queryGroup: 'DIM Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam,DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    dbo_GEO_VIEW = Source{[Schema="dbo",Item="GEO_VIEW"]}[Data],
+				    #"Replaced Value" = Table.ReplaceValue(dbo_GEO_VIEW,"Other","HQ",Replacer.ReplaceText,{"Geo"}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Replaced Value", "Geo Heiko Sorting", each if [Geo] = "APAC" then 1 else if [Geo] = "Central" then 2 else if [Geo] = "Europe South" then 3 else if [Geo] = "India" then 4 else if [Geo] = "Japan" then 5 else if [Geo] = "Latin America" then 6 else if [Geo] = "North America" then 7 else if [Geo] = "North West Europe" then 8 else if [Geo] = "Russia" then 9 else if [Geo] = "UKIMEA" then 92 else 93)
+				in
+				    #"Added Conditional Column"
+
+	annotation PBI_ResultType = Table
+

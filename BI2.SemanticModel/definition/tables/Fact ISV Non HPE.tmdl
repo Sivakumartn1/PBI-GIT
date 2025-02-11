@@ -1,0 +1,126 @@
+table 'Fact ISV Non HPE'
+	lineageTag: 12b023e1-d386-4911-9cfe-1f86b51fc187
+
+	column 'Quote ID'
+		dataType: string
+		lineageTag: 2d6c4174-daa3-4a51-ac96-b869ff3a764c
+		summarizeBy: none
+		sourceColumn: Quote ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Third Party Software Vendor'
+		dataType: string
+		lineageTag: 984bb705-2298-4a73-9f1f-28655af011a1
+		summarizeBy: none
+		sourceColumn: Third Party Software Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unlisted Vendor Name'
+		dataType: string
+		lineageTag: 4feef17e-2d5f-4cea-a1c4-16262eb6af90
+		summarizeBy: none
+		sourceColumn: Unlisted Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Office'
+		dataType: string
+		lineageTag: f1b4d6c9-ec3f-4905-9413-0b593ca96b62
+		summarizeBy: none
+		sourceColumn: Sales Office
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 4b110ef2-2b35-4257-a19a-99e37edbcdef
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub Region'
+		dataType: string
+		lineageTag: 3a56dccd-b2fc-4ac8-97ce-b411695d8ab8
+		summarizeBy: none
+		sourceColumn: Sub Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End User Company Name'
+		dataType: string
+		lineageTag: 8b513d6b-1ed4-4aba-a3c7-f8bc81d4027c
+		summarizeBy: none
+		sourceColumn: End User Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: f6c00ee4-4cf9-4e8a-abba-07ceb5852850
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Create Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9eaa2a21-0f80-41f4-9003-dda56acb299c
+		summarizeBy: none
+		sourceColumn: Create Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opportunity ID / SFDC ID'
+		dataType: string
+		lineageTag: 82d48a93-ccda-4e3f-ae45-da8ed5e376f6
+		summarizeBy: none
+		sourceColumn: Opportunity ID / SFDC ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote Amount'
+		dataType: double
+		lineageTag: b58de619-c376-450c-ae2d-3167ce6909b7
+		summarizeBy: sum
+		sourceColumn: Quote Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WBS Service'
+		dataType: string
+		lineageTag: 32da2213-a08a-491e-b66e-ea807f0fad7c
+		summarizeBy: none
+		sourceColumn: WBS Service
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quote Type'
+		dataType: string
+		lineageTag: 18717cff-bb03-4986-bbe8-767e652a01bd
+		summarizeBy: none
+		sourceColumn: Quote Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact ISV Non HPE' = m
+		mode: import
+		queryGroup: 'Fact Tables'
+		source =
+				let
+				    Source = Sql.Database(DataSourceParam, DBName, [CommandTimeout=#duration(0, Timeout, 0, 0)]),
+				    #"QOT Data_Sheet" = Source{[Schema="dbo",Item="BMT_Ecosystem_Non HPE SKU"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"QOT Data_Sheet",{{"Quote ID", type text}, {"Third Party Software Vendor", type text}, {"Unlisted Vendor Name", type text}, {"Sales Office", type text}, {"Region", type text}, {"Sub Region", type text}, {"End User Company Name", type text}, {"Quote Type", type text}, {"Status", type text}, {"Create Date", type datetime}, {"Opportunity ID / SFDC ID", type text}, {"WISE PO Number", type text}, {"WBS_1", type text}, {"WBS License", type text}, {"WBS Support", type text}, {"WBS Service", type text}, {"Quote Currency", type text}, {"Quote Amount", type number}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Quote ID", "Third Party Software Vendor", "Unlisted Vendor Name", "Sales Office", "Region", "Sub Region", "End User Company Name", "Quote Type", "Status", "Create Date", "Opportunity ID / SFDC ID", "WBS Service", "Quote Amount"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
