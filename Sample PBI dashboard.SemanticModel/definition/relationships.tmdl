@@ -1,0 +1,20 @@
+relationship a35a4d90-2417-47e0-a945-f249afa585d8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Export.'Open date'
+	toColumn: LocalDateTable_1c98a220-35f8-49cf-bf25-109f816ccac7.Date
+
+relationship fe1f0277-132e-4621-8520-4000c37ea0b0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Export.'Closed date'
+	toColumn: LocalDateTable_86969c22-30c1-4581-9215-c20f4025a245.Date
+
+relationship 20fedbf3-e708-48e4-a837-e480aebc5401
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Export.'Return Time'
+	toColumn: LocalDateTable_7918995d-a995-4330-8837-08efe078f4ec.Date
+
+relationship 73c10fdb-233b-47f3-8d52-bb5754ee1701
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Export.Year-Month
+	toColumn: LocalDateTable_70c85e92-f438-4ccb-8d98-99a346b757d5.Date
+

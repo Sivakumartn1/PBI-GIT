@@ -1,0 +1,1243 @@
+table Export
+	lineageTag: 6241f1b1-fdf5-4ecb-9744-f40ab8aed2a7
+
+	column 'Case Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6682bcb9-0e13-427c-9dac-886d66f6ef81
+		summarizeBy: sum
+		sourceColumn: Case Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geographies
+		dataType: string
+		lineageTag: 0ee9a297-2c08-4394-8b0b-6191c940f2d2
+		summarizeBy: none
+		sourceColumn: Geographies
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub-Geography
+		dataType: string
+		lineageTag: c5f6fba1-54e7-4047-acf0-9594d0c620c2
+		summarizeBy: none
+		sourceColumn: Sub-Geography
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub-Geography 2'
+		dataType: string
+		lineageTag: c556c69f-cb59-4256-a7f6-dcc306b779be
+		summarizeBy: none
+		sourceColumn: Sub-Geography 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Country'
+		dataType: string
+		lineageTag: 3a51c4aa-e9f8-49a3-bc39-b8b78246bb4e
+		summarizeBy: none
+		sourceColumn: Customer Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer country code'
+		dataType: string
+		lineageTag: 246faa36-4b52-483c-938b-31dc742b6b63
+		summarizeBy: none
+		sourceColumn: Customer country code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Name'
+		dataType: string
+		lineageTag: 1b450d3e-5982-4ebe-b394-669b8557eb3f
+		summarizeBy: none
+		sourceColumn: Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Top Parent ST'
+		dataType: string
+		lineageTag: ea8d38df-2c34-4dcc-bba5-46916200827d
+		summarizeBy: none
+		sourceColumn: Top Parent ST
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account ST'
+		dataType: string
+		lineageTag: d07f1578-4bac-4344-8e0e-3b8d4c26c611
+		summarizeBy: none
+		sourceColumn: Account ST
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Top Account'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8dfdc17d-c707-47ba-8a10-4279a5cbf9f4
+		summarizeBy: sum
+		sourceColumn: Top Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GSD Managed Flag'
+		dataType: int64
+		formatString: 0
+		lineageTag: de526882-d962-4e17-94e7-b9811e476c40
+		summarizeBy: sum
+		sourceColumn: GSD Managed Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Delivery Account Type'
+		dataType: string
+		lineageTag: 5adf5cb5-78a5-4916-8567-d19546a4c79d
+		summarizeBy: none
+		sourceColumn: Service Delivery Account Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Description'
+		dataType: string
+		lineageTag: 1d76f0cb-d33f-4258-933a-17071a7728bb
+		summarizeBy: none
+		sourceColumn: Product Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product or Product Number'
+		dataType: string
+		lineageTag: b4246fa8-b9c3-46c2-a1b4-78726009d3dd
+		summarizeBy: none
+		sourceColumn: Product or Product Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Serial Number'
+		dataType: string
+		lineageTag: d9e859bf-3052-46de-9efc-3a52210383d2
+		summarizeBy: none
+		sourceColumn: Serial Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column BU
+		dataType: string
+		lineageTag: 0bb3d6b0-52ca-451d-85b5-9dcc83d12ac0
+		summarizeBy: none
+		sourceColumn: BU
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub BU'
+		dataType: string
+		lineageTag: 5594b758-af2f-4f19-a9f0-5ec74845107f
+		summarizeBy: none
+		sourceColumn: Sub BU
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HW Product Group'
+		dataType: string
+		lineageTag: f2c91af9-2db0-411f-9c52-77243421f86d
+		summarizeBy: none
+		sourceColumn: HW Product Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HW Sub-Groups'
+		dataType: string
+		lineageTag: 233b9c27-8c8a-4dcc-88cd-b8ea6feefb5c
+		summarizeBy: none
+		sourceColumn: HW Sub-Groups
+
+		annotation SummarizationSetBy = Automatic
+
+	column HWPL
+		dataType: string
+		lineageTag: ad41c5c5-d96b-4cc3-b157-54f68f9ef834
+		summarizeBy: none
+		sourceColumn: HWPL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SPL Description'
+		dataType: string
+		lineageTag: 9f854ff8-38ec-49db-a3fe-3b5716135dd9
+		summarizeBy: none
+		sourceColumn: SPL Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e6edeeac-3f63-4111-b42a-d3b20e0d9d55
+		summarizeBy: none
+		sourceColumn: Open date
+
+		variation Variation
+			isDefault
+			relationship: a35a4d90-2417-47e0-a945-f249afa585d8
+			defaultHierarchy: LocalDateTable_1c98a220-35f8-49cf-bf25-109f816ccac7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Closed date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c63373da-8166-4e57-9fc9-7c44511aa795
+		summarizeBy: none
+		sourceColumn: Closed date
+
+		variation Variation
+			isDefault
+			relationship: fe1f0277-132e-4621-8520-4000c37ea0b0
+			defaultHierarchy: LocalDateTable_86969c22-30c1-4581-9215-c20f4025a245.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'TAT in Days'
+		dataType: double
+		lineageTag: 686d50b0-0d37-49d4-b1fa-7d523378909f
+		summarizeBy: sum
+		sourceColumn: TAT in Days
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Coverage Response'
+		dataType: string
+		lineageTag: 2cd1df10-b109-45db-a915-5bc39e1d73a0
+		summarizeBy: none
+		sourceColumn: Coverage Response
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Case Title / Project Description'
+		dataType: string
+		lineageTag: da2fa3c4-1cfe-4e0e-81f2-4444ee4b2ced
+		summarizeBy: none
+		sourceColumn: Case Title / Project Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Global Center'
+		dataType: string
+		lineageTag: f6ae6e65-a0c8-4616-a829-0788171da5e8
+		summarizeBy: none
+		sourceColumn: Global Center
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Case Origin'
+		dataType: string
+		lineageTag: 87ee7fe7-b500-4cdc-b5d5-644dcb493600
+		summarizeBy: none
+		sourceColumn: Case Origin
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warranty type'
+		dataType: string
+		lineageTag: c21a124e-90e8-49fa-88a1-39d956837a73
+		summarizeBy: none
+		sourceColumn: Warranty type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Business
+		dataType: string
+		lineageTag: db77b01e-d511-4df7-a6c0-469edb7aa20e
+		summarizeBy: none
+		sourceColumn: Business
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Type'
+		dataType: string
+		lineageTag: abf5f36e-91e7-47bb-b17e-b2903cee39da
+		summarizeBy: none
+		sourceColumn: Delivery Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Method'
+		dataType: string
+		lineageTag: 777e191c-189e-46b8-9716-87291b81782e
+		summarizeBy: none
+		sourceColumn: Delivery Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DC&MC Split'
+		dataType: string
+		lineageTag: b4838158-12de-420c-a5c8-a1d275d02069
+		summarizeBy: none
+		sourceColumn: DC&MC Split
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Partner name'
+		dataType: string
+		lineageTag: 7acd3bd0-1563-4031-8d07-53453a4c3b6d
+		summarizeBy: none
+		sourceColumn: Partner name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Partner
+		dataType: string
+		lineageTag: 957b4d83-f61f-45ff-9fde-9c3fb932c275
+		summarizeBy: none
+		sourceColumn: Partner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Overall Satisfaction'
+		dataType: int64
+		formatString: 0
+		lineageTag: 52f6f719-d94e-4f83-be12-23e34995813e
+		summarizeBy: sum
+		sourceColumn: Overall Satisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reasons for Overall Satisfaction'
+		dataType: string
+		lineageTag: 13470636-7e1d-4920-a7ac-7576e9c2dacc
+		summarizeBy: none
+		sourceColumn: Reasons for Overall Satisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Problem Resolved/ Installation Completed'
+		dataType: string
+		lineageTag: c18a2fc4-049c-416e-b02b-0d4d37e03a8e
+		summarizeBy: none
+		sourceColumn: Problem Resolved/ Installation Completed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES (Ease of Use)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 733665aa-ff33-4e54-9409-c54adf021b72
+		summarizeBy: sum
+		sourceColumn: CES (Ease of Use)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reasons for Cust Effort score'
+		dataType: string
+		lineageTag: 2c9aa3a7-d2d9-4a67-bac4-fc001f8b6117
+		summarizeBy: none
+		sourceColumn: Reasons for Cust Effort score
+
+		annotation SummarizationSetBy = Automatic
+
+	column '(L3) Phone Tech Ability Sat / (Install) Project mgmt'
+		dataType: int64
+		formatString: 0
+		lineageTag: b9b2bc94-b629-4948-870a-fbf2fd9b99a3
+		summarizeBy: sum
+		sourceColumn: (L3) Phone Tech Ability Sat / (Install) Project mgmt
+
+		annotation SummarizationSetBy = Automatic
+
+	column '(L3) Solution Time / (Install) Inst scheduling'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e89c684-a344-4b0f-bd66-cf3b33686ab9
+		summarizeBy: sum
+		sourceColumn: (L3) Solution Time / (Install) Inst scheduling
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Onsite Tech Ability Satisfaction/ Tech Expertise (Install)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 31407f4e-90d2-41a9-a091-4b96a0729a41
+		summarizeBy: sum
+		sourceColumn: Onsite Tech Ability Satisfaction/ Tech Expertise (Install)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ownership / Kept informed (Install)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3971c9fa-dffd-4f3d-897e-b2f380db1a8b
+		summarizeBy: sum
+		sourceColumn: Ownership / Kept informed (Install)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Q7 Know Me (Entitlement)'
+		dataType: int64
+		formatString: 0
+		lineageTag: f876a72a-7bc7-46c0-8158-27aac7fa14f8
+		summarizeBy: sum
+		sourceColumn: Q7 Know Me (Entitlement)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Other Comments'
+		dataType: string
+		lineageTag: d48adaca-4c90-4c57-a5ff-a3267f12df9a
+		summarizeBy: none
+		sourceColumn: Other Comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Likelihood to Recommend'
+		dataType: string
+		lineageTag: 9b6c2bfb-f0b5-427b-bfa3-bfe0ecf446bd
+		summarizeBy: none
+		sourceColumn: Likelihood to Recommend
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reasons for recommendation score given'
+		dataType: string
+		lineageTag: 95cd9322-5f7d-4146-8819-a1003b545be7
+		summarizeBy: none
+		sourceColumn: Reasons for recommendation score given
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Return Time'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 80856f26-a32f-442d-8d15-6935bd0f6bbf
+		summarizeBy: none
+		sourceColumn: Return Time
+
+		variation Variation
+			isDefault
+			relationship: 20fedbf3-e708-48e4-a837-e480aebc5401
+			defaultHierarchy: LocalDateTable_7918995d-a995-4330-8837-08efe078f4ec.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Survey Method'
+		dataType: string
+		lineageTag: 5cf3f8fd-cbe7-4611-8d64-e46e7e696c7a
+		summarizeBy: none
+		sourceColumn: Survey Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Month
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 315a52de-a005-4d24-83e6-c2ad3cbc158f
+		summarizeBy: none
+		sourceColumn: Year-Month
+
+		variation Variation
+			isDefault
+			relationship: 73c10fdb-233b-47f3-8d52-bb5754ee1701
+			defaultHierarchy: LocalDateTable_70c85e92-f438-4ccb-8d98-99a346b757d5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year-Week
+		dataType: int64
+		formatString: 0
+		lineageTag: 713abd82-1c74-40b5-a2ff-3826e582117b
+		summarizeBy: sum
+		sourceColumn: Year-Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		dataType: string
+		lineageTag: f2efd893-d1bc-48dd-b964-f3545fdd0191
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal H'
+		dataType: string
+		lineageTag: fa723717-e7f2-45b8-86d2-819a5da98539
+		summarizeBy: none
+		sourceColumn: Fiscal H
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter'
+		dataType: string
+		lineageTag: 532c3cd5-f4a9-4dbb-96b1-ae58704d6926
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Engineer Manager'
+		dataType: string
+		lineageTag: 4555d58a-cac8-4f3a-a2b8-73e0c6296c7a
+		summarizeBy: none
+		sourceColumn: Engineer Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Onsite Manager'
+		dataType: string
+		lineageTag: 9aa04f40-c60e-4b3e-928b-b4f6ed04269a
+		summarizeBy: none
+		sourceColumn: Onsite Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Onsite Workforce'
+		dataType: string
+		lineageTag: 1de66018-a758-416f-891f-3b218d37c2f6
+		summarizeBy: none
+		sourceColumn: Onsite Workforce
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Onsite Details'
+		dataType: string
+		lineageTag: 09f4b898-1df0-43c5-9c75-77f1c015aeb7
+		summarizeBy: none
+		sourceColumn: Onsite Details
+
+		annotation SummarizationSetBy = Automatic
+
+	column District
+		dataType: string
+		lineageTag: bdae2824-6a29-4fe5-ae1b-f8a51ffe7ef7
+		summarizeBy: none
+		sourceColumn: District
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Portfolio Services'
+		dataType: string
+		lineageTag: 86702deb-57be-4641-82ed-787f2c79719c
+		summarizeBy: none
+		sourceColumn: Portfolio Services
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Type'
+		dataType: string
+		lineageTag: 718e1e96-b6fa-4f4b-ad30-fbc69e8f2915
+		summarizeBy: none
+		sourceColumn: Service Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TCE Data'
+		dataType: string
+		lineageTag: cd3440e3-1fbf-4d78-b54a-d21c98780d43
+		summarizeBy: none
+		sourceColumn: TCE Data
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TCE Data Historical'
+		dataType: string
+		lineageTag: f4668ba2-d6d4-4c29-b589-e69649a77b4d
+		summarizeBy: none
+		sourceColumn: TCE Data Historical
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Overall Satisfaction Category'
+		dataType: string
+		lineageTag: 324288b7-a4d4-4bee-a032-4f8d13c2b4f4
+		summarizeBy: none
+		sourceColumn: Overall Satisfaction Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Category'
+		dataType: string
+		lineageTag: fbcfa9ce-d051-4fc0-ba3b-215578e55928
+		summarizeBy: none
+		sourceColumn: CES Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PNS Main RC'
+		dataType: string
+		lineageTag: a7e3cc31-1aa2-41b4-9888-5c78d58e5a67
+		summarizeBy: none
+		sourceColumn: PNS Main RC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PNS Sub RC'
+		dataType: string
+		lineageTag: 30e5e938-83c2-4a31-bf20-ffd1dfbb1029
+		summarizeBy: none
+		sourceColumn: PNS Sub RC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Main RC1'
+		dataType: string
+		lineageTag: 403a5612-ceb2-495a-9d1a-72784999c22e
+		summarizeBy: none
+		sourceColumn: DSAT Main RC1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Sub RC1'
+		dataType: string
+		lineageTag: 94e805cc-9080-4aff-b2bf-1dfa8afd9b2a
+		summarizeBy: none
+		sourceColumn: DSAT Sub RC1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Owner 1'
+		dataType: string
+		lineageTag: eec9053a-e8e2-4969-bddd-267cb926bec9
+		summarizeBy: none
+		sourceColumn: DSAT Owner 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Main RC2'
+		dataType: string
+		lineageTag: 508602c0-10cf-4ba1-ae64-997655e72f31
+		summarizeBy: none
+		sourceColumn: DSAT Main RC2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Sub RC2'
+		dataType: string
+		lineageTag: d863ad5b-388c-4e3e-b470-c70b0d44136c
+		summarizeBy: none
+		sourceColumn: DSAT Sub RC2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Owner 2'
+		dataType: string
+		lineageTag: 59e7e511-f60d-40a5-b386-91c53ac0dc30
+		summarizeBy: none
+		sourceColumn: DSAT Owner 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Main RC3'
+		dataType: string
+		lineageTag: 08a3ea1a-2c27-482c-99a7-daa44b0ea56f
+		summarizeBy: none
+		sourceColumn: DSAT Main RC3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Sub RC3'
+		dataType: string
+		lineageTag: dfc744f0-52e2-4061-aa9c-995963fb319c
+		summarizeBy: none
+		sourceColumn: DSAT Sub RC3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Owner 3'
+		dataType: string
+		lineageTag: 1c0e01a4-3835-4ca1-bb5b-0c0e5d49d87d
+		summarizeBy: none
+		sourceColumn: DSAT Owner 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Main RC4'
+		dataType: string
+		lineageTag: 39b89e88-0a62-4e53-a5f2-6039d5f35559
+		summarizeBy: none
+		sourceColumn: DSAT Main RC4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Sub RC4'
+		dataType: string
+		lineageTag: fe72a685-1c13-41d1-86d4-946e4ce7ddab
+		summarizeBy: none
+		sourceColumn: DSAT Sub RC4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DSAT Owner 4'
+		dataType: string
+		lineageTag: cd37f1f5-e995-4e3d-8f49-3c42f9327ecd
+		summarizeBy: none
+		sourceColumn: DSAT Owner 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Main RC1'
+		dataType: string
+		lineageTag: b24b9d6f-8bc0-4101-97dc-0c239c44f97d
+		summarizeBy: none
+		sourceColumn: CES Main RC1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Sub RC1'
+		dataType: string
+		lineageTag: e25cbdd4-209a-4e4d-b3ca-90e18c0fedae
+		summarizeBy: none
+		sourceColumn: CES Sub RC1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Owner 1'
+		dataType: string
+		lineageTag: fc52fa03-7fa8-4cc0-a1b3-2799b243aa9d
+		summarizeBy: none
+		sourceColumn: CES Owner 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Main RC2'
+		dataType: string
+		lineageTag: d5dfff56-67dd-4e46-b87d-97b048704764
+		summarizeBy: none
+		sourceColumn: CES Main RC2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Sub RC2'
+		dataType: string
+		lineageTag: 5c7d1766-16f0-4871-9431-b68a1e5a531e
+		summarizeBy: none
+		sourceColumn: CES Sub RC2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Owner 2'
+		dataType: string
+		lineageTag: 2b9a56af-952a-414a-b603-b6b04ae6a9f8
+		summarizeBy: none
+		sourceColumn: CES Owner 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Main RC3'
+		dataType: string
+		lineageTag: 2a08e1f9-83e2-4ae6-bbff-f5475c1cc222
+		summarizeBy: none
+		sourceColumn: CES Main RC3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Sub RC3'
+		dataType: string
+		lineageTag: e5edc616-7401-40e8-8a2c-99f4b29f6282
+		summarizeBy: none
+		sourceColumn: CES Sub RC3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Owner 3'
+		dataType: string
+		lineageTag: 8b620b9e-89fc-40e1-be7a-dfbf8cd733cc
+		summarizeBy: none
+		sourceColumn: CES Owner 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Main RC4'
+		dataType: string
+		lineageTag: aa23fe88-8af4-4aa9-853a-af37652e43a4
+		summarizeBy: none
+		sourceColumn: CES Main RC4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Sub RC4'
+		dataType: string
+		lineageTag: 18204158-c4bf-46ca-9bf2-f170de30cb13
+		summarizeBy: none
+		sourceColumn: CES Sub RC4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CES Owner 4'
+		dataType: string
+		lineageTag: feb274d7-8be9-4be0-a21a-57ae6b22b00e
+		summarizeBy: none
+		sourceColumn: CES Owner 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CB Resolution Status'
+		dataType: string
+		lineageTag: c2da6a94-3fa2-4ef8-b4dd-c96cb6952867
+		summarizeBy: none
+		sourceColumn: CB Resolution Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CB Action'
+		dataType: string
+		lineageTag: a4ade318-4e90-44f8-a833-9fbf7bf60c16
+		summarizeBy: none
+		sourceColumn: CB Action
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Elevated Flag'
+		dataType: int64
+		formatString: 0
+		lineageTag: ded8c824-e3c5-455f-ba27-bb8c967f9319
+		summarizeBy: sum
+		sourceColumn: Elevated Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLCP
+		dataType: string
+		lineageTag: 0a1db924-6ec2-4d1a-9c1b-9c9c3b58be54
+		summarizeBy: none
+		sourceColumn: GLCP
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GL Reactive support'
+		dataType: string
+		lineageTag: bd259f2f-25cc-4267-ab45-0fa28e73fba9
+		summarizeBy: none
+		sourceColumn: GL Reactive support
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Real Time Survey Flag'
+		dataType: string
+		lineageTag: d376bc55-3c8a-40ea-ad52-8e6e41bd5aa1
+		summarizeBy: none
+		sourceColumn: Real Time Survey Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RTCC Transfer Flag'
+		dataType: int64
+		formatString: 0
+		lineageTag: 75078107-2c61-41fd-9dd2-902a6c5d8602
+		summarizeBy: sum
+		sourceColumn: RTCC Transfer Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Onsite Arrival Time Missed'
+		dataType: string
+		lineageTag: 8fba83ab-1d70-4450-a464-a62b469b6d9c
+		summarizeBy: none
+		sourceColumn: Onsite Arrival Time Missed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CTR On Time Missed'
+		dataType: string
+		lineageTag: 8e911390-1329-4f3c-a6aa-fb8038f13ac3
+		summarizeBy: none
+		sourceColumn: CTR On Time Missed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Single Visit Missed'
+		dataType: string
+		lineageTag: 87493c25-6b13-43c7-b146-b42d47bdc0fe
+		summarizeBy: none
+		sourceColumn: Single Visit Missed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GLOS Issue Flag'
+		dataType: string
+		lineageTag: 8594f746-009d-4928-964e-835390e95b8e
+		summarizeBy: none
+		sourceColumn: GLOS Issue Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parts Consumed'
+		dataType: string
+		lineageTag: 8dc14180-e366-49a3-800f-655e594fb87d
+		summarizeBy: none
+		sourceColumn: Parts Consumed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parts Demanded'
+		dataType: string
+		lineageTag: d4d3a0cb-f24d-4b69-8505-cf7b3faef851
+		summarizeBy: none
+		sourceColumn: Parts Demanded
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Upgrades Identifier'
+		dataType: string
+		lineageTag: 4852bee8-94a3-4b2b-ac1c-99b5f8348b5d
+		summarizeBy: none
+		sourceColumn: Upgrades Identifier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Survey Type'
+		dataType: string
+		lineageTag: 4c3ee926-5668-4bf3-b5b3-c8bb63fc867c
+		summarizeBy: none
+		sourceColumn: Survey Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TPM SP MAP Temp Flag'
+		dataType: string
+		lineageTag: 7fe70677-528b-4fef-8a5e-0a416649f25c
+		summarizeBy: none
+		sourceColumn: TPM SP MAP Temp Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PC Split'
+		dataType: string
+		lineageTag: 05e64643-a948-4b73-a453-14dd5d033011
+		summarizeBy: none
+		sourceColumn: PC Split
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Group'
+		dataType: string
+		lineageTag: daf53ce6-f475-4513-a53d-8c467ff31a9c
+		summarizeBy: none
+		sourceColumn: Delivery Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Family'
+		dataType: string
+		lineageTag: c9d70925-008b-4a73-9ea4-5d61c9e40314
+		summarizeBy: none
+		sourceColumn: Product Family
+
+		annotation SummarizationSetBy = Automatic
+
+	column Practice
+		dataType: string
+		lineageTag: 22ece14e-3408-4a91-bd47-ab6f6a4ce98b
+		summarizeBy: none
+		sourceColumn: Practice
+
+		annotation SummarizationSetBy = Automatic
+
+	column Overall_sat_english_comments
+		dataType: string
+		lineageTag: a3f9195a-4838-46fd-a026-bc426257d3b3
+		summarizeBy: none
+		sourceColumn: Overall_sat_english_comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column Overall_sat_sentiment
+		dataType: double
+		lineageTag: 31521972-8beb-4025-b570-95219b16d939
+		summarizeBy: sum
+		sourceColumn: Overall_sat_sentiment
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ces_english_comments
+		dataType: string
+		lineageTag: 10db4ba4-3e30-4f1f-8f18-ef17cd801cc8
+		summarizeBy: none
+		sourceColumn: Ces_english_comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ces_sentiment
+		dataType: double
+		lineageTag: 9c7d8e89-dfab-4fe1-b011-70e8bb74e3ee
+		summarizeBy: sum
+		sourceColumn: Ces_sentiment
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'GTG_Q - Email Address'
+		dataType: string
+		lineageTag: 00ff47c3-5ff1-46ed-8399-58f221bcc713
+		summarizeBy: none
+		sourceColumn: GTG_Q - Email Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG_Q - Further Support'
+		dataType: string
+		lineageTag: 8e173bda-2543-492f-9fa3-b97d46231c2f
+		summarizeBy: none
+		sourceColumn: GTG_Q - Further Support
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG_Q - Guidance Provided'
+		dataType: string
+		lineageTag: e48f454d-6f77-455c-bf8b-032d87159c33
+		summarizeBy: none
+		sourceColumn: GTG_Q - Guidance Provided
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG_Q - Primary Reason'
+		dataType: string
+		lineageTag: 4859d13a-b4f9-4cec-acca-88c1809efc7d
+		summarizeBy: none
+		sourceColumn: GTG_Q - Primary Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG_Q - Primary Reason Successful'
+		dataType: string
+		lineageTag: c52d9827-91e4-4afe-8580-e6421a5e0ed2
+		summarizeBy: none
+		sourceColumn: GTG_Q - Primary Reason Successful
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG_Q - Primary Reason Text'
+		dataType: string
+		lineageTag: 635d6da6-ced8-40ea-b9d6-c54e3cbae9c0
+		summarizeBy: none
+		sourceColumn: GTG_Q - Primary Reason Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG_Q - Response Time'
+		dataType: string
+		lineageTag: 005ef749-764b-4c2c-b4d4-ddc0723b78e5
+		summarizeBy: none
+		sourceColumn: GTG_Q - Response Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG_Q - Technical Knowledge'
+		dataType: string
+		lineageTag: 69413710-ec8d-4f9b-8fdf-12658d43ac1c
+		summarizeBy: none
+		sourceColumn: GTG_Q - Technical Knowledge
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG_Q - Valid for Event'
+		dataType: string
+		lineageTag: bd661457-4d5d-4103-a22a-5a4a5890f2c6
+		summarizeBy: none
+		sourceColumn: GTG_Q - Valid for Event
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG_CQ - Valid for Event Other'
+		dataType: string
+		lineageTag: 1611b4ca-48da-4c76-b49f-ef08b51eb943
+		summarizeBy: none
+		sourceColumn: GTG_CQ - Valid for Event Other
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG Further Enhance Text'
+		dataType: string
+		lineageTag: bec9e1da-a348-44e3-a1b4-aa0ea7e09598
+		summarizeBy: none
+		sourceColumn: GTG Further Enhance Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG Supported Configuration Text'
+		dataType: string
+		lineageTag: 164bf984-2d5c-4e9d-a6c6-ebe8875a2bc4
+		summarizeBy: none
+		sourceColumn: GTG Supported Configuration Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG Learn More Text'
+		dataType: string
+		lineageTag: e1a67f85-4c0e-4f8a-851d-17447ea2cc47
+		summarizeBy: none
+		sourceColumn: GTG Learn More Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG Automate Save Time Text'
+		dataType: string
+		lineageTag: 509fe313-b5ef-4df1-8893-d35eee6bd08a
+		summarizeBy: none
+		sourceColumn: GTG Automate Save Time Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GTG Customer Comments Text'
+		dataType: string
+		lineageTag: 1e9bf645-8ea5-414b-b68f-c7fc71b80030
+		summarizeBy: none
+		sourceColumn: GTG Customer Comments Text
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PNS- HPE to Contact You'
+		dataType: string
+		lineageTag: 90e072c5-1587-4d06-9522-67b2c6e3bfea
+		summarizeBy: none
+		sourceColumn: PNS- HPE to Contact You
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Real Time'
+		dataType: string
+		lineageTag: bf6aa6a4-3669-4952-bbee-47b90644892f
+		summarizeBy: none
+		sourceColumn: Real Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column Caller_Type_Partner
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d874c35-ccbc-483f-b962-f7cf8727b6a0
+		summarizeBy: sum
+		sourceColumn: Caller_Type_Partner
+
+		annotation SummarizationSetBy = Automatic
+
+	column DXC_Recipient
+		dataType: int64
+		formatString: 0
+		lineageTag: 38f43cfb-6063-418b-9804-ba607a8a7da3
+		summarizeBy: sum
+		sourceColumn: DXC_Recipient
+
+		annotation SummarizationSetBy = Automatic
+
+	column TCE_Filter
+		dataType: string
+		lineageTag: 5bcb46bd-dc7b-4c90-a620-13235626ddd2
+		summarizeBy: none
+		sourceColumn: TCE_Filter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Portfolio in QBRO'
+		dataType: string
+		lineageTag: 8e8133c5-a197-4c3d-9ec9-683ba64d6a17
+		summarizeBy: none
+		sourceColumn: Portfolio in QBRO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'BU Segment'
+		dataType: string
+		lineageTag: 5f794378-061e-46d0-8e7b-020589f23bc8
+		summarizeBy: none
+		sourceColumn: BU Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CQ1 CSAT'
+		dataType: int64
+		formatString: 0
+		lineageTag: 266d1921-fe0e-4d4c-a110-dedd2a51f779
+		summarizeBy: sum
+		sourceColumn: CQ1 CSAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CQ1 DSAT'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6412ff1e-d0c3-4460-b62f-ad452e8ba55b
+		summarizeBy: sum
+		sourceColumn: CQ1 DSAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CQ1 Count'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a2ded1f-d9f7-4717-9ce8-7bcf1940323c
+		summarizeBy: sum
+		sourceColumn: CQ1 Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CQ16 CSAT'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d531f53-cc0a-42da-a6e2-11c728026199
+		summarizeBy: sum
+		sourceColumn: CQ16 CSAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CQ16 DSAT'
+		dataType: int64
+		formatString: 0
+		lineageTag: 65f62c2d-77c6-42c6-a593-27d4fab1f809
+		summarizeBy: sum
+		sourceColumn: CQ16 DSAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CQ16 Count'
+		dataType: int64
+		formatString: 0
+		lineageTag: e628a7b2-4540-4466-a630-c767e0204f55
+		summarizeBy: sum
+		sourceColumn: CQ16 Count
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Further Support Main RC'
+		dataType: string
+		lineageTag: a8308915-1fcf-4cbb-8ff4-663adf1ef169
+		summarizeBy: none
+		sourceColumn: Further Support Main RC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Further Support Sub RC'
+		dataType: string
+		lineageTag: dcc11983-af66-42c6-864a-5ee8c8d9330c
+		summarizeBy: none
+		sourceColumn: Further Support Sub RC
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Export = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\sivakum\OneDrive - Hewlett Packard Enterprise\GIT Integration\PBI-GIT\AID_CED 2.xlsx"), null, true),
+				    Export_Sheet = Source{[Item="Export",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Export_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Case Number", Int64.Type}, {"Geographies", type text}, {"Sub-Geography", type text}, {"Sub-Geography 2", type text}, {"Customer Country", type text}, {"Customer country code", type text}, {"Company Name", type text}, {"Top Parent ST", type text}, {"Account ST", type text}, {"Top Account", Int64.Type}, {"GSD Managed Flag", Int64.Type}, {"Service Delivery Account Type", type text}, {"Product Description", type text}, {"Product or Product Number", type text}, {"Serial Number", type text}, {"BU", type text}, {"Sub BU", type text}, {"HW Product Group", type text}, {"HW Sub-Groups", type text}, {"HWPL", type text}, {"SPL Description", type text}, {"Open date", type date}, {"Closed date", type date}, {"TAT in Days", type number}, {"Coverage Response", type text}, {"Case Title / Project Description", type text}, {"Global Center", type text}, {"Case Origin", type text}, {"Warranty type", type text}, {"Business", type text}, {"Delivery Type", type text}, {"Delivery Method", type text}, {"DC&MC Split", type text}, {"Partner name", type text}, {"Partner", type text}, {"Overall Satisfaction", Int64.Type}, {"Reasons for Overall Satisfaction", type text}, {"Problem Resolved/ Installation Completed", type text}, {"CES (Ease of Use)", Int64.Type}, {"Reasons for Cust Effort score", type text}, {"(L3) Phone Tech Ability Sat / (Install) Project mgmt", Int64.Type}, {"(L3) Solution Time / (Install) Inst scheduling", Int64.Type}, {"Onsite Tech Ability Satisfaction/ Tech Expertise (Install)", Int64.Type}, {"Ownership / Kept informed (Install)", Int64.Type}, {"Q7 Know Me (Entitlement)", Int64.Type}, {"Other Comments", type text}, {"Likelihood to Recommend", type any}, {"Reasons for recommendation score given", type any}, {"Return Time", type date}, {"Survey Method", type text}, {"Year-Month", type date}, {"Year-Week", Int64.Type}, {"Fiscal Year", type text}, {"Fiscal H", type text}, {"Fiscal Quarter", type text}, {"Engineer Manager", type text}, {"Onsite Manager", type text}, {"Onsite Workforce", type text}, {"Onsite Details", type text}, {"District", type text}, {"Portfolio Services", type text}, {"Service Type", type text}, {"TCE Data", type text}, {"TCE Data Historical", type text}, {"Overall Satisfaction Category", type text}, {"CES Category", type text}, {"PNS Main RC", type text}, {"PNS Sub RC", type text}, {"DSAT Main RC1", type text}, {"DSAT Sub RC1", type text}, {"DSAT Owner 1", type text}, {"DSAT Main RC2", type text}, {"DSAT Sub RC2", type text}, {"DSAT Owner 2", type text}, {"DSAT Main RC3", type text}, {"DSAT Sub RC3", type text}, {"DSAT Owner 3", type text}, {"DSAT Main RC4", type text}, {"DSAT Sub RC4", type text}, {"DSAT Owner 4", type text}, {"CES Main RC1", type text}, {"CES Sub RC1", type text}, {"CES Owner 1", type text}, {"CES Main RC2", type text}, {"CES Sub RC2", type text}, {"CES Owner 2", type text}, {"CES Main RC3", type any}, {"CES Sub RC3", type any}, {"CES Owner 3", type any}, {"CES Main RC4", type any}, {"CES Sub RC4", type any}, {"CES Owner 4", type any}, {"CB Resolution Status", type text}, {"CB Action", type text}, {"Elevated Flag", Int64.Type}, {"GLCP", type any}, {"GL Reactive support", type any}, {"Real Time Survey Flag", type text}, {"RTCC Transfer Flag", Int64.Type}, {"Onsite Arrival Time Missed", type text}, {"CTR On Time Missed", type text}, {"Single Visit Missed", type text}, {"GLOS Issue Flag", type text}, {"Parts Consumed", type any}, {"Parts Demanded", type any}, {"Upgrades Identifier", type any}, {"Survey Type", type any}, {"TPM SP MAP Temp Flag", type any}, {"PC Split", type text}, {"Delivery Group", type any}, {"Product Family", type text}, {"Practice", type any}, {"Overall_sat_english_comments", type text}, {"Overall_sat_sentiment", type number}, {"Ces_english_comments", type text}, {"Ces_sentiment", type number}, {"GTG_Q - Email Address", type any}, {"GTG_Q - Further Support", type any}, {"GTG_Q - Guidance Provided", type any}, {"GTG_Q - Primary Reason", type any}, {"GTG_Q - Primary Reason Successful", type any}, {"GTG_Q - Primary Reason Text", type any}, {"GTG_Q - Response Time", type any}, {"GTG_Q - Technical Knowledge", type any}, {"GTG_Q - Valid for Event", type any}, {"GTG_CQ - Valid for Event Other", type any}, {"GTG Further Enhance Text", type any}, {"GTG Supported Configuration Text", type any}, {"GTG Learn More Text", type any}, {"GTG Automate Save Time Text", type any}, {"GTG Customer Comments Text", type any}, {"PNS- HPE to Contact You", type text}, {"Real Time", type text}, {"Caller_Type_Partner", Int64.Type}, {"DXC_Recipient", Int64.Type}, {"TCE_Filter", type text}, {"Portfolio in QBRO", type text}, {"BU Segment", type text}, {"CQ1 CSAT", Int64.Type}, {"CQ1 DSAT", Int64.Type}, {"CQ1 Count", Int64.Type}, {"CQ16 CSAT", Int64.Type}, {"CQ16 DSAT", Int64.Type}, {"CQ16 Count", Int64.Type}, {"Further Support Main RC", type any}, {"Further Support Sub RC", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
